@@ -6,10 +6,7 @@
     <link rel="stylesheet" href="css/contacto.css">
     <title>Contactanos</title>
 </head>
-<body>
-
-    <?php include('encabezado.php');?>
-    
+<body>    
     <div class="contactus">
         <div class="box">
             <div class="contact form">
