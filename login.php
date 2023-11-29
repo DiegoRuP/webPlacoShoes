@@ -14,8 +14,11 @@
     <form class="register-form" method="POST">
       <h2>Registrarse</h2>
       <input type="text" placeholder="Nombre" id="nombre" required/>
+      <input type="text" placeholder="Cuenta" id="cuenta" required/>
       <input type="email" placeholder="Correo" id="correo" required/>
+      <input type="text" placeholder="Mascota favorita" id="seguridad" required/>
       <input type="password" placeholder="Contraseña*" id="Contraseña" required/>
+      <input type="password" placeholder="Repetir Contraseña*" id="Contraseña2" required/>
 
       <a class="btn" href="#">
         <span></span>
