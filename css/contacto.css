@@ -9,13 +9,11 @@ body{
     background: linear-gradient(#164863, #427D9D);
 }
 
-.contactus {
+.contactus{
     position: relative;
     width: 100%;
     padding: 40px 100px;
-    margin-top: -700px; 
 }
-
 
 .contactus .title{
     display: flex;

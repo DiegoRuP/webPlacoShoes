@@ -6,8 +6,12 @@
     <link rel="stylesheet" href="css/contacto.css">
     <title>Contactanos</title>
 </head>
-<body>    
+<body>
+    
     <div class="contactus">
+        <div class="title">
+            <h2>Contactanos</h2>
+        </div>
         <div class="box">
             <div class="contact form">
                 <h3>Manda tu mensaje</h3>
@@ -87,6 +91,8 @@
             </div>
         </div>
     </div>
+
+
     
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
