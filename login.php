@@ -20,7 +20,7 @@
       <input type="password" placeholder="Contraseña*" id="Contraseña" required/>
       <input type="password" placeholder="Repetir Contraseña*" id="Contraseña2" required/>
 
-      <a class="btn" href="#">
+      <a class="btn" href="javascript:void(0);" onclick="validarContraseñas()">
         <span></span>
         <span></span>
         <span></span>
@@ -55,6 +55,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/login.js"></script>
+<script src="js/validacion.js"></script>
 
 </body>
 </html>
