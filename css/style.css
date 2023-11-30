@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Nunito:wght@700&display=swap');
+
+html {
+    height: 100%;
+   }
+   
+   /* Agregamos el fondo coloreado y ordenamos todo */
+   .loginBody{
+       display:flex;
+       align-items:center;
+       justify-content:center;
+       margin:0;
+       padding:0;
+       font-family: sans-serif;
+       background: linear-gradient(#164863, #427D9D);
+   }
+   
+   *{
+     font-family:'Poppins',sans-serif;
+   }
+   /* Agregamos el fondo negro para el formulario */
+   .form {
+     position: relative;
+     z-index: 1;
+     text-align: center;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 400px;
+     padding: 40px;
+     transform: translate(-50%, -50%);
+     background: rgba(0,0,0,.5);
+     box-sizing: border-box;
+     box-shadow: 0 15px 25px rgba(0,0,0,.6);
+     border-radius: 10px;
+   }
+   
+   /* Decoramos los cuadros de texto */
+   .form input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+   }
+   /* Decoramos el titulo del formulario */
+   h2{
+    color:white;
+   }
+   
+   label{
+       color: #289bb8;
+   }
+   
+   /* Botones */
+   .form .message {
+     margin: 15px 0 0;
+     color: #b3b3b3;
+     font-size: 12px;
+   }
+   .form .message a {
+     color: #289bb8;
+     text-decoration: none;
+   }
+   .form .register-form {
+     display: none;
+   }
+   
+   /* Boton de Logearse y Registrarse */
+   
+   .btn {
+     position: relative;
+     display: inline-block;
+     padding: 10px 20px;
+     color: #289bb8;
+     font-size: 16px;
+     text-decoration: none;
+     overflow: hidden;
+     transition: .5s;
+     margin-top: 15px;
+     letter-spacing: 2px
+   }
+   
+   /* Efecto cuando tenemos el cursor en el boton */
+   .btn:hover {
+     background: #289bb8;
+     color: #fff;
+     border-radius: 5px;
+     box-shadow: 0 0 5px #289bb8,
+                 0 0 25px #289bb8,
+                 0 0 50px #289bb8,
+                 0 0 100px #289bb8;
+   }
+   
+   .checkbox-container {
+       display:flex;
+       align-items: center;
+       margin-bottom: 20px;
+     }
+     
+     .checkbox-container input {
+       margin-right: 10px;
+     }
+     
+     h5{
+       color: white;
+       font-size: 13px;
+       margin: 10px;
+     }
+
+
+/* Estilos para la header y navbar */
+
+.contenedorNav{
+    margin: 0 auto;
+    background: linear-gradient(#164863, #427D9D);
+    width: 99%;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    margin-top: 10px;
+}
+
+.opcionesTopNav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
+    padding: 5px 10%;
+}
+
+.opcionesTopNav .listaNav{
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.opcionesTopNav .listaNav li, .listaNav span{
+    font-family: 'Nunito', sans-serif;
+    display: inline-block;
+    padding: 0 20px;
+    transition: all 0.3s ease 0s;
+}
+
+.micuentaNav{
+    margin-left: 200px;
+}
+
+.opcionesTopNav .listaNav li:hover{
+    transform: scale(1.2);
+}
+
+.opcionesTopNav .listaNav a, .listaNav span{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.opcionesTopNav .listaNav a{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.opcionesTopNav .listaNav li a:hover{
+    color: rgba(0,0,0,.5);
+}
+
+.opcionesTopNav .logoNav{
+    cursor: pointer;
+}
+
+.opcionesTopNav .logoNav img{
+    margin-top: 50px;
+    height: 180px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.opcionesTopNav .logoNav img:hover{
+    transform: scale(1.2);
+}
+
+.header{
+    height: 50px;
+    padding: 5px 10%;
+}
+
+.header .listaNav{
+    list-style: none;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.header .listaNav li{
+    font-family: 'Nunito', sans-serif;
+    display: inline-block;
+    padding: 0 40px;
+    transition: all 0.3s ease 0s;
+}
+
+.header .listaNav li:hover{
+    transform: scale(1.1);
+}
+
+.header .listaNav a{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header .listaNav li a:hover{
+    color: rgba(0,0,0,.5);
+}
+
+.desactivado{
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
