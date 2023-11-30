@@ -1,12 +1,11 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="loginBody">
@@ -38,7 +37,7 @@
       <input type="text" placeholder="Nombre" id="inombre" required />
       <input type="password" placeholder="Contraseña" id="icontra" required/>
 
-      <a class="btn" href="#">
+      <a class="btn" href="javascript:void(0);" onclick="validarIntentos()">
         <span></span>
         <span></span>
         <span></span>
