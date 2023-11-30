@@ -1,14 +1,16 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sesion</title>
+    <title>Iniciar sesión</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-<div class="login-page">
+<body class="loginBody">
+<?php include 'navbar.php'?>
   <div class="form">
  <!-- Aqui preguntamos si quiere crear cuenta -->
     <form class="register-form" method="POST">
@@ -50,7 +52,6 @@
       </div>
       <p class="message">¿No tienes cuenta?<a href="#"> Crea una</a></p>
     </form>
-  </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Nunito:wght@700&display=swap');
+
 html {
     height: 100%;
    }
    
    /* Agregamos el fondo coloreado y ordenamos todo */
-   body{
+   .loginBody{
        display:flex;
        align-items:center;
        justify-content:center;
@@ -15,12 +17,6 @@ html {
    
    *{
      font-family:'Poppins',sans-serif;
-   }
-   
-   .login-page {
-     width: 400px;
-     padding: 8% 0 0;
-     margin: auto;
    }
    /* Agregamos el fondo negro para el formulario */
    .form {
@@ -74,8 +70,6 @@ html {
      display: none;
    }
    
-   
-   
    /* Boton de Logearse y Registrarse */
    
    .btn {
@@ -117,3 +111,120 @@ html {
        font-size: 13px;
        margin: 10px;
      }
+
+
+/* Estilos para la header y navbar */
+
+.contenedorNav{
+    margin: 0 auto;
+    background: linear-gradient(#164863, #427D9D);
+    width: 99%;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    margin-top: 10px;
+}
+
+.opcionesTopNav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
+    padding: 5px 10%;
+}
+
+.opcionesTopNav .listaNav{
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.opcionesTopNav .listaNav li, .listaNav span{
+    font-family: 'Nunito', sans-serif;
+    display: inline-block;
+    padding: 0 20px;
+    transition: all 0.3s ease 0s;
+}
+
+.micuentaNav{
+    margin-left: 200px;
+}
+
+.opcionesTopNav .listaNav li:hover{
+    transform: scale(1.2);
+}
+
+.opcionesTopNav .listaNav a, .listaNav span{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.opcionesTopNav .listaNav a{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.opcionesTopNav .listaNav li a:hover{
+    color: rgba(0,0,0,.5);
+}
+
+.opcionesTopNav .logoNav{
+    cursor: pointer;
+}
+
+.opcionesTopNav .logoNav img{
+    margin-top: 50px;
+    height: 180px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.opcionesTopNav .logoNav img:hover{
+    transform: scale(1.2);
+}
+
+.header{
+    height: 50px;
+    padding: 5px 10%;
+}
+
+.header .listaNav{
+    list-style: none;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.header .listaNav li{
+    font-family: 'Nunito', sans-serif;
+    display: inline-block;
+    padding: 0 40px;
+    transition: all 0.3s ease 0s;
+}
+
+.header .listaNav li:hover{
+    transform: scale(1.1);
+}
+
+.header .listaNav a{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header .listaNav li a:hover{
+    color: rgba(0,0,0,.5);
+}
+
+.desactivado{
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+
+
+
+
