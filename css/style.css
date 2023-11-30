@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Nunito:wght@700&display=swap');
 
-   *{
-    font-family: 'Nunito', sans-serif;
-   }
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:'Nunito',sans-serif;
+}
    
    /* Agregamos el fondo coloreado y ordenamos todo */
 
@@ -257,7 +260,7 @@
 
 .bodyFooter{
     border-radius: 15px ; 
-    width: 93%;
+    width: 98%;
     margin: 0 auto;
     background-color: #1A2226;
     min-height: 100px;

@@ -1,3 +1,5 @@
+<?php include 'navbar.php'?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +9,14 @@
     <title>Contactanos</title>
 </head>
 <body>
+    <br>
     
     <div class="contactus">
         <div class="title">
             <h2>Contactanos</h2>
         </div>
         <div class="box">
-            <div class="contact form">
+            <div class="contact formContacto">
                 <h3>Manda tu mensaje</h3>
                 <form action="">
                     <div class="formBox">
@@ -90,11 +93,13 @@
 
             </div>
         </div>
-    </div>
+    </div><br>
 
 
     
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
+<?php include 'footer.php'?>
 </html>

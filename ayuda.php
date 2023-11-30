@@ -9,6 +9,7 @@
     <title>Ayuda - Placo Shoes</title>
 </head>
 <body>
+    <br>
     <div class="divAyuda">
         <h2>Preguntas Frecuentes</h2>
 
@@ -76,10 +77,13 @@
         </div>
 
     </div>
+    <br>
+    <?php include 'footer.php'?>
+
 </body>
 
 </html>
 <br>
 
-<?php include 'footer.php'?>
+
 

@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Iniciar sesión</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -56,12 +57,10 @@
 
   </div>
 
-  
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/login.js"></script>
-<script src="js/validacion.js"></script>
-<br>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/validacion.js"></script>
+  <br>
 <?php include 'footer.php'?>
 </body>
 </html>
