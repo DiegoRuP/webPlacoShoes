@@ -33,8 +33,8 @@
     <!-- Aqui preguntamos si ya tiene cuenta -->
     <form class="login-form" method="post">
       <h2></i> Iniciar Sesion</h2>
-      <input type="text" placeholder="Nombre" required />
-      <input type="password" placeholder="Contraseña" required/>
+      <input type="text" placeholder="Nombre" id="inombre" required />
+      <input type="password" placeholder="Contraseña" id="icontra" required/>
 
       <a class="btn" href="#">
         <span></span>
