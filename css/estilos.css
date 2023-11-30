@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Nunito:wght@700&display=swap');
 
 *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -81,7 +84,9 @@ p {
     color: black;
 }
 
-
+.conocenos{
+    margin-left: 25%;
+}
 
 /* preguntas frecuentes */
 h1 {
@@ -113,3 +118,5 @@ a{
 .colorFooter{
     background-color: lightslategray;
 }
+
+/* carrusel con nuestras fotos */
