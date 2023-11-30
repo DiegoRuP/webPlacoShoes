@@ -25,6 +25,11 @@
         <div class="col-lg-12 login-form">
           <form>
             <div class="form-group">
+
+              <!-- EL ID NOS PUEDE AYUDAR A IDENTIFICAR LA CATEGORIA, POR EJEMPLO SI EMPIEZA EN 1 ES HOMBRE Y SI EMPIEZA EN 2 ES MUJER 
+            ejemplo: 2233 Es una teni de mujer 
+            ejemplo: 1242 Es un teni de hombre -->
+            
               <label class="form-control-label">ID del producto</label>
               <input type="text" class="form-control" id="nombreProducto">
             </div>

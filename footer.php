@@ -13,12 +13,6 @@
     <div class="bodyFooter">
 
         <footer class="footer">
-            <div class="efectoOla">
-                <div class="ola" id="ola1"></div>
-                <div class="ola" id="ola2"></div>
-                <div class="ola" id="ola3"></div>
-                <div class="ola" id="ola4"></div>
-            </div>
 
             <ul class="redes">
                 <li>
@@ -37,19 +31,19 @@
 
             <ul class="menuFooter">
                 <li>
-                    <a href=""> Inicio </a>
+                    <a href="index.php"> Inicio </a>
                 </li>
                 <li>
-                    <a href=""> Tienda </a>
+                    <a href="catalogo.php"> Tienda </a>
                 </li>
                 <li>
-                    <a href=""> Acerca de </a>
+                    <a href="nosotros.php"> Acerca de </a>
                 </li>
                 <li>
-                    <a href=""> Contacto </a>
+                    <a href="contacto.php"> Contacto </a>
                 </li>
                 <li>
-                    <a href=""> Ayuda </a>
+                    <a href="ayuda.php"> Ayuda </a>
                 </li>
             </ul>
 
