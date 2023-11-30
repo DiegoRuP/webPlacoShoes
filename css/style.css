@@ -1,3 +1,333 @@
-*{
-    font-family: 'Courier New', Courier, monospace;
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Nunito:wght@700&display=swap');
+
+   *{
+    font-family: 'Nunito', sans-serif;
+   }
+   
+   /* Agregamos el fondo coloreado y ordenamos todo */
+
+   body{
+    height: auto !important;
+    margin: 0;
+    background-color: #071014;
+        background-image: -webkit-linear-gradient(160deg, #071014 0%, #0db8de 100%);
+        background-image: -moz-linear-gradient(160deg, #071014 0%, #0db8de 100%);
+        background-image: -o-linear-gradient(160deg, #071014 0%, #0db8de 100%);
+        background-image: linear-gradient(160deg, #071014 0%, #0db8de 100%);
+   }
+   .loginBody{
+       display:flex;
+       align-items:center;
+       justify-content:center;
+       margin:0;
+       padding:0;
+       font-family: sans-serif; 
+   }
+   
+   /* Agregamos el fondo negro para el formulario */
+   .form {
+     position: relative;
+     z-index: 1;
+     text-align: center;
+     position: absolute;
+     top: 55%;
+     left: 50%;
+     width: 400px;
+     padding: 40px;
+     transform: translate(-50%, -50%);
+     background: #1A2226;
+     box-sizing: border-box;
+     box-shadow: 0 15px 25px rgba(0,0,0,.6);
+     border-radius: 10px;
+   }
+   
+   /* Decoramos los cuadros de texto */
+   .form input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    outline: none;
+    background: transparent;
+   }
+   /* Decoramos el titulo del formulario */
+   h2{
+    color:#0DB8DE;
+   }
+   
+   label{
+       color: #289bb8;
+   }
+   
+   /* Botones */
+   .form .message {
+     margin: 15px 0 0;
+     color: #b3b3b3;
+     font-size: 12px;
+   }
+   .form .message a {
+     color: #289bb8;
+     text-decoration: none;
+   }
+   .form .register-form {
+     display: none;
+   }
+   
+   /* Boton de Logearse y Registrarse */
+   
+   .btn {
+     position: relative;
+     display: inline-block;
+     padding: 10px 20px;
+     color: #289bb8;
+     font-size: 16px;
+     text-decoration: none;
+     overflow: hidden;
+     transition: .5s;
+     margin-top: 15px;
+     letter-spacing: 2px
+   }
+   
+   /* Efecto cuando tenemos el cursor en el boton */
+   .btn:hover {
+     background: #289bb8;
+     color: #fff;
+     border-radius: 5px;
+     box-shadow: 0 0 5px #289bb8,
+                 0 0 25px #289bb8,
+                 0 0 50px #289bb8,
+                 0 0 100px #289bb8;
+   }
+   
+   .checkbox-container {
+       display:flex;
+       align-items: center;
+       margin-bottom: 20px;
+     }
+     
+     .checkbox-container input {
+       margin-right: 10px;
+     }
+     
+     h5{
+       color: white;
+       font-size: 13px;
+       margin: 10px;
+     }
+
+
+/* Estilos para la header y navbar */
+
+.contenedorNav{
+    margin: 0 auto;
+    background-color: #1A2226;
+    width: 98%;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.opcionesTopNav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70px ;
+    padding: 5px 10%;
+}
+
+.opcionesTopNav .listaNav{
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.opcionesTopNav .listaNav li, .listaNav span{
+    
+    display: inline-block;
+    padding: 0 20px;
+    transition: all 0.3s ease 0s;
+}
+
+.micuentaNav{
+    margin-left: 200px;
+}
+
+.opcionesTopNav .listaNav li:hover{
+    transform: scale(1.2);
+}
+
+.opcionesTopNav .listaNav a, .listaNav span{
+    font-size: 20px;
+    font-weight: 700;
+    color: #0DB8DE;
+    text-decoration: none;
+}
+
+.opcionesTopNav .listaNav a{
+    font-size: 20px;
+    font-weight: 700;
+    color: #0DB8DE;
+    text-decoration: none;
+}
+
+.opcionesTopNav .listaNav li a:hover , .listaNav span{
+    color: #fff;
+}
+
+.opcionesTopNav .logoNav{
+    cursor: pointer;
+}
+
+.opcionesTopNav .logoNav img{
+    margin-top: 60px;
+    height: 180px;
+    transition: all 0.3s;
+}
+
+.opcionesTopNav .logoNav img:hover{
+    transform: scale(1.2);
+}
+
+.headerNav{
+    height: 50px;
+    padding: 5px 10%;
+}
+
+.headerNav .listaNav{
+    list-style: none;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.headerNav .listaNav li{
+    display: inline-block;
+    padding: 0 40px;
+    transition: all 0.3s ease 0s;
+}
+
+.headerNav .listaNav li:hover{
+    transform: scale(1.1);
+}
+
+.headerNav .listaNav a{
+    font-size: 20px;
+    font-weight: 700;
+    color: #0DB8DE;
+    text-decoration: none;
+}
+
+.headerNav .listaNav li a:hover{
+    color: #fff;
+}
+
+.desactivado{
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.divAyuda{
+    text-align: center;
+    margin: 0 auto;
+    width: 98%;
+    height: auto;
+    background-color: #1A2226;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+.divAyuda h2{
+    color: #0DB8DE;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.divAyuda .question{
+    color: #0DB8DE;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.divAyuda .answer{
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.divPreguntas{
+    padding: 20px;
+    text-align: left;
+    margin: 0 auto;
+    width: 40%;
+}
+
+.contenedorFooter{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 100vh;
+}
+
+.bodyFooter{
+
+    
+    width: 93%;
+    margin: 0 auto;
+    background-color: #1A2226;
+    min-height: 100px;
+    padding: 20px 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footer .redes , .footer .menuFooter{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.footer .redes li ,  .footer .menuFooter li{
+    list-style: none;
+}
+
+.footer .redes li a{
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.footer .redes li a:hover{
+    transform: translateY(-10px);
+}
+
+.footer .menuFooter li a{
+    padding-top: 1em;
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.65;
+}
+
+.footer .menuFooter li a:hover{
+    opacity: 1;
+}
+
+.footer p{
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
 }
