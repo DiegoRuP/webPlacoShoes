@@ -20,26 +20,46 @@
         <div class="col-lg-12 login-form">
           <form>
             <div class="form-group">
+              <label class="form-control-label">ID del producto</label>
+              <input type="text" class="form-control" id="nombreProducto">
+            </div>
+
+            <div class="form-group">
               <label class="form-control-label">Nombre del producto</label>
               <input type="text" class="form-control" id="nombreProducto">
             </div>
+
+            <div class="form-group">
+              <label class="form-control-label">Descripcion</label> <br> <br>
+              <textarea name="descripcion" id="" cols="60 " rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label">Cuantos productos se encuentran disponibles</label>
+              <input type="text" class="form-control" id="disponibleProducto" >
+            </div>
+
             <div class="form-group">
               <label class="form-control-label">Precio</label>
               <input type="text" class="form-control" id="precioProducto">
             </div>
             <div class="form-group">
-            <label class="form-control-label">Foto de la imagen</label> <br> <br>
+            <label class="form-control-label">Foto del producto</label> <br> <br>
               <label for="imagen" class="upload-btn">
                 <span id="label-imagen">Selecciona una imagen</span>
               </label>
               <input type="file" id="imagen" name="imagen" style="display: none;" onchange="mostrarNombreArchivo()">
             </div>
+
             <div class="form-group">
-              <label class="form-control-label">Cuantos productos se encuentran disponibles</label>
+              <label class="form-control-label">Descuento</label>
               <input type="text" class="form-control" id="disponibleProducto" >
             </div>
+
             <div class="col-12 login-btm login-button justify-content-center d-flex">
-              <button type="submit" class="btn btn-outline-primary">Mandar</button>
+              <button type="submit" class="btn btn-outline-primary">Alta</button>
+              <button type="submit" class="btn btn-outline-primary">Cambios</button>
+              <button type="submit" class="btn btn-outline-primary">Baja</button>
             </div>
           </div>
         </form>
