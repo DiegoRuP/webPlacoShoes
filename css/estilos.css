@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Nunito:wght@700&display=swap');
 
 *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -85,8 +88,6 @@ p {
     margin-left: 25%;
 }
 
-
-
 /* preguntas frecuentes */
 h1 {
     color: darkslateblue;
@@ -119,69 +120,3 @@ a{
 }
 
 /* carrusel con nuestras fotos */
-.swiper{
-    width: 100%;
-}
-
-.swiper-wrapper{
-    width: 100%;
-    height: 35em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card{
-    width: 20em;
-    height: 90%;
-    background-color: white;
-    border-radius: 2em;
-    box-shadow: 0 0 2em rgba(0, 0, 0, .2);
-    padding: 2em 1em;
-
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.card_img{
-    width: 10em;
-    height: 10em;
-    border-radius: 50%;
-    border: 5px solid darkslateblue;
-    padding: 3px;
-    margin-bottom: 2em;
-}
-
-.card_img img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.card_contenido{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.card_nombre{
-    font-size: 1.5em;
-    font-weight: 500;
-    color: darkslateblue;
-    position: relative;
-}
-
-.card_boton{
-    background-color: darkslateblue;
-    color: white;
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    border: none;
-    padding: .5em;
-    border-radius: .5em;
-    margin-top: .5em;
-    cursor: pointer;
-}

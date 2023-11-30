@@ -64,14 +64,17 @@
                         <a href=""> Tienda </a>
                     </li>                
                     <li>
-                        <a href="formproducto.php"> Acerca de </a>
+                        <a href="nosotros.php"> Acerca de </a>
                     </li>   
                     <li>
                         <a href="contacto.php"> Contacto </a>
                     </li>                 
                     <li>
                         <a href="ayuda.php"> Ayuda </a>
-                    </li>            
+                    </li>     
+                    <li>
+                        <a href="formproducto.php"> Admin </a>
+                    </li>          
                 </ul>
     
     </header>
