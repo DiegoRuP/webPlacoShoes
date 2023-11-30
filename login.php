@@ -8,7 +8,7 @@
     <title>Iniciar sesión</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-
+<br>
 <body>
   <div class="loginBody">
   <div class="form">
@@ -52,7 +52,7 @@
       </div>
       <p class="message">¿No tienes cuenta?<a href="#"> Registrarte </a></p>
     </form>
-</div>
+    </div>
 
   </div>
 
@@ -61,8 +61,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/login.js"></script>
 <script src="js/validacion.js"></script>
-
+<br>
+<?php include 'footer.php'?>
 </body>
 </html>
 
-<?php include 'footer.php'?>

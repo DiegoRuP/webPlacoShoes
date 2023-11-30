@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="divAyuda">
-    <h2>Preguntas Frecuentes</h2>
+        <h2>Preguntas Frecuentes</h2>
 
         <div class="divPreguntas">
             <div class="question">
@@ -76,8 +76,10 @@
         </div>
 
     </div>
-    <?php include 'piePagina.php'?>
 </body>
 
 </html>
+<br>
+
+<?php include 'footer.php'?>
 

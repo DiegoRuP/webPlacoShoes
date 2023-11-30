@@ -70,7 +70,7 @@
                         <a href="contacto.php"> Contacto </a>
                     </li>                 
                     <li>
-                        <a href="ayudaPrueba.php"> Ayuda </a>
+                        <a href="ayuda.php"> Ayuda </a>
                     </li>            
                 </ul>
     
