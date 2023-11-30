@@ -1,3 +1,5 @@
+<?php include 'navbar.php'?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +12,7 @@
 <body>
 
     <div class="faq-container">
-        <h1>Preguntas Frecuentes</h1>
+        <h2 class=>Preguntas Frecuentes</h2>
         <br><br>
 
         <div class="question">

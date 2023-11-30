@@ -1,3 +1,5 @@
+<?php include 'navbar.php'?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,8 +9,8 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="loginBody">
-<?php include 'navbar.php'?>
+<body>
+  <div class="loginBody">
   <div class="form">
  <!-- Aqui preguntamos si quiere crear cuenta -->
     <form class="register-form" method="POST">
@@ -17,8 +19,8 @@
       <input type="text" placeholder="Cuenta" id="cuenta" required/>
       <input type="email" placeholder="Correo" id="correo" required/>
       <input type="text" placeholder="Animal favorito" id="seguridad" required/>
-      <input type="password" placeholder="Contraseña*" id="Contraseña" required/>
-      <input type="password" placeholder="Repetir Contraseña*" id="Contraseña2" required/>
+      <input type="password" placeholder="Contraseña*" id="contraseña" required/>
+      <input type="password" placeholder="Repetir Contraseña*" id="contraseña2" required/>
 
       <a class="btn" href="javascript:void(0);" onclick="validarContraseñas()">
         <span></span>
@@ -28,7 +30,7 @@
         Crear Cuenta
       </a>
 
-      <p class="message">¿Ya estas registrado? <a href="#">Logeate</a></p>
+      <p class="message">¿Ya estas registrado? <a href="#">Inicia sesión</a></p>
     </form>
     <!-- Aqui preguntamos si ya tiene cuenta -->
     <form class="login-form" method="post">
@@ -41,16 +43,20 @@
         <span></span>
         <span></span>
         <span></span>
-        Logearse
+        Iniciar sesión
       </a>
       <br>
       <h5>Recuerdame</h5>
       <div class="checkbox-container">
         <input type="checkbox" id="recordar">
       </div>
-      <p class="message">¿No tienes cuenta?<a href="#"> Crea una</a></p>
+      <p class="message">¿No tienes cuenta?<a href="#"> Registrarte </a></p>
     </form>
 </div>
+
+  </div>
+
+  
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/login.js"></script>
@@ -58,3 +64,5 @@
 
 </body>
 </html>
+
+<?php include 'footer.php'?>

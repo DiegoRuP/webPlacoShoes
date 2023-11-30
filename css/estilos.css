@@ -1,15 +1,16 @@
 /* carrusel de marcas */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Nunito:wght@700&display=swap');
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 body{
-    background-color: #ffffff;
-    justify-content: center;
+    background-color: #071014;
+        background-image: -webkit-linear-gradient(160deg, #071014 0%, #0db8de 100%);
+        background-image: -moz-linear-gradient(160deg, #071014 0%, #0db8de 100%);
+        background-image: -o-linear-gradient(160deg, #071014 0%, #0db8de 100%);
+        background-image: linear-gradient(160deg, #071014 0%, #0db8de 100%);  
 }
 
 @keyframes slide {
@@ -63,17 +64,9 @@ body{
     margin: 0 40px;
 }
 
-
-/* sobre nosotros */
-header {
-    background-color: rgb(255, 255, 255);
-    color: darkslateblue;
-    padding: 1em;
-    text-align: center;
-}
+/* Sobre nosotros */
 
 section {
-    max-width: 800px;
     margin: 40px auto;
     padding: 20px;
     background-color: #ffffff;
@@ -98,7 +91,6 @@ strong{
     color: darkslateblue;
 }
 .faq-container {
-    max-width: 600px;
     margin: 0 auto;
 }
 
