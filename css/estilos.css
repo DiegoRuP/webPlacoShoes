@@ -1,0 +1,123 @@
+/* carrusel de marcas */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color: #ffffff;
+    justify-content: center;
+}
+
+@keyframes slide {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.logos{
+    overflow: hidden;
+    padding: 60px 0;
+    background-color: white;
+    white-space: nowrap;
+    position: relative;
+}
+
+.logos:before
+.logos:after{
+    position: absolute;
+    top: 0;
+    content: "";
+    z-index: 2;
+    width: 250px;
+    height: 100%;
+} 
+
+.logos:before{
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after{
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.logos:hover .logos-slide{
+    animation-play-state: paused;
+}
+
+.logos-slide{
+    display: inline-block;
+    animation: 25s slide infinite linear;
+}
+
+.logos-slide img{
+    height: 50px;
+    margin: 0 40px;
+}
+
+
+/* sobre nosotros */
+header {
+    background-color: rgb(255, 255, 255);
+    color: darkslateblue;
+    padding: 1em;
+    text-align: center;
+}
+
+section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: darkslateblue;
+}
+
+p {
+    color: black;
+}
+
+
+
+/* preguntas frecuentes */
+h1 {
+    color: darkslateblue;
+}
+strong{
+    color: darkslateblue;
+}
+.faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.question {
+    margin-bottom: 10px;
+}
+
+.answer {
+    margin-bottom: 20px;
+}
+
+
+/* pie de pagina */
+a{
+    color: white;
+}
+.pFooter{
+    color: white;
+}
+.colorFooter{
+    background-color: lightslategray;
+}
