@@ -11,10 +11,13 @@
   <script src="script.js"></script>
 </head>
 <body class="d-flex align-items-center">
+
+
+
   <div class="container">
     <div class="row justify-content-center" style="margin:20px;">
-      <div class="col-lg-6 col-md-8 login-box">
-        <div class="col-lg-12 login-title">
+      <div class="col-lg-6 col-md-8 caja-login">
+        <div class="col-lg-12 caja-titulo">
           Productos
         </div>
         <div class="col-lg-12 login-form">
@@ -31,7 +34,7 @@
 
             <div class="form-group">
               <label class="form-control-label">Descripcion</label> <br> <br>
-              <textarea name="descripcion" id="" cols="60 " rows="2"></textarea>
+              <textarea name="descripcion" id="" cols="65 " rows="2"></textarea>
             </div>
 
             <div class="form-group">
@@ -57,9 +60,9 @@
             </div>
 
             <div class="col-12 login-btm login-button justify-content-center d-flex">
-              <button type="submit" class="btn btn-outline-primary">Alta</button>
-              <button type="submit" class="btn btn-outline-primary">Cambios</button>
-              <button type="submit" class="btn btn-outline-primary">Baja</button>
+            <button type="submit" class="btn btn-outline-primary" id="alta">Alta</button>
+            <button type="submit" class="btn btn-outline-primary" id="cambios">Cambios</button>
+            <button type="submit" class="btn btn-outline-primary" id="baja">Baja</button>
             </div>
           </div>
         </form>
