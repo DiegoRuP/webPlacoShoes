@@ -64,7 +64,7 @@
                         <a href=""> Tienda </a>
                     </li>                
                     <li>
-                        <a href=""> Acerca de </a>
+                        <a href="formproducto.php"> Acerca de </a>
                     </li>   
                     <li>
                         <a href="contacto.php"> Contacto </a>

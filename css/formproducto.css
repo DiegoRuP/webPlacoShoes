@@ -4,17 +4,19 @@ body {
     background-image: -moz-linear-gradient(160deg, #071014 0%, #0db8de 100%);
     background-image: -o-linear-gradient(160deg, #071014 0%, #0db8de 100%);
     background-image: linear-gradient(160deg, #071014 0%, #0db8de 100%);  
-    font-family: 'Nunito', sans-serif;
-    height: 100vh;
-  }
-  .login-box {
-      margin-top: 75px;
-      background: #1A2226;
-      text-align: center;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-      border-radius: 15px;
-  }
-  .login-title {
+    font-family: 'Arial', sans-serif;
+    height: 170vh;
+    background-size: cover;
+}
+  .caja-login {
+    margin-top: 15px;
+    background: #1A2226;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 15px;
+}
+
+  .caja-titulo {
       text-align: center;
       font-size: 30px;
       letter-spacing: 2px;
@@ -35,14 +37,6 @@ body {
       outline: 0;
       margin-bottom: 20px;
       padding-left: 0px;
-      color: #ECF0F5;
-  }
-  input[type=password] {
-      background-color: #1A2226;
-      border: none;
-      border-bottom: 2px solid #0DB8DE;
-      border-radius: 0px;
-      margin-bottom: 20px;
       color: #ECF0F5;
   }
   .form-group {
@@ -96,5 +90,11 @@ label.upload-btn {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    display: inline-block;
+    display: inline-block;
+}
+
+textarea{
+    color: #fff;
+    background-color: transparent;
+    border-color: #0DB8DE;
 }
