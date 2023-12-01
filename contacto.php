@@ -18,28 +18,27 @@
         <div class="box">
             <div class="contact formContacto">
                 <h3>Manda tu mensaje</h3>
-                <form action="">
+                <form action="correo.php" method="POST">
                     <div class="formBox">
                         <div class="row50">
                             <div class="inputBox">
                                 <span>Nombre</span>
-                                <input type="text" placeholder="Nombre" id="nombre">
+                                <input type="text" placeholder="Nombre" id="nombre" name="nombre">
                             </div>
                             <div class="inputBox">
                                 <span>Apellidos</span>
-                                <input type="text" placeholder="Apellidos" id="apellidos">
+                                <input type="text" placeholder="Apellidos" id="apellidos" name="apellidos">
                             </div>
                         </div>
-
 
                         <div class="row50">
                             <div class="inputBox">
                                 <span>Email</span>
-                                <input type="text" placeholder="Email" id="email">
+                                <input type="text" placeholder="Email" id="email" name="email">
                             </div>
                             <div class="inputBox">
                                 <span>Telefono</span>
-                                <input type="text" placeholder="Telefono" id="telefono">
+                                <input type="text" placeholder="Telefono" id="telefono" name="telefono">
                             </div>
                         </div>
 
@@ -55,9 +54,9 @@
                                 <input type="submit" value="Enviar">
                             </div>
                         </div>
-
                     </div>
                 </form>
+
             </div>
 
             <div class="contact info">
