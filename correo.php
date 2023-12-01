@@ -3,7 +3,11 @@
 $nombre = $_POST['nombre'];
 $apellidos = $_POST['apellidos'];
 $email = $_POST['email'];
-$nombre_completo = $nombre . ' ' . $apellidos;
+$tel = $_POST['telefono'];
+$msj = $_POST['mensaje'];
+
+$nombre_completo = $nombre . " " . $apellidos ;
+
 // Envía un correo electrónico personalizado
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
@@ -29,8 +33,7 @@ $mail->setFrom('correodiegoxampp@gmail.com', 'Equipo Placo-Shoes');
 $mail->addAddress($email, $nombre_completo);
 
 // Asunto y cuerpo del correo
-$subject = 'Resultado del Examen';
-$mail->Subject = $subject;
+
 
 //Se implementan imágenes dentro del cuerpo del correo
 $mail->addEmbeddedImage('media/logoAzul.png', 'logoPlaco');
@@ -39,6 +42,7 @@ $mail->addEmbeddedImage('media/logoAzul.png', 'logoPlaco');
 $mail->isHTML(true);
     //Mensaje en correo
 $subject = "¡Tu solicitud esta siendo procedada! Placo-Shoes";
+$mail->Subject = $subject;
 $mail->Body = '
     <html>
     <head>
@@ -46,6 +50,7 @@ $mail->Body = '
             body {
                 font-family: Arial, sans-serif;
                 background-color: #f0f0f0;
+                color: #000000;
             }
             .container {
                 max-width: 600px;
@@ -59,13 +64,30 @@ $mail->Body = '
     <body>
         <div class="container">
             <img src="cid:logoPlaco" alt="logoPlacoShoes" width="200px" height="200px" style="margin-left: 32%;">
-            <h2>¡Hola ' . $nombre_completo . '! En seguida procesaremos tu solicitud y nos pondremos en contacto contigo, estate atento a tu bandeja de entrada.</h2>
+            <h2>¡Hola ' . $nombre . '!</h2>
+            <p>En seguida procesaremos tu solicitud y nos pondremos en contacto contigo, estate atento a tu bandeja de entrada.</p>
             <p>Estamos encantados de atender las peticiones de nuestros clientes, si tienes alguna otra duda no dudes en contactarnos.</p>
+            <p>A continuación, un repaso de los datos que recibimos:</p>
+                        <ol>
+                            <h3>Datos:</h3>
+                                <ul>
+                                    <li>Nombre:'. $nombre .' </li>
+                                    <li>Apellidos: '.$apellidos.'</li>
+                                    <li>Telefono: '.$tel.' </li>
+                                    <li>Mensaje: '.$msj.'</li>
+                                </ul>
             <p>Tennis Chidos Para Gente Chida</p>
-                        <p>PlacoSaludos cordiales</p>
+                        <p>PlacoSaludos :)</p>
                         <p>PlacoInc</p>
         </div>
     </body>
     </html>';
 
+    if ($mail->send()) {
+        header("Location: contacto.php");
+        exit(); 
+    } else {
+        echo "Error: " . $mail->ErrorInfo;
+    }
+    
 ?>
