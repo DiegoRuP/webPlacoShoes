@@ -26,11 +26,15 @@ body{
 }
 
 .logos{
+    margin: 0 auto;
     overflow: hidden;
     padding: 60px 0;
     background-color: white;
     white-space: nowrap;
     position: relative;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    width: 98%;
 }
 
 .logos:before
