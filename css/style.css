@@ -557,6 +557,14 @@
     display: inline-block;
 }
 
+figure img{
+    transition: all .5s;
+}
+
+figure img:hover {
+    transform: scale(1.2);
+}
+
 .shop-card {
     width: 350px;
     background: #f5f5f5;
@@ -652,4 +660,98 @@
     border-radius: 20px;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
 
-  }
+}
+
+.contenedorCarrito{
+    position: relative;
+}
+
+.contadorProductos{
+    position: absolute;
+    top: -25px;
+    right: -30px;
+    background: #289bb8;
+    width: 25px;
+    height: 25px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+}
+
+.contadorProductos span{
+    font-size: 14px;
+    color: #1A2226;
+}
+
+.productosCarrito{
+    position: absolute;
+    top: 10;
+    right: -20px;
+    background-color: #289bb8;
+    width: 400px;
+    z-index: 1;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 20px 0 20px 20px;
+}
+
+.itemCarrito{
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1A2226;
+}
+
+.infoCarrito{
+    display: flex;
+    flex: 0.8;
+    justify-content: space-between;
+}
+
+.tituloItem {
+    font-size: 20px;
+    color: #1A2226;
+}
+
+.infoCarrito .cantItem, .precioItem{
+    font-size: 20px;
+    font-weight: 400;
+    color: #1A2226;
+}
+
+.totalCarrito{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 20px;
+    align-items: center;
+}
+
+.totalCarrito h3{
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+.totalCarrito .totalPago{
+    font-size: 20px;
+    font-weight: 900;
+    color: #000;
+}
+
+#iconoCerrar:hover{
+    color: red;
+    cursor: pointer;
+
+}
+
+.iconoCarrito{
+    cursor: pointer;
+}
+
+.ocultarCarrito{
+    display: none;
+}
