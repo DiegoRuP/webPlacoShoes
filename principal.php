@@ -9,6 +9,7 @@
     <title>Pagina principal - Placo Shoes</title>
 </head>
 <body>
+    <br>
     <div class="contenedorPrincipal">
         <div class="seccionPortada">
             <h2>Placo Shoes</h2>
@@ -87,15 +88,11 @@
             </ul>
             
         </div>
-
+    
         </div>
-        
-
-        
-        
-
-
-    <?php include 'carrusel.php'?>
+        <br>
+        <?php include 'carrusel.php'?>
+        <br>
     </div>
     
 </body>
