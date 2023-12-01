@@ -647,9 +647,9 @@
   .contenedorCatalogo{
     margin: 0 auto;
     width: 98%;
-    height: 1000px;
+    height: 3000px;
     background-color: #1A2226;
     border-radius: 20px;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
-
+    /* height original de 1000px; */
   }
