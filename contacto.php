@@ -18,7 +18,7 @@
         <div class="box">
             <div class="contact formContacto">
                 <h3>Manda tu mensaje</h3>
-                <form action="correo.php">
+                <form action="correo.php" method="POST">
                     <div class="formBox">
                         <div class="row50">
                             <div class="inputBox">
