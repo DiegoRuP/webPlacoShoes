@@ -62,7 +62,7 @@
                         <a href="principal.php"> Inicio </a>
                     </li>                
                     <li>
-                        <a href=""> Tienda </a>
+                        <a href="catalogo.php"> Tienda </a>
                     </li>                
                     <li>
                         <a href="nosotros.php"> Acerca de </a>

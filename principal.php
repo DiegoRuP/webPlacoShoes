@@ -93,12 +93,6 @@
         <br>
         <?php include 'carrusel.php'?>
         <br>
-
-        
-        
-
-
-    
     </div>
     
 </body>
