@@ -490,8 +490,7 @@
     grid-template-columns: 1fr*2;
     grid-template-areas: " mujer hombres"
                         " mujer chavo";
-                        
-
+                    
 }
 
 .collage .mujer{
