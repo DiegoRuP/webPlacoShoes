@@ -19,7 +19,7 @@
         <div class="box">
             <div class="contact formContacto">
                 <h3>Manda tu mensaje</h3>
-                <form action="correo.php" method="POST" id="IDFormContacto">
+                <form action="correo.php" method="POST">
                     <div class="formBox">
                         <div class="row50">
                             <div class="inputBox">
@@ -97,28 +97,6 @@
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script>
-    // Espera a que el DOM esté completamente cargado
-    document.addEventListener('DOMContentLoaded', function () {
-        // Selecciona el formulario por su ID
-        var formulario = document.getElementById('IDFormContacto');
-
-        // Agrega un evento de escucha para el envío del formulario
-        formulario.addEventListener('submit', function (e) {
-            // Evita que el formulario se envíe de la manera normal
-            e.preventDefault();
-
-            // Muestra la notificación de éxito con SweetAlert2
-            Swal.fire({
-                icon: 'success',
-                title: 'Correo enviado',
-                text: 'Pronto nos comunicaremos contigo',
-            });
-
-            // Puedes agregar aquí cualquier acción adicional después de mostrar la notificación
-        });
-    });
-</script>
 </body>
 
 <?php include 'footer.php'?>
