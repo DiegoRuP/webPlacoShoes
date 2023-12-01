@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="media/logo.ico">
     <script src="https://kit.fontawesome.com/f646e31ace.js" crossorigin="anonymous"></script>
 </head>
 
