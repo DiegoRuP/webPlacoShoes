@@ -10,8 +10,75 @@
 <body>
     <br>
     <div class="contenedorCatalogo">
-       <h1>Tienda vacia :(</h1> 
+       
+       <div class="cartaPrincipal">
+            <ul>
+                <li>
+                <div class="shop-card">
+                <div class="title">
+                    Nike Travis
+                </div>
+                <div class="desc">
+                    Hombres
+                </div>
+                <div class="slider">
+                    <figure>
+                        <img src="media/hombre1.png" alt="hombre1" height="200px">
+                    </figure>
+                </div>
+
+                <div class="cta">
+                    <div class="price">$21000</div>
+                    <button class="btnCard">Añadir al carrito<span class="bg"></span></button>
+                </div>
+                </li>
+                <li>
+                <div class="shop-card">
+                <div class="title">
+                    Nike
+                </div>
+                <div class="desc">
+                    Mujer
+                </div>
+                <div class="slider">
+                    <figure>
+                        <img src="media/mujer1.png" alt="mujer1" height="200px">
+                    </figure>
+                </div>
+
+                <div class="cta">
+                    <div class="price">$3099</div>
+                    <button class="btnCard">Añadir al carrito<span class="bg"></span></button>
+                </div>
+                </li>
+                <li>
+                <div class="shop-card">
+                <div class="title">
+                    Nike
+                </div>
+                <div class="desc">
+                    Hombres
+                </div>
+                <div class="slider">
+                    <figure>
+                        <img src="media/hombre7.png" alt="hombre7" height="200px">
+                    </figure>
+                </div>
+
+                <div class="cta">
+                    <div class="price">$2699</div>
+                    <button class="btnCard">Añadir al carrito<span class="bg"></span></button>
+                </div>
+                </li>
+            </ul>
+            
+        </div>
+    
+        </div>
+       
     </div>
+    <br>
+    <?php include 'carrusel.php'?>
     <br>
 </body>
 <?php include 'footer.php'?>
