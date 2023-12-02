@@ -7,12 +7,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "basededatos";
+    $dbname = "bdplacoshoes";
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
     }
-    $sql = "SELECT * FROM tu_tabla WHERE nombre = '$nombre' AND contraseña = '$contraseña'";
+    $sql = "SELECT * FROM usuarios WHERE nombre = '$nombre' AND contraseña = '$contraseña'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $_SESSION["usuario"] = $nombre;
