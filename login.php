@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Iniciar sesión</title>
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <br><br><br><br>
 <body>
@@ -34,16 +34,12 @@
       <p class="message">¿Ya estas registrado? <a href="#">Inicia sesión</a></p>
     </form>
     <!-- Aqui preguntamos si ya tiene cuenta -->
-    <form class="login-form" method="post">
+    <form class="login-form" method="POST">
       <h2></i> Iniciar Sesion</h2>
       <input type="text" placeholder="Nombre" id="inombre" required />
       <input type="password" placeholder="Contraseña" id="icontra" required/>
-
-      <div>
-        <img src="captcha.php" alt="CAPTCHA">
-        <input type="text" id="captcha" name="captcha" placeholder="Intruzca el texto generado en la imagen">
-      </div>
-      <a class="btn" href="#">
+    <!--Aqui se muestra el captcha creado al momento que entra a loguearse el usuario-->
+      <a class="btn" href="captcha.php">
         <span></span>
         <span></span>
         <span></span>
@@ -64,6 +60,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/login.js"></script>
   <script src="js/validacion.js"></script>
+  <script src="js/validacionCaptcha.js"></script>
   <br><br><br>
 <?php include 'footer.php'?>
 </body>
