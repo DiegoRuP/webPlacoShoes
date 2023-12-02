@@ -23,7 +23,7 @@
           Control de producto
         </div>
         <div class="col-lg-12 login-form">
-          <form>
+          <form action="alta.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
 
               <!-- EL ID NOS PUEDE AYUDAR A IDENTIFICAR LA CATEGORIA, POR EJEMPLO SI EMPIEZA EN 1 ES HOMBRE Y SI EMPIEZA EN 2 ES MUJER 
@@ -31,30 +31,30 @@
             ejemplo: 1242 Es un teni de hombre -->
             
               <label class="form-control-label">ID del producto</label>
-              <input type="text" class="form-control" id="nombreProducto">
+              <input type="text" class="form-control" id="idProducto" name="idProducto">
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Nombre del producto</label>
-              <input type="text" class="form-control" id="nombreProducto">
+              <input type="text" class="form-control" id="nombreProducto" name="nombreProducto">
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Descripcion</label> <br> <br>
-              <textarea name="descripcion" id="" cols="58 " rows="2"></textarea>
+              <textarea name="descripcion" id="descripcion" cols="58 " rows="2"></textarea>
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Cuantos productos se encuentran disponibles</label>
-              <input type="text" class="form-control" id="disponibleProducto" >
+              <input type="text" class="form-control" id="disponibleProducto" name="disponibleProducto">
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Precio</label>
-              <input type="text" class="form-control" id="precioProducto">
+              <input type="text" class="form-control" id="precioProducto" name="precioProducto">
             </div>
             <div class="form-group">
-            <label class="form-control-label">Foto del producto</label> <br> <br>
+            <label class="form-control-label">Foto del producto</label><br><br>
               <label for="imagen" class="upload-btn">
                 <span id="label-imagen">Selecciona una imagen</span>
               </label>
@@ -63,13 +63,17 @@
 
             <div class="form-group">
               <label class="form-control-label">Descuento</label>
-              <input type="text" class="form-control" id="disponibleProducto" >
+              <input type="text" class="form-control" id="descuentoProducto" name="descuentoProducto">
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label">Categoria</label>
+              <input type="text" class="form-control" id="categoriaProducto" name="categoriaProducto">
             </div>
 
             <div class="col-12 login-btm login-button justify-content-center d-flex">
             <button type="submit" class="btn btn-outline-primary" id="alta">Alta</button>
-            <button type="submit" class="btn btn-outline-primary" id="cambios">Cambios</button>
-            <button type="submit" class="btn btn-outline-primary" id="baja">Baja</button>
+            <button type="button" class="btn btn-outline-primary" id="actualizar" onclick="window.location.href='cambios.php';">Actualizar datos</button>
             </div>
           </div>
         </form>
