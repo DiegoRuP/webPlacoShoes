@@ -1,20 +1,23 @@
 function validarContraseñas() {
-  var contraseña1 = document.getElementById('contraseña').value;
-  var contraseña2 = document.getElementById('contraseña2').value;
-
-  if (contraseña1 !== contraseña2) {
-      // Utilizando SweetAlert para mostrar la alerta
-      Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'Las contraseñas no coinciden',
-      });
-
-      return false; // Detener el envío del formulario
+    var contraseña1 = document.getElementById('contraseña').value;
+    var contraseña2 = document.getElementById('contraseña2').value;
+  
+    if (contraseña1 !== contraseña2) {
+        // Utilizando SweetAlert para mostrar la alerta
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Las contraseñas no coinciden',
+        });
+  
+        // Detener el envío del formulario
+        return false;
+    }
+  
+    // Permitir el envío del formulario
+    return true;
   }
-
-  return true; // Permitir el envío del formulario
-}
+  
 
   
 var intentosIncorrectos = 0;

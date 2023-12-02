@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <title>Iniciar sesión</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,38 +15,39 @@
   <div class="loginBody">
   <div class="form">
  <!-- Aqui preguntamos si quiere crear cuenta -->
-    <form class="register-form" method="POST">
+    <form class="register-form" method="POST" action="registro.php">
       <h2>Registrarse</h2>
-      <input type="text" placeholder="Nombre" id="nombre" required/>
-      <input type="text" placeholder="Cuenta" id="cuenta" required/>
-      <input type="email" placeholder="Correo" id="correo" required/>
-      <input type="text" placeholder="Animal favorito" id="seguridad" required/>
-      <input type="password" placeholder="Contraseña*" id="contraseña" required/>
-      <input type="password" placeholder="Repetir Contraseña*" id="contraseña2" required/>
+      <input type="text" placeholder="Nombre" id="nombre" name="nombre" required/>
+    <input type="text" placeholder="Cuenta" id="cuenta" name="cuenta" required/>
+    <input type="email" placeholder="Correo" id="correo" name="correo" required/>
+    <input type="text" placeholder="Animal favorito" id="seguridad" name="animal" required/>
+    <input type="password" placeholder="Contraseña*" id="contraseña" name="contraseña" required/>
+    <input type="password" placeholder="Repetir Contraseña*" id="contraseña2" name="contraseña2" required/>
 
-      <a class="btn" href="javascript:void(0);" onclick="validarContraseñas()">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Crear Cuenta
-      </a>
+    <button type="submit" class="btn" onclick="return validarContraseñas();">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Crear Cuenta
+    </button>
+
 
       <p class="message">¿Ya estas registrado? <a href="#">Inicia sesión</a></p>
     </form>
     <!-- Aqui preguntamos si ya tiene cuenta -->
-    <form class="login-form" method="post">
+    <form class="login-form" method="post" action="validarLogin.php">
       <h2></i> Iniciar Sesion</h2>
-      <input type="text" placeholder="Nombre" id="inombre" required />
-      <input type="password" placeholder="Contraseña" id="icontra" required/>
+      <input type="text" placeholder="Nombre" name="inombre" required />
+    <input type="password" placeholder="Contraseña" name="icontra" required/>
 
-      <a class="btn" href="#">
+    <button type="submit" class="btn">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         Iniciar sesión
-      </a>
+    </button>
       <br>
       <h5>Recuerdame</h5>
       <div class="checkbox-container">
