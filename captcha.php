@@ -61,10 +61,10 @@
         <!-- Se muestra la imagen del captcha -->
         <img class="imagen-captcha" src="<?php echo $ImagenCaptcha; ?>" alt="CAPTCHA">
         <!-- Formulario para introducir el texto del captcha -->
-        <form class="login-form" method="post" action="">
+        <form id="captchaForm" class="login-form" method="post" action="" onsubmit="return mostrarAlerta()">
             <input type="text" id="captchaUsuario" name="captchaUsuario" placeholder="Introduzca el texto generado en la imagen" required>
             <input type="text" id="captchaGenerado" name="captchaGenerado" value="<?php echo $_SESSION['captcha_texto']; ?>" hidden>
-            <input class="btn" onclick="mostrarAlerta()" type="submit" value="VALIDAR CAPTCHA"></button>
+            <input class="btn" type="submit" value="VALIDAR CAPTCHA"></button>
         </form> <!-- en esta parte solo funciona la sweet alert cuando no se introduce ningun valor en el input, pero si se pone valor,
                      este o no bien salta una alerta pero no dura nada de tiempo.
                     cuando entre bien el usuario no se a donde saltar desde este php, queda pendiente jiji-->
