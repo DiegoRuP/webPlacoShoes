@@ -41,7 +41,7 @@ $mail->addEmbeddedImage('media/logoAzul.png', 'logoPlaco');
 // Cuerpo de correo
 $mail->isHTML(true);
     //Mensaje en correo
-$subject = "¡Tu solicitud esta siendo procedada! Placo-Shoes";
+$subject = "¡Tu solicitud esta siendo procesada! Placo-Shoes";
 $mail->Subject = $subject;
 $mail->Body = '
     <html>

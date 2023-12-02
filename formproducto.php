@@ -68,8 +68,7 @@
 
             <div class="col-12 login-btm login-button justify-content-center d-flex">
             <button type="submit" class="btn btn-outline-primary" id="alta">Alta</button>
-            <button type="submit" class="btn btn-outline-primary" id="cambios">Cambios</button>
-            <button type="submit" class="btn btn-outline-primary" id="baja">Baja</button>
+            <button type="submit" class="btn btn-outline-primary" id="actualizar" href="cambios.php">Actualizar datos</button>
             </div>
           </div>
         </form>
