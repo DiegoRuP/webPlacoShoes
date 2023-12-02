@@ -17,9 +17,7 @@
         </div>
 
         <ul class="listaNav">            
-            <li>
-                <span> Tenis chidos, actitud chida, para gente chida como Diego</span>
-            </li>    
+                
 
                 <?php
                 if (isset($_SESSION['usuario'])) {
@@ -27,12 +25,14 @@
                     //(Se puede utilizar también para habilitar las opciones del admin de control de base de datos)
                     echo '
                     
-                    <span>
-                            Bienvenido, ' . $_SESSION['usuario'] . '
-                    </span>
+                    <li>
+                        <span> Tenis chidos, actitud chida, para gente chida como '. $_SESSION['usuario'].'</span>
+                    </li> 
+
+                
                     
                     <li class="micuentaNav">
-                    <a href=""> <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión </a>
+                    <a href="logout.php"> <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión </a>
                     </li>    
                     
                     <!-- CARRITO SOLO CON INICIO DE SESIÓN -->
@@ -67,7 +67,12 @@
                     </li>';
 
                 } else {
-                    echo '
+                    
+                    echo ' <li>
+                    <span> Tenis chidos, actitud chida, para gente chida</span>
+                     </li>
+                    
+                    
                     <li class="micuentaNav">
                         <a href="login.php"> <i class="fa-solid fa-user"></i> Mi cuenta </a>
                     </li>                   
