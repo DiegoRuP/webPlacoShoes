@@ -15,7 +15,7 @@
   <div class="loginBody">
   <div class="form">
  <!-- Aqui preguntamos si quiere crear cuenta -->
-    <form class="register-form" method="POST" action="registro.php">
+    <form id="RegForm" class="register-form" method="POST" action="registro.php">
       <h2>Registrarse</h2>
       <input type="text" placeholder="Nombre" id="nombre" name="nombre" required/>
     <input type="text" placeholder="Cuenta" id="cuenta" name="cuenta" required/>
@@ -24,37 +24,39 @@
     <input type="password" placeholder="Contraseña*" id="contraseña" name="contraseña" required/>
     <input type="password" placeholder="Repetir Contraseña*" id="contraseña2" name="contraseña2" required/>
 
-    <button type="submit" class="btn" onclick="return validarContraseñas();">
+    <a class="btn" href="javascript:void(0);" onclick="if(validarContraseñas()){document.getElementById('RegForm').submit()} ">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       Crear Cuenta
-    </button>
+    </a>
 
 
       <p class="message">¿Ya estas registrado? <a href="#">Inicia sesión</a></p>
     </form>
     <!-- Aqui preguntamos si ya tiene cuenta -->
-    <form class="login-form" method="post" action="validarLogin.php">
-      <h2></i> Iniciar Sesion</h2>
-      <input type="text" placeholder="Nombre" name="inombre" required />
-    <input type="password" placeholder="Contraseña" name="icontra" required/>
+    <form id="loginForm" class="login-form" method="post" action="validarLogin.php">
+            <h2>Iniciar Sesion</h2>
+            <input type="text" placeholder="Nombre" name="inombre" value="<?php if(isset($_COOKIE["inombre"])){ echo $_COOKIE["inombre"];}?>" required />
+            <input type="password" placeholder="Contraseña" name="icontra" value="<?php if(isset($_COOKIE["icontra"])){ echo $_COOKIE["icontra"];}?>" required/>
 
-    <button type="submit" class="btn">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Iniciar sesión
-    </button>
-      <br>
-      <h5>Recuerdame</h5>
-      <div class="checkbox-container">
-        <input type="checkbox" id="recordar">
-      </div>
-      <p class="message">¿No tienes cuenta?<a href="#"> Registrarte </a></p>
-    </form>
+            <a class="btn" href="javascript:void(0);" onclick="document.getElementById('loginForm').submit()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Iniciar sesión
+            </a>
+            
+            <br>
+            <h5>Recuérdame</h5>
+            <div class="checkbox-container">
+                <input type="checkbox" name="recordar" id="recordar">
+            </div>
+            
+            <p class="message">¿No tienes cuenta?<a href="#"> Registrarte </a></p>
+        </form>
     </div>
 
   </div>

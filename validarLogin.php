@@ -35,8 +35,19 @@ function decrypt($input) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recoger datos del formulario
+
+    if(!empty($_POST["recordar"])){
+        setcookie ("inombre", $_POST["inombre"],time()+3600);
+        setcookie ("icontra", $_POST["icontra"],time()+3600);
+    }else{
+        setcookie("inombre","");
+        setcookie("icontra","");
+    }
+    
+
     $usuario = $_POST['inombre'];
     $contraseña = $_POST['icontra'];
+    $recordar = isset($_POST['recordar']) ? $_POST['recordar'] : false;
 
     // Buscar en la base de datos
     $sql = "SELECT nombre, contraseña FROM usuarios WHERE cuenta = '$usuario'";
@@ -51,26 +62,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verificar la contraseña
         if ($contraseña == $contraseña_guardada) {
-                 if(!isset($_SESSION)) { 
-                    session_start(); 
-                }
+            if (!isset($_SESSION)) {
+                session_start();
+            }
 
-                $_SESSION["usuario"] = $usuario;
-                
-                echo "<script>
+            $_SESSION["usuario"] = $usuario;
+
+            // Si el checkbox "Recuérdame" está marcado, establecer la cookie
+            if ($recordar) {
+                setcookie("usuario", $usuario, time() + 3600, "/"); // La cookie expirará en 1 hora
+                setcookie("contraseña", $contraseña, time() + 3600, "/"); // La cookie expirará en 1 hora
+            }
+
+            echo "<script>
                 Swal.fire({
                     icon: 'success',
-                    title: 'Exito',
-                    text: 'Inicio de Sesion Exitoso'
+                    title: 'Éxito',
+                    text: 'Inicio de Sesión Exitoso'
                 }).then(function() {
                     window.location.href='principal.php';
                 });
              </script>";
-                
-                exit;
-        
-            // Aquí puedes redirigir a la página de inicio o realizar otras acciones
-        } else if($contraseña != $contraseña_guardada) {
+
+            exit;
+        } else if ($contraseña != $contraseña_guardada) {
             // Mostrar mensaje de error con SweetAlert 2
             echo "<script>
                     Swal.fire({
@@ -84,7 +99,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
-
 // Cerrar conexión
 $conn->close();
 ?>

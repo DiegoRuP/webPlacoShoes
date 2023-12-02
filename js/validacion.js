@@ -16,7 +16,7 @@ function validarContraseñas() {
   
     // Permitir el envío del formulario
     return true;
-  }
+}
   
 
   
