@@ -654,12 +654,32 @@ figure img:hover {
   
   .contenedorCatalogo{
     margin: 0 auto;
-    width: 98%;
-    height: 1000px;
+    width: 65%;
     background-color: #1A2226;
     border-radius: 20px;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    padding-bottom: 40px;
+    
 
+}
+
+.itemCatalogo{
+    border-top: #0DB8DE solid 2px;
+    border-bottom: #0DB8DE solid 2px;
+    margin-bottom: 20px;
+    color: #fff;
+    border-radius: 20px;
+
+    
+}
+
+.img-fluid{
+    transition: all 0.5s;
+}
+
+.itemCatalogo img:hover{
+
+    transform: scale(1.2);
 }
 
 .contenedorCarrito{
