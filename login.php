@@ -38,10 +38,10 @@
     <!-- Aqui preguntamos si ya tiene cuenta -->
     <form class="login-form" method="post" action="validarLogin.php">
       <h2></i> Iniciar Sesion</h2>
-      <input type="text" placeholder="Nombre" name="inombre" required />
-    <input type="password" placeholder="Contraseña" name="icontra" required/>
+      <input type="text" placeholder="Nombre" id="inombre" required />
+      <input type="password" placeholder="Contraseña" id="icontra" required/>
 
-    <button type="submit" class="btn">
+      <a class="btn" href="#">
         <span></span>
         <span></span>
         <span></span>
