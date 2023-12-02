@@ -1,9 +1,11 @@
-<?php include 'navbar.php'?>
+<?php
+  include 'navbar.php'
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Admin - Placo Shoes</title>
+  <title>Admin - PlacoShoes</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap-->
@@ -23,7 +25,7 @@
           Control de producto
         </div>
         <div class="col-lg-12 login-form">
-          <form>
+          <form action="alta.php" method="post">
             <div class="form-group">
 
               <!-- EL ID NOS PUEDE AYUDAR A IDENTIFICAR LA CATEGORIA, POR EJEMPLO SI EMPIEZA EN 1 ES HOMBRE Y SI EMPIEZA EN 2 ES MUJER 
@@ -31,7 +33,7 @@
             ejemplo: 1242 Es un teni de hombre -->
             
               <label class="form-control-label">ID del producto</label>
-              <input type="text" class="form-control" name="idProducto" id="nombreProducto">
+              <input type="text" class="form-control" name="idProducto" id="idProducto">
             </div>
 
             <div class="form-group">
@@ -41,7 +43,7 @@
 
             <div class="form-group">
               <label class="form-control-label">Descripcion</label> <br> <br>
-              <textarea name="descripcion" id="" cols="58 " rows="2"></textarea>
+              <textarea name="descripcion" id="descripcion" cols="58 " rows="2"></textarea>
             </div>
 
             <div class="form-group">
@@ -68,12 +70,12 @@
 
             <div class="form-group">
               <label class="form-control-label">Descuento</label>
-              <input type="text" class="form-control" name="descuento" id="disponibleProducto" >
+              <input type="text" class="form-control" name="descuento" id="descuentoProducto" >
             </div>
 
             <div class="col-12 login-btm login-button justify-content-center d-flex">
-            <button type="submit" class="btn btn-outline-primary" id="alta">Alta</button>
-            <button type="submit" class="btn btn-outline-primary" id="actualizar" href="cambios.php">Actualizar datos</button>
+              <button type="submit" class="btn btn-outline-primary" id="alta">Alta</button>
+              <button type="button" class="btn btn-outline-primary" id="actualizar" onclick="window.location.href='cambios.php';">Actualizar datos</button>
             </div>
           </div>
         </form>
