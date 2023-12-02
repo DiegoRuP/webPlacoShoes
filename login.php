@@ -39,6 +39,10 @@
       <input type="text" placeholder="Nombre" id="inombre" required />
       <input type="password" placeholder="Contraseña" id="icontra" required/>
 
+      <div>
+        <img src="captcha.php" alt="CAPTCHA">
+        <input type="text" id="captcha" name="captcha" placeholder="Intruzca el texto generado en la imagen">
+      </div>
       <a class="btn" href="#">
         <span></span>
         <span></span>
