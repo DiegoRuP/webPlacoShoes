@@ -1,9 +1,11 @@
-<?php include 'navbar.php'?>
+<?php
+  include 'navbar.php'
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Admin - Placo Shoes</title>
+  <title>Admin - PlacoShoes</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap-->
@@ -23,6 +25,7 @@
           Control de producto
         </div>
         <div class="col-lg-12 login-form">
+
           <form action="alta.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
 
@@ -31,12 +34,12 @@
             ejemplo: 1242 Es un teni de hombre -->
             
               <label class="form-control-label">ID del producto</label>
-              <input type="text" class="form-control" id="idProducto" name="idProducto">
+              <input type="text" class="form-control" name="idProducto" id="idProducto">
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Nombre del producto</label>
-              <input type="text" class="form-control" id="nombreProducto" name="nombreProducto">
+              <input type="text" class="form-control" name="nombreProducto" id="nombreProducto">
             </div>
 
             <div class="form-group">
@@ -45,8 +48,13 @@
             </div>
 
             <div class="form-group">
+              <label class="form-control-label">Categoria</label>
+              <input type="text" class="form-control" name="categoria" id="categoriaProducto">
+            </div>
+
+            <div class="form-group">
               <label class="form-control-label">Cuantos productos se encuentran disponibles</label>
-              <input type="text" class="form-control" id="disponibleProducto" name="disponibleProducto">
+              <input type="text" class="form-control" name="stock" id="disponibleProducto" >
             </div>
 
             <div class="form-group">
@@ -63,17 +71,12 @@
 
             <div class="form-group">
               <label class="form-control-label">Descuento</label>
-              <input type="text" class="form-control" id="descuentoProducto" name="descuentoProducto">
-            </div>
-
-            <div class="form-group">
-              <label class="form-control-label">Categoria</label>
-              <input type="text" class="form-control" id="categoriaProducto" name="categoriaProducto">
+              <input type="text" class="form-control" name="descuentoProducto" id="descuentoProducto" >
             </div>
 
             <div class="col-12 login-btm login-button justify-content-center d-flex">
-            <button type="submit" class="btn btn-outline-primary" id="alta">Alta</button>
-            <button type="button" class="btn btn-outline-primary" id="actualizar" onclick="window.location.href='cambios.php';">Actualizar datos</button>
+              <button type="submit" class="btn btn-outline-primary" id="alta">Alta Producto</button>
+              <button type="button" class="btn btn-outline-primary" id="actualizar" onclick="window.location.href='cambios.php';">Actualizar Datos</button>
             </div>
           </div>
         </form>
