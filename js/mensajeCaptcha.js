@@ -10,6 +10,7 @@ function mostrarAlerta() {
                 timer: 3000, //milisegundos - el tiempo que este la alerta para que el usuario la alcance a leer
                 onClose: () => {
                     return false; // se detiene el envío del formulario
+                    
                 }
             });
             return false; //se detiene el envio del formulario

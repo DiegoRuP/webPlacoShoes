@@ -74,17 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 setcookie("contraseña", $contraseña, time() + 3600, "/"); // La cookie expirará en 1 hora
             }
 
-            echo "<script>
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Éxito',
-                    text: 'Inicio de Sesión Exitoso'
-                }).then(function() {
-                    window.location.href='principal.php';
-                });
-             </script>";
-
-            exit;
+            header("Location: captcha.php");
         } else if ($contraseña != $contraseña_guardada) {
             // Mostrar mensaje de error con SweetAlert 2
             echo "<script>
