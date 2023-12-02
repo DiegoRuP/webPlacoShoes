@@ -31,12 +31,12 @@
             ejemplo: 1242 Es un teni de hombre -->
             
               <label class="form-control-label">ID del producto</label>
-              <input type="text" class="form-control" id="nombreProducto">
+              <input type="text" class="form-control" name="idProducto" id="nombreProducto">
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Nombre del producto</label>
-              <input type="text" class="form-control" id="nombreProducto">
+              <input type="text" class="form-control" name="nombreProducto" id="nombreProducto">
             </div>
 
             <div class="form-group">
@@ -45,13 +45,18 @@
             </div>
 
             <div class="form-group">
+              <label class="form-control-label">Categoria</label>
+              <input type="text" class="form-control" name="categoria" id="categoriaProducto">
+            </div>
+
+            <div class="form-group">
               <label class="form-control-label">Cuantos productos se encuentran disponibles</label>
-              <input type="text" class="form-control" id="disponibleProducto" >
+              <input type="text" class="form-control" name="stock" id="disponibleProducto" >
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Precio</label>
-              <input type="text" class="form-control" id="precioProducto">
+              <input type="text" class="form-control" name="precio" id="precioProducto">
             </div>
             <div class="form-group">
             <label class="form-control-label">Foto del producto</label> <br> <br>
@@ -63,7 +68,7 @@
 
             <div class="form-group">
               <label class="form-control-label">Descuento</label>
-              <input type="text" class="form-control" id="disponibleProducto" >
+              <input type="text" class="form-control" name="descuento" id="disponibleProducto" >
             </div>
 
             <div class="col-12 login-btm login-button justify-content-center d-flex">
