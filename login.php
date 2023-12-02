@@ -34,11 +34,10 @@
       <p class="message">¿Ya estas registrado? <a href="#">Inicia sesión</a></p>
     </form>
     <!-- Aqui preguntamos si ya tiene cuenta -->
-    <form class="login-form" method="post">
+    <form class="login-form" method="post" action="loginProcesar.php">
       <h2></i> Iniciar Sesion</h2>
-      <input type="text" placeholder="Nombre" id="inombre" required />
-      <input type="password" placeholder="Contraseña" id="icontra" required/>
-
+      <input type="text" placeholder="Nombre" id="inombre" name="nombre" value="<?php if(isset($_COOKIE["nombre"])) { echo $_COOKIE["nombre"]; } ?>" required />
+      <input type="password" placeholder="Contraseña" id="icontra" name="contraseña" value="<?php if(isset($_COOKIE["contraseña"])) { echo $_COOKIE["contraseña"]; } ?>" required/>
       <a class="btn" href="#">
         <span></span>
         <span></span>
@@ -49,7 +48,7 @@
       <br>
       <h5>Recuerdame</h5>
       <div class="checkbox-container">
-        <input type="checkbox" id="recordar">
+        <input type="checkbox" id="recordar" name="recordar">
       </div>
       <p class="message">¿No tienes cuenta?<a href="#"> Registrarte </a></p>
     </form>
