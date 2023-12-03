@@ -61,7 +61,7 @@
         <!-- Se muestra la imagen del captcha -->
         <img class="imagen-captcha" src="<?php echo $ImagenCaptcha; ?>" alt="CAPTCHA">
         <!-- Formulario para introducir el texto del captcha -->
-        <form id="captchaForm" class="login-form" method="post" action="" onsubmit="return mostrarAlerta()">
+        <form id="captchaForm" class="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <input type="text" id="captchaUsuario" name="captchaUsuario" placeholder="Introduzca el texto generado en la imagen" required>
             <input type="text" id="captchaGenerado" name="captchaGenerado" value="<?php echo $_SESSION['captcha_texto']; ?>" hidden>
             <input class="btn" type="submit" value="VALIDAR CAPTCHA"></button>
@@ -74,3 +74,42 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
+
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recoger los valores de los campos de texto
+    $captchaUsuario = $_POST["captchaUsuario"];
+    $captchaGenerado = $_POST["captchaGenerado"];
+
+    if($captchaUsuario == $captchaGenerado){
+        
+        $_SESSION["usuario"] = $_SESSION["usernav"];
+        echo "
+        <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Éxito',
+            text: 'Inicio de Sesión Exitoso'
+        }).then(function() {
+            window.location.href='principal.php';
+        });
+        </script>";        
+
+
+    exit;
+    }else{
+        echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Captcha Incorrecto'
+                    }).then(function() {
+                        window.location.href='captcha.php';
+                    });
+                 </script>";
+
+    }
+}
+
+?>

@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <title>Iniciar sesión</title>
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <br><br><br><br>
 <body>
@@ -35,14 +35,14 @@
 
       <p class="message">¿Ya estas registrado? <a href="#">Inicia sesión</a></p>
     </form>
-    <!-- Aqui preguntamos si ya tiene cuenta -->
 
     <form id="loginForm" class="login-form" method="post" action="validarLogin.php">
             <h2>Iniciar Sesion</h2>
             <input type="text" placeholder="Nombre" name="inombre" value="<?php if(isset($_COOKIE["inombre"])){ echo $_COOKIE["inombre"];}?>" required />
             <input type="password" placeholder="Contraseña" name="icontra" value="<?php if(isset($_COOKIE["icontra"])){ echo $_COOKIE["icontra"];}?>" required/>
-            <!-- aqui va lo del captcha en este boton de iniciar sesion pero falta juntarlo con validar.php -->
-            <a class="btn" href="javascript:void(0);" onclick="document.getElementById('loginForm').submit()">
+
+            <a class="btn" onclick="document.getElementById('loginForm').submit()">
+
                 <span></span>
                 <span></span>
                 <span></span>
@@ -57,6 +57,7 @@
             </div>
             
             <p class="message">¿No tienes cuenta?<a href="#"> Registrarte </a></p>
+            <p class="message">¿Olvidaste tu contraseña?<a href="desbloquearCuenta.php" > Recuperar </a></p>
         </form>
     </div>
 
@@ -65,7 +66,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/login.js"></script>
   <script src="js/validacion.js"></script>
-  <script src="js/validacionCaptcha.js"></script>
   <br><br><br>
 <?php include 'footer.php'?>
 </body>

@@ -105,9 +105,41 @@
                     <li>
                         <a href="ayuda.php"> Ayuda </a>
                     </li>     
-                    <li>
-                        <a href="formproducto.php"> Admin </a>
-                    </li>          
+                    
+                    <?php if (isset($_SESSION['usuario'])) {
+
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $database = "bdplacoshoes";
+
+                        $conn = new mysqli($servername, $username, $password, $database);
+                        // Verificar la conexión
+                        if ($conn->connect_error) {
+                            die("Conexión fallida: " . $conn->connect_error);
+                        }
+                        $user = $_SESSION['usuario'];
+                        $campo = "Admin";
+
+                        $sql = "SELECT $campo FROM usuarios WHERE Cuenta = '$user'";
+                        $resultado = $conn->query($sql);
+
+                        if ($resultado) {
+                            if ($resultado->num_rows > 0) {
+                                $fila = $resultado->fetch_assoc();
+                                $valorAdmin = $fila[$campo];
+
+                                if ($valorAdmin == 1) {
+                                    echo "
+                                    <li>
+                                        <a href='formproducto.php'> Admin </a>
+                                    </li>";
+                                }
+                            }
+                        } else {
+                            echo "Error en la consulta: " . $conn->error;
+                        }
+                    }?>
                 </ul>
     
     </header>
