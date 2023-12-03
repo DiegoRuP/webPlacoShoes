@@ -84,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($captchaUsuario == $captchaGenerado){
         
+        $_SESSION["usuario"] = $_SESSION["usernav"];
         echo "
         <script>
         Swal.fire({

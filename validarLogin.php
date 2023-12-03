@@ -69,9 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verificar la contraseña
         if ($contraseña == $contraseña_guardada) {
-
-            $_SESSION["usuario"] = $usuario;
-
+            
             // Si el checkbox "Recuérdame" está marcado, establecer la cookie
             if ($recordar) {
                 setcookie("usuario", $usuario, time() + 3600, "/"); // La cookie expirará en 1 hora
@@ -79,8 +77,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             header("Location: captcha.php");
+            $_SESSION["usernav"] = $usuario;
+            
         } else if ($contraseña != $contraseña_guardada) {
-            $_SESSION["usuario"] = $usuario;
+            $_SESSION["userblock"] = $usuario;
 
             $intentos++;
 

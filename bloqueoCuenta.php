@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['usuario'])) {
+if (isset($_SESSION['userblock'])) {
 
     $servername = "localhost";
     $username = "root";
@@ -15,7 +15,7 @@ if (isset($_SESSION['usuario'])) {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    $user = $_SESSION['usuario'];
+    $user = $_SESSION['userblock'];
     $campo = "Online";
 
     // Usar UPDATE para actualizar el campo "Online" a 1
