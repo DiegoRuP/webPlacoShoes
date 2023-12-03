@@ -47,8 +47,11 @@
                 icon: 'success',
                 title: 'PRODUCTO ELIMINADO CORRECTAMENTE',
                 confirmButtonText: 'OK',
-                timer: 2000, //milisegundos - el tiempo que este la alerta para que el usuario la alcance a leer
-                showConfirmButton: false
+                timer: 5000, //milisegundos - el tiempo que este la alerta para que el usuario la alcance a leer
+                showConfirmButton: false,
+                onClose: () => {
+                    return false; // se detiene el envío del formulario
+                }
             });</script>";
         } else {
             echo "<script>Swal.fire({
@@ -96,7 +99,8 @@
         <div class="izqAlta">      
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>   
             <br>
-            <select   class="prod custom-select" name='modificar' >    
+            <div class="centrarselect">
+                <select class="select custom-select" name='modificar' >    
                 <?php
                 echo '<div style="margin:80px;">';
                 $salida='<table class="tab table table-success table-striped table-hover table-bordered border-dark">';
@@ -108,16 +112,24 @@
                     $salida.= '<td class="table-group-divider border-dark">'. $fila['Descripcion'] . '</td>';
                     $salida.= '<td class="table-group-divider border-dark">'. $fila['Stock'] . '</td>';
                     $salida.= '<td class="table-group-divider border-dark">'. $fila['Precio'] . '</td>';
-                    $salida.= '<td class="table-group-divider border-dark">'. $fila['Descuento'] . '</td>';
+                    $salida.= '<td class="table-group-divider border-dark">%'. $fila['Descuento'] . '</td>';
                     $salida.= '<td class="table-group-divider border-dark">'. $fila['Imagen'] . '</td>';
                     $salida.= '<td class="table-group-divider border-dark">'. $fila['Categoria'] . '</td>';
                     $salida.= '</tr>';
                     }
                     $salida.= '</table>';
-                ?>
-            </select>
+                    ?>
+                </select>
+            </div>
+            
             <br><br>
-            <button class="prod" type="submit" value="submit" name="confirmar">Confirmar</button>               
+
+            <div class="centrarbtn">
+                <button class="prod" type="submit" value="submit" name="confirmar">Confirmar</button>        
+                <button class=" prod btn2 btn2-outline-primary" type="submit" name="mod">Editar Producto</button>
+                <button class="prod btn2 btn2-outline-primary" type="button" name="mod" onclick="window.location.href='formproducto.php';">Regresar</button>
+            </div>
+
             </form>
         </div> 
         <?php
@@ -170,10 +182,12 @@
                 <label class="labcol form-control-label" for="categoria">CATEGORIA</label>
                 <input class="form-control" type="text" id="categoria" name="categ2" value="<?php echo $_SESSION["categ"]; ?>">
                 </li>
+
                 <button class="btn2 btn2-outline-primary" type="submit" name="mod">Editar Producto</button>
                 <input type="hidden" name="id_baja" value="<?php echo $_SESSION['id']; ?>">
                 <button class="prod" type="submit" value="submit" name="baja">Baja</button>
                 <button class="btn2 btn2-outline-primary" type="button" name="mod" onclick="window.location.href='formproducto.php';">Regresar</button>
+                
             </ul>
             </form>       
         </div>
