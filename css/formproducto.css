@@ -111,7 +111,6 @@ textarea{
     color: #333;
 }
 
-/*-------------------------------------- Aqui empece -------------------------------------------*/
 input[type=number] {
     background-color: #1A2226;
     border: none;
@@ -264,4 +263,7 @@ button[name="mod"]:hover {
     color: white;
   }
 
-  
+  #productImage{
+    width: 50%; 
+    height: auto;
+  }

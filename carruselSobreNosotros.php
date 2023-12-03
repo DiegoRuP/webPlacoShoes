@@ -91,7 +91,7 @@
 
             <div class="card swiper-slide">
                 <div class="card_img">
-                    <img src="media/edgar.jpeg" alt="">
+                    <img src="media/edgar.jpg" alt="">
                 </div>
                 <div class="card_contenido">
                     <span class="card_nombre">Edgar Miranda</span>

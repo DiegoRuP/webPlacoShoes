@@ -22,7 +22,7 @@
     if ($conexion->connect_errno){
         die('Error en la conexion');
     }
-    if(isset($_POST['cambios'])){
+    if(isset($_POST['confirmar'])){
         $modificar=$_POST['modificar'];
         $_SESSION['modificar2']=$modificar;
         $sql2="SELECT * FROM productos WHERE id='$modificar'";
@@ -39,7 +39,7 @@
         }
     }
     if(isset($_POST['baja'])){
-        $borrar = $_POST['modificar'];
+        $borrar = $_POST['id_baja'];
         $sql_borrar = "DELETE FROM productos WHERE ID='$borrar'";
         $resultado_borrar = $conexion->query($sql_borrar);
         if ($resultado_borrar) {
@@ -47,7 +47,7 @@
                 icon: 'success',
                 title: 'PRODUCTO ELIMINADO CORRECTAMENTE',
                 confirmButtonText: 'OK',
-                timer: 1000, //milisegundos - el tiempo que este la alerta para que el usuario la alcance a leer
+                timer: 2000, //milisegundos - el tiempo que este la alerta para que el usuario la alcance a leer
                 showConfirmButton: false
             });</script>";
         } else {
@@ -117,8 +117,7 @@
                 ?>
             </select>
             <br><br>
-            <button class="prod" type="submit" value="submit" name="cambios">Cambios</button>               
-            <button class="prod" type="submit" value="submit" name="baja">Baja</button>
+            <button class="prod" type="submit" value="submit" name="confirmar">Confirmar</button>               
             </form>
         </div> 
         <?php
@@ -162,17 +161,24 @@
                 <li class="form-row">
                 <label class="labcol form-control-label" for="imagen">IMAGEN</label>
                 <input class="form-control" type="text" id="imagen" name="imagen2" value="<?php echo $_SESSION["imagen"]; ?>">
+                <?php
+                $img= "media/" . $_SESSION["imagen"];
+                ?>
+                <img id="productImage" src="<?php echo $img ?>">
                 </li>
                 <li class="form-row">
                 <label class="labcol form-control-label" for="categoria">CATEGORIA</label>
                 <input class="form-control" type="text" id="categoria" name="categ2" value="<?php echo $_SESSION["categ"]; ?>">
                 </li>
                 <button class="btn2 btn2-outline-primary" type="submit" name="mod">Editar Producto</button>
+                <input type="hidden" name="id_baja" value="<?php echo $_SESSION['id']; ?>">
+                <button class="prod" type="submit" value="submit" name="baja">Baja</button>
                 <button class="btn2 btn2-outline-primary" type="button" name="mod" onclick="window.location.href='formproducto.php';">Regresar</button>
             </ul>
             </form>       
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <?php include 'footer.php'?>
 </body>
-<?php include 'footer.php'?>
 </html>
