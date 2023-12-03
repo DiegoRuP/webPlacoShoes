@@ -83,7 +83,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/formproducto.css">
     <title>Modificar - PlacoShoes</title>
 </head>
@@ -99,36 +100,27 @@
         <div class="izqAlta">      
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>   
             <br>
-            <div class="centrarselect">
-                <select class="select custom-select" name='modificar' >    
+            <select   class="custom-select" name='modificar' >    
                 <?php
-                echo '<div style="margin:80px;">';
-                $salida='<table class="tab table table-success table-striped table-hover table-bordered border-dark">';
+                echo '<div>';
+                $salida='<table>';
                 while( $fila = $resultado -> fetch_assoc() ){
                     echo '<option value="'.$fila["ID"].'">'.$fila["Nombre"].'</option>';
                     $salida.= '<tr>';
-                    $salida.= '<td class="table-group-divider border-dark">'. $fila['ID'] . '</td>';
-                    $salida.= '<td class="table-group-divider border-dark">'. $fila['Nombre'] . '</td>';
-                    $salida.= '<td class="table-group-divider border-dark">'. $fila['Descripcion'] . '</td>';
-                    $salida.= '<td class="table-group-divider border-dark">'. $fila['Stock'] . '</td>';
-                    $salida.= '<td class="table-group-divider border-dark">'. $fila['Precio'] . '</td>';
-                    $salida.= '<td class="table-group-divider border-dark">%'. $fila['Descuento'] . '</td>';
-                    $salida.= '<td class="table-group-divider border-dark">'. $fila['Imagen'] . '</td>';
-                    $salida.= '<td class="table-group-divider border-dark">'. $fila['Categoria'] . '</td>';
+                    $salida.= '<td>'. $fila['ID'] . '</td>';
+                    $salida.= '<td>'. $fila['Nombre'] . '</td>';
+                    $salida.= '<td>'. $fila['Descripcion'] . '</td>';
+                    $salida.= '<td>'. $fila['Stock'] . '</td>';
+                    $salida.= '<td>'. $fila['Precio'] . '</td>';
+                    $salida.= '<td>%'. $fila['Descuento'] . '</td>';
+                    $salida.= '<td>'. $fila['Imagen'] . '</td>';
+                    $salida.= '<td>'. $fila['Categoria'] . '</td>';
                     $salida.= '</tr>';
                     }
                     $salida.= '</table>';
-                    ?>
-                </select>
-            </div>
-            
-            <br><br>
-
-            <div class="centrarbtn">
-                <button class="prod" type="submit" value="submit" name="confirmar">Mostrar producto</button>        
-                <button class="prod btn2 btn2-outline-primary" type="button" name="mod" onclick="window.location.href='formproducto.php';">Regresar</button>
-            </div>
-
+                ?>
+            </select>
+            <button class="btn2 btn2-outline-primary confirmar" type="submit" value="submit" name="confirmar" onclick="myFunction()">Confirmar</button>               
             </form>
         </div> 
         <?php
@@ -145,7 +137,7 @@
         <div class="derecha">
             <form class="estiloformulario" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>
             <ul class="wrapper">
-                <li class="form-row">
+                <li>
                 <label class="labcol form-control-label" for="id">ID</label>
                 <input class="form-control" type="number" id="id" name="id2"  value="<?php echo $_SESSION["id"]; ?>" readonly>
                 </li>
@@ -175,7 +167,9 @@
                 <?php
                 $img= "media/" . $_SESSION["imagen"];
                 ?>
-                <img id="productImage" src="<?php echo $img ?>">
+                <div id="producImage imagenOculta">
+                    <img id="productImage" src="<?php echo $img ?>">
+                </div>
                 </li>
                 <li class="form-row">
                 <label class="labcol form-control-label" for="categoria">CATEGORIA</label>
@@ -184,13 +178,23 @@
 
                 <button class="btn2 btn2-outline-primary" type="submit" name="mod">Comfirmar edicion</button>
                 <input type="hidden" name="id_baja" value="<?php echo $_SESSION['id']; ?>">
-                <button class="prod" type="submit" value="submit" name="baja">Baja</button>
+                <button class="btn2 btn2-outline-primary" type="submit" value="submit" name="baja">Baja</button>
                 <button class="btn2 btn2-outline-primary" type="button" name="mod" onclick="window.location.href='formproducto.php';">Regresar</button>
                 
             </ul>
             </form>       
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+    <script>
+        const btnConfirmar = document.querySelector(".confirmar");
+    const mostrarImagen = document.querySelector("#productImage");
+    btnCarrito.addEventListener('click', () => {
+        mostrarImagen.classList.toggle('productImage');
+    });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php include 'footer.php'?>
 </body>
