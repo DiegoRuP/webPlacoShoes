@@ -253,6 +253,15 @@ button[name="mod"]:hover {
     border-radius: 20px!important;
     border-collapse: collapse;
   }
+    .tab td {
+        overflow: hidden!important; /* Oculta el texto que exceda el tamaño del contenedor */
+        white-space: nowrap!important; /* Evita el salto de línea */
+        text-overflow: ellipsis!important; /* Muestra puntos suspensivos si el texto es demasiado largo */
+    }
+    .tab td {
+        max-height: 10px; /* Establece la altura máxima */
+        overflow: auto;
+    }
 
   .prod{
     margin-left: 120px;

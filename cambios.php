@@ -47,8 +47,11 @@
                 icon: 'success',
                 title: 'PRODUCTO ELIMINADO CORRECTAMENTE',
                 confirmButtonText: 'OK',
-                timer: 1000, //milisegundos - el tiempo que este la alerta para que el usuario la alcance a leer
-                showConfirmButton: false
+                timer: 5000, //milisegundos - el tiempo que este la alerta para que el usuario la alcance a leer
+                showConfirmButton: false,
+                onClose: () => {
+                    return false; // se detiene el envío del formulario
+                }
             });</script>";
         } else {
             echo "<script>Swal.fire({
@@ -108,7 +111,7 @@
                     $salida.= '<td class="table-group-divider border-dark">'. $fila['Descripcion'] . '</td>';
                     $salida.= '<td class="table-group-divider border-dark">'. $fila['Stock'] . '</td>';
                     $salida.= '<td class="table-group-divider border-dark">'. $fila['Precio'] . '</td>';
-                    $salida.= '<td class="table-group-divider border-dark">'. $fila['Descuento'] . '</td>';
+                    $salida.= '<td class="table-group-divider border-dark">%'. $fila['Descuento'] . '</td>';
                     $salida.= '<td class="table-group-divider border-dark">'. $fila['Imagen'] . '</td>';
                     $salida.= '<td class="table-group-divider border-dark">'. $fila['Categoria'] . '</td>';
                     $salida.= '</tr>';
