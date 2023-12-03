@@ -49,7 +49,7 @@
 
             <div class="form-group">
               <label class="form-control-label">Categoria</label>
-              <input type="text" class="form-control" name="categoria" id="categoriaProducto">
+              <input type="text" class="form-control" name="categoriaProducto" id="categoriaProducto">
             </div>
 
             <div class="form-group">

@@ -41,7 +41,7 @@
             <h2>Iniciar Sesion</h2>
             <input type="text" placeholder="Nombre" name="inombre" value="<?php if(isset($_COOKIE["inombre"])){ echo $_COOKIE["inombre"];}?>" required />
             <input type="password" placeholder="Contraseña" name="icontra" value="<?php if(isset($_COOKIE["icontra"])){ echo $_COOKIE["icontra"];}?>" required/>
-
+            <!-- aqui va lo del captcha en este boton de iniciar sesion pero falta juntarlo con validar.php -->
             <a class="btn" href="javascript:void(0);" onclick="document.getElementById('loginForm').submit()">
                 <span></span>
                 <span></span>

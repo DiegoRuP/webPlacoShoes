@@ -15,7 +15,7 @@
         $id = $_POST['idProducto'];
         $nombre = $_POST['nombreProducto'];
         $descripcion = $_POST['descripcion'];
-        $stock = $_POST['disponibleProducto'];
+        $stock = $_POST['stock'];
         $costo = $_POST['precioProducto'];
         $descuento = $_POST['descuentoProducto'];
         $categoria = $_POST['categoriaProducto'];
