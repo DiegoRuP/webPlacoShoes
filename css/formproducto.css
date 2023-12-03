@@ -264,13 +264,21 @@ button[name="mod"]:hover {
     }
 
   .prod{
-    margin-left: 120px;
-    margin-right: -100px;
     width: 200px;
     border-radius: 20px;
+  }
+  .select{
+    width: 200px;
+    border-radius: 20px;
+  }
+  .centrarselect{
+    text-align: center;
   }
   .labcol{
     color: white;
   }
 
+  .centrarbtn{
+    text-align: center;
+  }
   

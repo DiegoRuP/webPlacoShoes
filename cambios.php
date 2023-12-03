@@ -99,7 +99,8 @@
         <div class="izqAlta">      
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>   
             <br>
-            <select   class="prod custom-select" name='modificar' >    
+            <div class="centrarselect">
+                <select class="select custom-select" name='modificar' >    
                 <?php
                 echo '<div style="margin:80px;">';
                 $salida='<table class="tab table table-success table-striped table-hover table-bordered border-dark">';
@@ -117,11 +118,17 @@
                     $salida.= '</tr>';
                     }
                     $salida.= '</table>';
-                ?>
-            </select>
+                    ?>
+                </select>
+            </div>
+            
             <br><br>
-            <button class="prod" type="submit" value="submit" name="cambios">Cambios</button>               
-            <button class="prod" type="submit" value="submit" name="baja">Baja</button>
+            <div class="centrarbtn">
+                <button class="prod" type="submit" value="submit" name="cambios">Cambios</button>               
+                <button class="prod" type="submit" value="submit" name="baja">Baja</button>
+                <button class=" prod btn2 btn2-outline-primary" type="submit" name="mod">Editar Producto</button>
+                <button class="prod btn2 btn2-outline-primary" type="button" name="mod" onclick="window.location.href='formproducto.php';">Regresar</button>
+            </div>
             </form>
         </div> 
         <?php
@@ -170,8 +177,6 @@
                 <label class="labcol form-control-label" for="categoria">CATEGORIA</label>
                 <input class="form-control" type="text" id="categoria" name="categ2" value="<?php echo $_SESSION["categ"]; ?>">
                 </li>
-                <button class="btn2 btn2-outline-primary" type="submit" name="mod">Editar Producto</button>
-                <button class="btn2 btn2-outline-primary" type="button" name="mod" onclick="window.location.href='formproducto.php';">Regresar</button>
             </ul>
             </form>       
         </div>
