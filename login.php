@@ -56,6 +56,7 @@
             </div>
             
             <p class="message">¿No tienes cuenta?<a href="#"> Registrarte </a></p>
+            <p class="message">¿Olvidaste tu contraseña?<a href="desbloquearCuenta.php" > Recuperar </a></p>
         </form>
     </div>
 

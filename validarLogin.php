@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,13 @@
 <body>
 <?php
 
-
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "bdplacoshoes";
+
+$intentos = isset($_SESSION['intentos']) ? $_SESSION['intentos'] : 0;
+$inres = isset($_SESSION['inres']) ? $_SESSION['inres'] : 3;
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $database);
@@ -48,23 +51,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST['inombre'];
     $contraseña = $_POST['icontra'];
     $recordar = isset($_POST['recordar']) ? $_POST['recordar'] : false;
+    $online = "Online";
 
     // Buscar en la base de datos
-    $sql = "SELECT nombre, contraseña FROM usuarios WHERE cuenta = '$usuario'";
+    $sql = "SELECT nombre, contraseña, $online FROM usuarios WHERE cuenta = '$usuario'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $contraseña_encriptada = $row['contraseña'];
+        $bloqueo = $row[$online];
 
-        // Desencriptar la contraseña almacenada en la base de datos
+        if($bloqueo == 0){
+
+                    // Desencriptar la contraseña almacenada en la base de datos
         $contraseña_guardada = decrypt($contraseña_encriptada);
 
         // Verificar la contraseña
         if ($contraseña == $contraseña_guardada) {
-            if (!isset($_SESSION)) {
-                session_start();
-            }
 
             $_SESSION["usuario"] = $usuario;
 
@@ -76,18 +80,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             header("Location: captcha.php");
         } else if ($contraseña != $contraseña_guardada) {
-            // Mostrar mensaje de error con SweetAlert 2
-            echo "<script>
+            $_SESSION["usuario"] = $usuario;
+
+            $intentos++;
+
+            // Almacenar el contador de intentos en la sesión
+            $_SESSION['intentos'] = $intentos;
+
+            if ($intentos === 3) {
+
+                echo "<script>
                     Swal.fire({
                         icon: 'error',
-                        title: 'Error',
-                        text: 'Contraseña Incorrecta'
+                        title: 'Intentos Excedido',
+                        text: 'Cuenta Bloqueada'
+                    }).then(function() {
+                        window.location.href='bloqueoCuenta.php';
+                    });
+                 </script>";
+
+                 $_SESSION['intentos'] = 0;
+                 $_SESSION['inres'] = 3;
+                 
+            }else{
+
+                $inres--;
+                $_SESSION['inres'] = $inres;
+
+                echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Contraseña Incorrecta Intentos restantes $inres'
+                }).then(function() {
+                    window.location.href='login.php';
+                });
+                </script>";
+
+            }
+
+        }
+
+
+    }else{
+        echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Cuenta Bloqueada',
+                        text: 'Excedio sus Intentos'
                     }).then(function() {
                         window.location.href='login.php';
                     });
                  </script>";
-        }
     }
+}
 }
 // Cerrar conexión
 $conn->close();
