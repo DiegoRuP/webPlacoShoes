@@ -53,7 +53,7 @@
             </div>
 
             <div class="form-group">
-              <label class="form-control-label">Cuantos productos se encuentran disponibles</label>
+              <label class="form-control-label">Stock</label>
               <input type="text" class="form-control" name="stock" id="disponibleProducto" >
             </div>
 

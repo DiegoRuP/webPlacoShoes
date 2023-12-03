@@ -125,8 +125,7 @@
             <br><br>
 
             <div class="centrarbtn">
-                <button class="prod" type="submit" value="submit" name="confirmar">Confirmar</button>        
-                <button class=" prod btn2 btn2-outline-primary" type="submit" name="mod">Editar Producto</button>
+                <button class="prod" type="submit" value="submit" name="confirmar">Mostrar producto</button>        
                 <button class="prod btn2 btn2-outline-primary" type="button" name="mod" onclick="window.location.href='formproducto.php';">Regresar</button>
             </div>
 
@@ -183,7 +182,7 @@
                 <input class="form-control" type="text" id="categoria" name="categ2" value="<?php echo $_SESSION["categ"]; ?>">
                 </li>
 
-                <button class="btn2 btn2-outline-primary" type="submit" name="mod">Editar Producto</button>
+                <button class="btn2 btn2-outline-primary" type="submit" name="mod">Comfirmar edicion</button>
                 <input type="hidden" name="id_baja" value="<?php echo $_SESSION['id']; ?>">
                 <button class="prod" type="submit" value="submit" name="baja">Baja</button>
                 <button class="btn2 btn2-outline-primary" type="button" name="mod" onclick="window.location.href='formproducto.php';">Regresar</button>
