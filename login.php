@@ -10,7 +10,7 @@
     <title>Iniciar sesión</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<br><br><br><br>
+<br><br><br>
 <body>
   <div class="loginBody">
   <div class="form">

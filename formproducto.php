@@ -15,6 +15,10 @@
   <script src="script.js"></script>
 </head>
 <body>
+
+
+
+
   <div class="d-flex align-items-center">
 
   
@@ -38,7 +42,7 @@
             </div>
 
             <div class="form-group">
-              <label class="form-control-label">Descripcion</label> <br> <br>
+              <label class="form-control-label">Descripcion</label>
               <textarea name="descripcion" id="descripcion" cols="58 " rows="2"></textarea>
             </div>
 
@@ -57,7 +61,7 @@
               <input type="text" class="form-control" id="precioProducto" name="precioProducto">
             </div>
             <div class="form-group">
-            <label class="form-control-label">Foto del producto</label><br><br>
+            <label class="form-control-label">Foto del producto</label>
               <label for="imagen" class="upload-btn">
                 <span id="label-imagen">Selecciona una imagen</span>
               </label>

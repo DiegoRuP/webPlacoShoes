@@ -1,6 +1,11 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
+<body>
+
 <?php
     $servidor='localhost';
     $cuenta='root';
@@ -34,7 +39,17 @@
                 $conexion->query($sql);
 
                 if ($conexion->affected_rows >= 1) { // Verificar si se insertó un registro
-                    echo '<script>alertaAlta()</script>';
+                    echo "
+                        <script>
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Registro Exitoso',
+                                text: 'Se dio de alta el producto'
+                            }).then(function() {
+                                window.location.href='formproducto.php';
+                            });
+                        </script>";
+ 
                 } else {
                     echo "Error al insertar el producto en la base de datos.";
                 }
@@ -46,3 +61,6 @@
         }
     }
 ?>
+    
+
+</body>

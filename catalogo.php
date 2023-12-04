@@ -69,6 +69,7 @@ $resultado = $conexion -> query($sql);
     <?php
         while( $fila = $resultado ->  fetch_assoc()){
             $id = $fila['ID'];
+            $stock = $fila['Stock'];
             $descuento = $fila['Descuento'];
             $descripcion = $fila['Descripcion'];
             $imagen = $fila['Imagen'];
@@ -87,12 +88,26 @@ $resultado = $conexion -> query($sql);
             <img class="img-fluid" width="250" height="250" src="media/<?php echo $imagen ?>">
         </a>
             <p id="catalogoIDP"><?php echo $id ?></p>
+            <p id="catalogoStockP"> Stock: <?php echo $stock ?></p>
 
             <!-- ESTE DIV ES EL QUE SE VA A MOSTRAR SOLO SI EL DESCUENTO ES MAYOR A 0 -->
-            <div class="descuento">
-                <p id="catalogoDescuentoP"><?php echo $descuento . '%' ?> </p>
-            </div>
-            <!-- AQUI TERMINA EL DIV -->
+            <?php 
+
+            if  ($stock == 0){
+                echo '<div class="agotado">
+                        <p id="agotadoP"> Agotado </p>
+                    </div>';
+            }
+
+            elseif  ($descuento > 0){
+                echo '<div class="descuento">
+                        <p id="catalogoDescuentoP"> ' .$descuento .'% </p>
+                    </div>';
+
+            }
+
+            
+            ?>
             
         <p id="catalogoNombreP"><?php echo $producto ?></p>
         <p id="catalogoDescripcionP"><?php echo $descripcion ?></p>
@@ -102,6 +117,7 @@ $resultado = $conexion -> query($sql);
             ?>
         </div>
         <p id="catalogoPrecioP">$<?php echo $precio ?></p>
+        <a href="" class="carritoCatalogo" ><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
     <br>
 

@@ -45,9 +45,10 @@
         if ($resultado_borrar) {
             echo "<script>Swal.fire({
                 icon: 'success',
-                title: 'PRODUCTO ELIMINADO CORRECTAMENTE',
+                title: 'Eliminado con exito',
+                text: 'Se eliminó el registro',
                 confirmButtonText: 'OK',
-                timer: 5000, //milisegundos - el tiempo que este la alerta para que el usuario la alcance a leer
+                timer: 2000, //milisegundos - el tiempo que este la alerta para que el usuario la alcance a leer
                 showConfirmButton: false,
                 onClose: () => {
                     return false; // se detiene el envío del formulario
@@ -57,9 +58,9 @@
             echo "<script>Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'NO SE PUEDO ELIMINAR EL PRODUCTO SELECCIONADO',
+                text: 'No se puede eliminar el registro',
                 confirmButtonText: 'OK',
-                timer: 3000, //milisegundos - el tiempo que este la alerta para que el usuario la alcance a leer
+                timer: 2000, //milisegundos - el tiempo que este la alerta para que el usuario la alcance a leer
             });</script>";
         }
     }

@@ -1,6 +1,5 @@
 <?php
     include 'navbar.php';
-    session_start();
     // Variables para controlar la validación
     $band = false;
     $error = '';
@@ -53,10 +52,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <title>Iniciar sesión</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/captcha.css">
 </head>
 <body>
-    <div class="loginBody captcha">
+    <br>
+    <br><br><br><br>
+    <div class="loginBody">
     <div class="form">
         <h2>¿No eres un robot?</h2>
         <!-- Se muestra la imagen del captcha -->
@@ -74,6 +74,7 @@
     <script src="js/mensajeCaptcha.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+<br><br><br><br><br>
 <?php include 'footer.php'?>
 </html>
 

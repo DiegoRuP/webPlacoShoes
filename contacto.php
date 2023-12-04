@@ -88,7 +88,7 @@
             <div class="contact map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3701.547006095845!2d-102.31886132482163!3d21.
                              91351297996651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429eee247f25c8d%3A0x6ca6ecee48974407!2sEdificio%205
-                             4!5e0!3m2!1ses-419!2smx!4v1700269318353!5m2!1ses-419!2smx" width="600" height="450" style="border:0;"
+                             4!5e0!3m2!1ses-419!2smx!4v1700269318353!5m2!1ses-419!2smx" width="600" height="450" style="border:0; border-radius: 15px;"
                              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
             </div>
