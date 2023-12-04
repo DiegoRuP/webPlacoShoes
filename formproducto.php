@@ -31,11 +31,6 @@
             </div>
 
             <div class="form-group">
-              <label class="form-control-label">ID del producto</label>
-              <input type="text" class="form-control" id="nombreProducto">
-            </div>
-
-            <div class="form-group">
               <label class="form-control-label">Nombre del producto</label>
               <input type="text" class="form-control" name="nombreProducto" id="nombreProducto">
             </div>

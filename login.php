@@ -16,22 +16,22 @@
   <div class="loginBody">
   <div class="form">
  <!-- Aqui preguntamos si quiere crear cuenta -->
-    <form id="RegForm" class="register-form" method="POST" action="registro.php">
+    <form id="RegForm" class="register-form" method="POST" action="registro.php" onsubmit="return validarContraseñas();">
       <h2>Registrarse</h2>
-      <input type="text" placeholder="Nombre" id="nombre" name="nombre" required/>
-    <input type="text" placeholder="Cuenta" id="cuenta" name="cuenta" required/>
-    <input type="email" placeholder="Correo" id="correo" name="correo" required/>
-    <input type="text" placeholder="Animal favorito" id="seguridad" name="animal" required/>
-    <input type="password" placeholder="Contraseña*" id="contraseña" name="contraseña" required/>
-    <input type="password" placeholder="Repetir Contraseña*" id="contraseña2" name="contraseña2" required/>
+      <input type="text" placeholder="Nombre" id="nombre" name="nombre" required>
+    <input type="text" placeholder="Cuenta" id="cuenta" name="cuenta" required>
+    <input type="email" placeholder="Correo" id="correo" name="correo" required>
+    <input type="text" placeholder="Animal favorito" id="seguridad" name="animal" required>
+    <input type="password" placeholder="Contraseña*" id="contraseña" name="contraseña" required>
+    <input type="password" placeholder="Repetir Contraseña*" id="contraseña2" name="contraseña2" required>
 
-    <a class="btn" href="javascript:void(0);" onclick="if(validarContraseñas()){document.getElementById('RegForm').submit()} ">
+    <button class="btn" type="submit">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       Crear Cuenta
-    </a>
+    </button>
 
 
       <p class="message">¿Ya estas registrado? <a href="#">Inicia sesión</a></p>
@@ -39,17 +39,16 @@
 
     <form id="loginForm" class="login-form" method="post" action="validarLogin.php">
             <h2>Iniciar Sesion</h2>
-            <input type="text" placeholder="Nombre" name="inombre" value="<?php if(isset($_COOKIE["inombre"])){ echo $_COOKIE["inombre"];}?>" required />
-            <input type="password" placeholder="Contraseña" name="icontra" value="<?php if(isset($_COOKIE["icontra"])){ echo $_COOKIE["icontra"];}?>" required/>
+            <input type="text" placeholder="Nombre" name="inombre" value="<?php if(isset($_COOKIE["inombre"])){ echo $_COOKIE["inombre"];}?>" required >
+            <input type="password" placeholder="Contraseña" name="icontra" value="<?php if(isset($_COOKIE["icontra"])){ echo $_COOKIE["icontra"];}?>" required>
 
-            <a class="btn" onclick="document.getElementById('loginForm').submit()">
-
+            <button class="btn" type="submit">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 Iniciar sesión
-            </a>
+            </button>
             
             <br>
             <h5>Recuérdame</h5>

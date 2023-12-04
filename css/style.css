@@ -89,7 +89,9 @@
      overflow: hidden;
      transition: .5s;
      margin-top: 15px;
-     letter-spacing: 2px
+     letter-spacing: 2px;
+    border: none;
+    background: transparent;
    }
    
    /* Efecto cuando tenemos el cursor en el boton */

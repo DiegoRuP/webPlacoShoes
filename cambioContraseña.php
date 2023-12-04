@@ -57,17 +57,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="loginBody">
         <div class="form">
             <h2>Cambio Contraseña</h2>
-            <form id="ActForm" class="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-            <input type="password" placeholder="Contraseña*" id="contraseña" name="contraseña" required/>
-            <input type="password" placeholder="Repetir Contraseña*" id="contraseña2" name="contraseña2" required/>
+            <form id="ActForm" class="login-form" method="post" onsubmit="return validarContraseñas();" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <input type="password" placeholder="Contraseña*" id="contraseña" name="contraseña" required>
+            <input type="password" placeholder="Repetir Contraseña*" id="contraseña2" name="contraseña2" required>
 
-            <a class="btn" href="javascript:void(0);" onclick="if(validarContraseñas()){document.getElementById('ActForm').submit()} ">
+            <button class="btn" type="submit">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             Actualizar
-            </a>
+            </button>
             </form> 
         </div>
     </div>
