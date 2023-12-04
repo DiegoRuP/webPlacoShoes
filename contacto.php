@@ -1,42 +1,45 @@
+<?php include 'navbar.php'?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="css/contacto.css">
     <title>Contactanos</title>
 </head>
 <body>
+    <br>
     
     <div class="contactus">
         <div class="title">
             <h2>Contactanos</h2>
         </div>
         <div class="box">
-            <div class="contact form">
+            <div class="contact formContacto">
                 <h3>Manda tu mensaje</h3>
-                <form action="">
+                <form action="correo.php" method="POST">
                     <div class="formBox">
                         <div class="row50">
                             <div class="inputBox">
                                 <span>Nombre</span>
-                                <input type="text" placeholder="Nombre" id="nombre">
+                                <input type="text" placeholder="Nombre" id="nombre" name="nombre">
                             </div>
                             <div class="inputBox">
                                 <span>Apellidos</span>
-                                <input type="text" placeholder="Apellidos" id="apellidos">
+                                <input type="text" placeholder="Apellidos" id="apellidos" name="apellidos">
                             </div>
                         </div>
-
 
                         <div class="row50">
                             <div class="inputBox">
                                 <span>Email</span>
-                                <input type="text" placeholder="Email" id="email">
+                                <input type="text" placeholder="Email" id="email" name="email">
                             </div>
                             <div class="inputBox">
                                 <span>Telefono</span>
-                                <input type="text" placeholder="Telefono" id="telefono">
+                                <input type="text" placeholder="Telefono" id="telefono" name="telefono">
                             </div>
                         </div>
 
@@ -52,9 +55,9 @@
                                 <input type="submit" value="Enviar">
                             </div>
                         </div>
-
                     </div>
                 </form>
+
             </div>
 
             <div class="contact info">
@@ -85,16 +88,16 @@
             <div class="contact map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3701.547006095845!2d-102.31886132482163!3d21.
                              91351297996651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429eee247f25c8d%3A0x6ca6ecee48974407!2sEdificio%205
-                             4!5e0!3m2!1ses-419!2smx!4v1700269318353!5m2!1ses-419!2smx" width="600" height="450" style="border:0;"
+                             4!5e0!3m2!1ses-419!2smx!4v1700269318353!5m2!1ses-419!2smx" width="600" height="450" style="border:0; border-radius: 15px;"
                              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
             </div>
         </div>
-    </div>
+    </div><br>
 
-
-    
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
+<?php include 'footer.php'?>
 </html>
