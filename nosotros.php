@@ -41,7 +41,7 @@
         <br>
         <p><i class="fa-solid fa-circle-dot fa-2xs"></i> Estamos comprometidos con objetivos concretos que promuevan la ética y la responsabilidad social, contribuyendo así a un sector del calzado más consciente y sostenible.</p>
         <br>
-    </section>
+    </section><br><br><br>
 
     </div>
     

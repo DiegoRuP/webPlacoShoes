@@ -19,9 +19,9 @@
         Este año, da un regalo que convierta el siguiente año en uno mejor. </p>
         <br>
         <div class="collage">
-            <div class="mujer"> <button>Mujer</button> </div>
-            <div class="hombres"> <button>Hombre</button> </div>
-            <div class="chavo"> <button>Catalogo</button></div>
+            <div class="mujer"><a href="catalogo.php"> <button>Mujer</button></a> </div>
+            <div class="hombres"><a href="catalogo.php"> <button>Hombre</button></a> </div>
+            <div class="chavo"><a href="catalogo.php"> <button>Catalogo</button></a></div>
         </div> 
         <h1>LOS MAS VENDIDOS</h1>
         <p> Te mostramos las mejores opciones que podrías encontrar a un excelente precio</p>
@@ -31,7 +31,7 @@
                 <li>
                 <div class="shop-card">
                 <div class="title">
-                    Nike Travis
+                    Nike Air Jordan 1 HIGH x Travis Scott
                 </div>
                 <div class="desc">
                     Hombres
@@ -43,14 +43,14 @@
                 </div>
 
                 <div class="cta">
-                    <div class="price">$21000</div>
+                    <div class="price">$30400</div>
                     <button class="btnCard">Añadir al carrito<span class="bg"></span></button>
                 </div>
                 </li>
                 <li>
                 <div class="shop-card">
                 <div class="title">
-                    Nike
+                    Nike Air Jordan 1 HIGH Rosa y blanco
                 </div>
                 <div class="desc">
                     Mujer
@@ -62,14 +62,14 @@
                 </div>
 
                 <div class="cta">
-                    <div class="price">$3099</div>
+                    <div class="price">$2599</div>
                     <button class="btnCard">Añadir al carrito<span class="bg"></span></button>
                 </div>
                 </li>
                 <li>
                 <div class="shop-card">
                 <div class="title">
-                    Nike
+                    Nike Air Jordan 1 HIGH x Spider-Man
                 </div>
                 <div class="desc">
                     Hombres
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="cta">
-                    <div class="price">$2699</div>
+                    <div class="price">$5240</div>
                     <button class="btnCard">Añadir al carrito<span class="bg"></span></button>
                 </div>
                 </li>
