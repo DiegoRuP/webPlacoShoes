@@ -15,13 +15,7 @@
   <script src="script.js"></script>
 </head>
 <body>
-
-
-
-
   <div class="d-flex align-items-center">
-
-  
   <div class="container">
     <div class="row justify-content-center" style="margin:20px;">
       <div class="col-lg-6 col-md-8 caja-login">
@@ -34,6 +28,11 @@
             <div class="form-group">       
               <label class="form-control-label">ID del producto</label>
               <input type="text" class="form-control" name="idProducto" id="idProducto">
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label">ID del producto</label>
+              <input type="text" class="form-control" id="nombreProducto">
             </div>
 
             <div class="form-group">
@@ -54,6 +53,7 @@
             <div class="form-group">
               <label class="form-control-label">Stock</label>
               <input type="text" class="form-control" name="stock" id="disponibleProducto" >
+
             </div>
 
             <div class="form-group">
@@ -76,6 +76,7 @@
             <div class="col-12 login-btm login-button justify-content-center d-flex">
               <button type="submit" class="btn btn-outline-primary" id="alta">Alta Producto</button>
               <button type="button" class="btn btn-outline-primary" id="actualizar" onclick="window.location.href='cambios.php';">Actualizar Datos</button>
+
             </div>
           </div>
         </form>

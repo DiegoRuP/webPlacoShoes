@@ -27,6 +27,7 @@ function validarIntentos() {
     var contrasena = document.getElementById("contraseña").value;
     var contrasenaRepetida = document.getElementById("contraseña2").value;
 
+
     if (contrasena === contrasenaRepetida) {
         //si coinciden
         Swal.fire({
@@ -52,3 +53,4 @@ function validarIntentos() {
           }
         }
 }
+
