@@ -190,16 +190,19 @@
                 </div>
             </div>
             <div class="derecha">
-                <form class="estiloformulario" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>
+                <form class="estiloformulario" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post' >
                     <?php
                     $img= "media/" . $_SESSION["imagen"];
                     ?>
                     <div class="calzadoSeleccionado">
                         <img id="productImage" src="<?php echo $img ?>">
                     </div>
+                    <label for="imagen" class="btn3 btn3-outline-primary">Subir Imagen</label> 
+                    <input type="file" name="imagen2" id="imagen" class="form-control-file" >
+        
                 <!-- CONTROL DEL FORMULARIO -->
                 <ul class="wrapper"> 
-                    <li>
+                    <li class="form-row">
                     <label class="labcol form-control-label" for="id">ID</label>
                     <input class="form-control" type="number" id="id" name="id2"  value="<?php echo $_SESSION["id"]; ?>" readonly>
                     </li>
@@ -223,12 +226,7 @@
                     <label class="labcol form-control-label" for="descuento">DESCUENTO</label>
                     <input class="form-control" type="text" id="descuento" name="descuen2" value="<?php echo $_SESSION["descuen"]; ?>">
                     </li>
-                    <li class="form-row">
-                        <div class="form-group">
-                            <label for="imagen" class="btn3 btn3-outline-primary">Subir Imagen</label> 
-                            <input type="file" name="imagen2" id="imagen" class="form-control-file"  >
-                        </div> 
-                    </li>
+                    
                     <li class="form-row">
                     <label class="labcol form-control-label" for="categoria">CATEGORIA</label>
                     <input class="form-control" type="text" id="categoria" name="categ2" value="<?php echo $_SESSION["categ"]; ?>">
@@ -243,7 +241,7 @@
                 </form>       
             </div>
         </div>
-                
+               <br> 
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"

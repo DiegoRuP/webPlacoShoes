@@ -124,7 +124,7 @@ textarea{
 }
 
 input[type=number] {
-    background-color: #1A2226;
+    background-color: #1A2226 !important;
     border: none;
     border-bottom: 2px solid #0DB8DE;
     border-top: 0px;
@@ -280,6 +280,7 @@ button[name="baja"] {
 
 .labcol{
     color: white;
+    background-color: #1A2226;
     grid-column: 1;
     grid-row: 1;
 }
@@ -354,17 +355,18 @@ td{
 
 /* Boton de subir foto (necesitaba otro estilo a los demas botones) */
 .btn3 {
-    position: relative;
-    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
     padding: 10px 20px;
-    background: #e0e4e5;
+    background: #0DB8DE;
     color: #000000;
     font-size: 16px;
     text-decoration: none;
     overflow: hidden;
     transition: .5s;
     margin-top: 15px;
-    letter-spacing: 2px
+    letter-spacing: 2px;
+    margin-bottom: 50px;
   }
   
   /* Efecto cuando tenemos el cursor en el boton */
@@ -373,9 +375,7 @@ td{
     color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px #c1c6c8,
-                0 0 25px #e8eaeb,
-                0 0 50px #ebeded,
-                0 0 100px #e8eaea;
+                0 0 25px #e8eaeb;
   }
 
   .btn3-outline-primary {
@@ -396,3 +396,4 @@ td{
     
     color: #ffffff!important;
   }
+
