@@ -1,4 +1,5 @@
 <?php
+    include 'navbar.php';
     session_start();
     // Variables para controlar la validación
     $band = false;
@@ -73,6 +74,7 @@
     <script src="js/mensajeCaptcha.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+<?php include 'footer.php'?>
 </html>
 
 <?php

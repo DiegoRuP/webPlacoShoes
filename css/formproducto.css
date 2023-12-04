@@ -1,3 +1,9 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #071014;
     background-image: -webkit-linear-gradient(160deg, #071014 0%, #0db8de 100%);
@@ -101,11 +107,15 @@ textarea{
 }
 
 .custom-select {
-    width: 200px;
+    width: 300px;
+    height: 50px;
     padding: 5px;
     font-size: 16px;
     border-radius: 10px;
     text-align: center;
+    background-color: #1A2226;
+    border-color: #0DB8DE;
+    color: #fff;
 }
 
 .custom-select option {
@@ -142,12 +152,12 @@ button {
 
 .derecha {
     margin-top: 20px;
-    float: left; 
     padding: 20px;
+    height: 100%;
 }
 
 .estiloformulario {
-    max-width: 400px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -212,6 +222,7 @@ button[name="baja"] {
     display: inline-block;
     padding: 10px 20px;
     color: #289bb8;
+    background-color: #101416;
     font-size: 16px;
     text-decoration: none;
     overflow: hidden;
@@ -222,7 +233,7 @@ button[name="baja"] {
   
   /* Efecto cuando tenemos el cursor en el boton */
   .btn2:hover {
-    background: #d9dedf;
+    background: #289bb8;
     color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px #c1c6c8,
@@ -236,8 +247,9 @@ button[name="baja"] {
     height: 50px;
     border-radius: 15px;
     cursor: pointer;
+    background-color: #0DB8DE !important;
     border-color:#6ccde3!important;
-    color:#62cbe2;
+    color:#1A2226 !important;
     margin-top: 30px;
   }
   .btn2-outline-primary:hover{
@@ -280,18 +292,61 @@ button[name="baja"] {
     width: 50%; 
     height: auto;
   }
-.contenedor1{
+.contenedorAdmin{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 0 auto;
+    width: 98%;
+    background-color: #1A2226;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    padding: 50px;
 }
 .izqAlta{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 #imagenOculta{
     display: none;
+}
+
+.calzadoSeleccionado{
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+    border-top: #0DB8DE solid 2px;
+    border-bottom: #0DB8DE solid 2px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.contenedor2{
+    margin: 0 auto;
+    width: 70%;
+    border-radius: 20px;
+    margin-right: 50px;
+}
+
+.izquierdaBaja{
+    border-top: #0DB8DE solid 2px;
+    border-bottom: #0DB8DE solid 2px;
+    border-radius: 20px;
+    padding: 20px 0px;
+}
+
+table{
+    margin: 0 auto;
+    width: 100%;
+}
+
+tr{
+    background-color: #1A2226;
+    color: #fff;
+}
+
+td{
+    border-color: #0DB8DE;
+    padding: 10px;
 }

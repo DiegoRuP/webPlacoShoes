@@ -23,32 +23,31 @@ $resultado = $conexion -> query($sql);
 </head>
 <body>
     <br>
-    
-    
     <div class="contenedorCatalogo">
+    <br>
+        <h2>Catalogo - Placo Shoes</h2>
+        <br>
         <div class="filtro">
-            <label for="filtroGenero">Filtrar por género:</label>
-            <select id="filtroGenero">
-                <option value="todos">Todos</option>
-                <option value="hombres">Hombres</option>
-                <option value="mujer">Mujeres</option>
-            </select>
+                <label for="filtroGenero">Filtrar por categoria:</label>
+                <select id="filtroGenero">
+                    <option value="todos">Todos</option>
+                    <option value="hombres">Hombres</option>
+                    <option value="mujer">Mujeres</option>
+                </select>
         </div>
-       <br>
-
-    <script>
+        <script>
         document.getElementById('filtroGenero').addEventListener('change', function() {
             
             var filtro = this.value;
             var cartas = document.querySelectorAll('.itemCatalogo');
 
             cartas.forEach(function(carta) {
-                carta.style.paddingLeft = '72';
+                carta.style.paddingLeft = '15';
                 carta.style.display = 'block';
                 var generoCarta = carta.querySelector('.desc').innerText.toLowerCase();
                 
                 if (filtro === 'todos' || generoCarta === filtro) {
-                    carta.style.paddingLeft = '72';
+                    carta.style.paddingLeft = '15';
                     carta.style.display = 'block';
                 } else {
                     carta.style.display = 'none';
@@ -57,9 +56,8 @@ $resultado = $conexion -> query($sql);
             
         });
     </script>
-    <br>
-        <div class="container"> <br><br>
-
+        <div class="container"> 
+        <br>
             <div class="row">
 
     <?php
@@ -70,6 +68,9 @@ $resultado = $conexion -> query($sql);
 
     <?php
         while( $fila = $resultado ->  fetch_assoc()){
+            $id = $fila['ID'];
+            $descuento = $fila['Descuento'];
+            $descripcion = $fila['Descripcion'];
             $imagen = $fila['Imagen'];
             $producto = $fila['Nombre'];
             $precio = $fila['Precio'];
@@ -85,13 +86,22 @@ $resultado = $conexion -> query($sql);
         <a href="#">
             <img class="img-fluid" width="250" height="250" src="media/<?php echo $imagen ?>">
         </a>
-        <p><?php echo $producto ?></p>
+            <p id="catalogoIDP"><?php echo $id ?></p>
+
+            <!-- ESTE DIV ES EL QUE SE VA A MOSTRAR SOLO SI EL DESCUENTO ES MAYOR A 0 -->
+            <div class="descuento">
+                <p id="catalogoDescuentoP"><?php echo $descuento . '%' ?> </p>
+            </div>
+            <!-- AQUI TERMINA EL DIV -->
+            
+        <p id="catalogoNombreP"><?php echo $producto ?></p>
+        <p id="catalogoDescripcionP"><?php echo $descripcion ?></p>
         <div class="desc">
             <?php 
                 echo $categoria;
             ?>
         </div>
-        <p>$<?php echo $precio ?></p>
+        <p id="catalogoPrecioP">$<?php echo $precio ?></p>
     </div>
     <br>
 

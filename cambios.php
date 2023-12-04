@@ -89,102 +89,105 @@
     <title>Modificar - PlacoShoes</title>
 </head>
 <body>
-<div class="contenedor1">
-    <div class="contenedor2">
-        <div class="izquierdaAlta">
-        <?php        
-        $sql = 'SELECT * FROM productos';
-        $resultado = $conexion -> query($sql);
-        if ($resultado -> num_rows){
-        ?>        
-        <div class="izqAlta">      
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>   
-            <br>
-            <select   class="custom-select" name='modificar' >    
-                <?php
-                echo '<div>';
-                $salida='<table>';
-                while( $fila = $resultado -> fetch_assoc() ){
-                    echo '<option value="'.$fila["ID"].'">'.$fila["Nombre"].'</option>';
-                    $salida.= '<tr>';
-                    $salida.= '<td>'. $fila['ID'] . '</td>';
-                    $salida.= '<td>'. $fila['Nombre'] . '</td>';
-                    $salida.= '<td>'. $fila['Descripcion'] . '</td>';
-                    $salida.= '<td>'. $fila['Stock'] . '</td>';
-                    $salida.= '<td>'. $fila['Precio'] . '</td>';
-                    $salida.= '<td>%'. $fila['Descuento'] . '</td>';
-                    $salida.= '<td>'. $fila['Imagen'] . '</td>';
-                    $salida.= '<td>'. $fila['Categoria'] . '</td>';
-                    $salida.= '</tr>';
-                    }
-                    $salida.= '</table>';
-                ?>
-            </select>
-            <button class="btn2 btn2-outline-primary confirmar" type="submit" value="submit" name="confirmar" onclick="myFunction()">Confirmar</button>               
-            </form>
-        </div> 
-        <?php
-        }
-        else{
-            echo "no hay datos";
-        }
-        ?>
-        </div>
-            <div class="izquierdaBaja">
-                <?php echo $salida ?>
+    <br>
+    <div class="contenedorAdmin">
+        <div class="contenedor2">
+            <div class="izquierdaAlta">
+            <?php        
+            $sql = 'SELECT * FROM productos';
+            $resultado = $conexion -> query($sql);
+            if ($resultado -> num_rows){
+            ?>        
+            <div class="izqAlta">      
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>   
+                <br>
+                <select class="custom-select" name='modificar' >    
+                    <?php
+                    echo '<div>';
+                    $salida='<table>';
+                    while( $fila = $resultado -> fetch_assoc() ){
+                        echo '<option value="'.$fila["ID"].'">'.$fila["Nombre"].'</option>';
+                        $salida.= '<tr>';
+                        $salida.= '<td>'. $fila['ID'] . '</td>';
+                        $salida.= '<td>'. $fila['Nombre'] . '</td>';
+                        $salida.= '<td>'. $fila['Descripcion'] . '</td>';
+                        $salida.= '<td>'. $fila['Stock'] . '</td>';
+                        $salida.= '<td>$'. $fila['Precio'] . '</td>';
+                        $salida.= '<td>'. $fila['Descuento'] . '%</td>';
+                        $salida.= '<td>'. $fila['Imagen'] . '</td>';
+                        $salida.= '<td>'. $fila['Categoria'] . '</td>';
+                        $salida.= '</tr>';
+                        }
+                        $salida.= '</table>';
+                    ?>
+                </select>
+                <button class="btn2 btn2-outline-primary" type="submit" value="submit" name="confirmar" onclick="myFunction()">Seleccionar</button>               
+                </form>
+            </div> 
+            <?php
+            }
+            else{
+                echo "no hay datos";
+            }
+            ?>
+            </div>
+                <div class="izquierdaBaja">
+                    <?php echo $salida ?>
+                </div>
+            </div>
+            <div class="derecha">
+                <form class="estiloformulario" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>
+                    <?php
+                    $img= "media/" . $_SESSION["imagen"];
+                    ?>
+                    <div class="calzadoSeleccionado">
+                        <img id="productImage" src="<?php echo $img ?>">
+                    </div>
+                <!-- CONTROL DEL FORMULARIO -->
+                <ul class="wrapper"> 
+                    <li>
+                    <label class="labcol form-control-label" for="id">ID</label>
+                    <input class="form-control" type="number" id="id" name="id2"  value="<?php echo $_SESSION["id"]; ?>" readonly>
+                    </li>
+                    <li class="form-row">
+                    <label class="labcol form-control-label" for="nombre">NOMBRE</label>
+                    <input class="form-control" type="text" id="nombre" name="nom2" value="<?php echo $_SESSION["nom"]; ?>">
+                    </li>
+                    <li class="form-row">
+                    <label class="labcol form-control-label" for="descripcion">DESCRIPCION</label>
+                    <input class="form-control" type="text" id="descripcion" name="desc2" value="<?php echo $_SESSION["desc"]; ?>">
+                    </li>
+                    <li class="form-row">
+                    <label class="labcol form-control-label" for="stock">STOCK</label>
+                    <input class="form-control" type="text" id="stock" name="stock2" value="<?php echo $_SESSION['stock']; ?>">
+                    </li>
+                    <li class="form-row">
+                    <label class="labcol form-control-label" for="precio">PRECIO</label>
+                    <input class="form-control" type="text" id="precio" name="precio2" value="<?php echo $_SESSION["precio"]; ?>">
+                    </li>
+                    <li class="form-row">
+                    <label class="labcol form-control-label" for="descuento">DESCUENTO</label>
+                    <input class="form-control" type="text" id="descuento" name="descuen2" value="<?php echo $_SESSION["descuen"]; ?>">
+                    </li>
+                    <li class="form-row">
+                    <label class="labcol form-control-label" for="imagen">IMAGEN</label>
+                    <input class="form-control" type="text" id="imagen" name="imagen2" value="<?php echo $_SESSION["imagen"]; ?>">
+                    </li>
+                    <li class="form-row">
+                    <label class="labcol form-control-label" for="categoria">CATEGORIA</label>
+                    <input class="form-control" type="text" id="categoria" name="categ2" value="<?php echo $_SESSION["categ"]; ?>">
+                    </li>
+                </ul>
+
+                    <button class="btn2 btn2-outline-primary" type="submit" name="mod">Confirmar edicion</button>
+                    <input type="hidden" name="id_baja" value="<?php echo $_SESSION['id']; ?>">
+                    <button class="btn2 btn2-outline-primary" type="submit" value="submit" name="baja">Baja</button>
+                    <button class="btn2 btn2-outline-primary" type="button" name="mod" onclick="window.location.href='formproducto.php';">Regresar</button>
+                    
+                </form>       
             </div>
         </div>
-        <div class="derecha">
-            <form class="estiloformulario" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>
-            <ul class="wrapper">
-                <li>
-                <label class="labcol form-control-label" for="id">ID</label>
-                <input class="form-control" type="number" id="id" name="id2"  value="<?php echo $_SESSION["id"]; ?>" readonly>
-                </li>
-                <li class="form-row">
-                <label class="labcol form-control-label" for="nombre">NOMBRE</label>
-                <input class="form-control" type="text" id="nombre" name="nom2" value="<?php echo $_SESSION["nom"]; ?>">
-                </li>
-                <li class="form-row">
-                <label class="labcol form-control-label" for="descripcion">DESCRIPCION</label>
-                <input class="form-control" type="text" id="descripcion" name="desc2" value="<?php echo $_SESSION["desc"]; ?>">
-                </li>
-                <li class="form-row">
-                <label class="labcol form-control-label" for="stock">STOCK</label>
-                <input class="form-control" type="text" id="stock" name="stock2" value="<?php echo $_SESSION['stock']; ?>">
-                </li>
-                <li class="form-row">
-                <label class="labcol form-control-label" for="precio">PRECIO</label>
-                <input class="form-control" type="text" id="precio" name="precio2" value="<?php echo $_SESSION["precio"]; ?>">
-                </li>
-                <li class="form-row">
-                <label class="labcol form-control-label" for="descuento">DESCUENTO</label>
-                <input class="form-control" type="text" id="descuento" name="descuen2" value="<?php echo $_SESSION["descuen"]; ?>">
-                </li>
-                <li class="form-row">
-                <label class="labcol form-control-label" for="imagen">IMAGEN</label>
-                <input class="form-control" type="text" id="imagen" name="imagen2" value="<?php echo $_SESSION["imagen"]; ?>">
-                <?php
-                $img= "media/" . $_SESSION["imagen"];
-                ?>
-                <div id="producImage imagenOculta">
-                    <img id="productImage" src="<?php echo $img ?>">
-                </div>
-                </li>
-                <li class="form-row">
-                <label class="labcol form-control-label" for="categoria">CATEGORIA</label>
-                <input class="form-control" type="text" id="categoria" name="categ2" value="<?php echo $_SESSION["categ"]; ?>">
-                </li>
-
-                <button class="btn2 btn2-outline-primary" type="submit" name="mod">Comfirmar edicion</button>
-                <input type="hidden" name="id_baja" value="<?php echo $_SESSION['id']; ?>">
-                <button class="btn2 btn2-outline-primary" type="submit" value="submit" name="baja">Baja</button>
-                <button class="btn2 btn2-outline-primary" type="button" name="mod" onclick="window.location.href='formproducto.php';">Regresar</button>
-                
-            </ul>
-            </form>       
-        </div>
-    </div>
+        <br>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
