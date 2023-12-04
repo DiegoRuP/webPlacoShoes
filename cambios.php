@@ -73,10 +73,10 @@
         if (isset($_POST["submit"])) {
             $check = getimagesize($_FILES["imagen2"]["tmp_name"]);
             if ($check !== false) {
-                echo "El archivo es una imagen - " . $check["mime"] . ".";
+                //echo "El archivo es una imagen - " . $check["mime"] . ".";
                 $uploadOk = 1;
             } else {
-                echo "El archivo no es una imagen.";
+                //echo "El archivo no es una imagen.";
                 $uploadOk = 0;
             }
         }
@@ -91,24 +91,24 @@
 
         // Verificar el tamaño del archivo
         if ($_FILES["imagen2"]["size"] > 500000) {
-            echo "Lo siento, tu archivo es demasiado grande.";
+            //echo "Lo siento, tu archivo es demasiado grande.";
             $uploadOk = 0;
         }
 
         // Permitir ciertos formatos de archivo
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif") {
-            echo "Lo siento, solo se permiten archivos JPG, JPEG, PNG y GIF.";
+            //echo "Lo siento, solo se permiten archivos JPG, JPEG, PNG y GIF.";
             $uploadOk = 0;
         }
 
         // Verificar si $uploadOk está configurado en 0 por un error
         if ($uploadOk == 0) {
-            echo "Lo siento, tu archivo no fue subido.";
+            //echo "Lo siento, tu archivo no fue subido.";
         } else {
             // Si todo está bien, intentar subir el archivo
             if (move_uploaded_file($_FILES["imagen2"]["tmp_name"], $target_file)) {
-                echo "El archivo " . htmlspecialchars(basename($_FILES["imagen2"]["name"])) . " ha sido subido.";
+                //echo "El archivo " . htmlspecialchars(basename($_FILES["imagen2"]["name"])) . " ha sido subido.";
                 $nombreimag= htmlspecialchars(basename($_FILES["imagen2"]["name"]));
                 $siete= $nombreimag;
             } else {
@@ -218,13 +218,10 @@
                 
                 <!-- <label class="labcol form-control-label" for="imagenu">IMAGEN</label> -->
                 <div class="form-group">
-                    <label for="imagen" class="btn2 btn2-outline-primary">Subir tu foto</label> 
+                    <label for="imagen" class="btn3 btn3-outline-primary">Subir Imagen</label> 
                     <input type="file" name="imagen2" id="imagen" class="form-control-file"  >
                 </div> 
-                <!-- <label for="imagen2" class="btn2 btn2-outline-primary">Subir tu foto</label>
-                <input type="file" name="imagen2" id="imagen"> -->
                 
-                <!-- <input class="form-control" type="text" id="imagen" name="imagen2" value="<?php echo $_SESSION["imagen"]; ?>?"> -->
                 <?php
                 $img= "media/" . $_SESSION["imagen"];
                 ?>

@@ -296,3 +296,48 @@ button[name="baja"] {
     display: none;
 }
 
+
+/* Boton de subir foto (necesitaba otro estilo a los demas botones) */
+.btn3 {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #e0e4e5;
+    color: #000000;
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 15px;
+    letter-spacing: 2px
+  }
+  
+  /* Efecto cuando tenemos el cursor en el boton */
+  .btn3:hover {
+    background: #d9dedf;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #c1c6c8,
+                0 0 25px #e8eaeb,
+                0 0 50px #ebeded,
+                0 0 100px #e8eaea;
+  }
+
+  .btn3-outline-primary {
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    cursor: pointer;
+    border-color:#6ccde3!important;
+    color:#000000;
+    margin-top: 30px;
+  }
+  .btn3-outline-primary:hover{
+    background-color: #374145!important;
+    background-image: -webkit-linear-gradient(160deg, #344750 0%, rgb(129, 205, 222) 100%)!important;
+    background-image: -moz-linear-gradient(160deg, #344750 0%, rgb(129, 205, 222) 100%)!important;
+    background-image: -o-linear-gradient(160deg, #344750 0%, rgb(129, 205, 222) 100%)!important;
+    background-image: linear-gradient(160deg, #344750 0%, rgb(129, 205, 222) 100%)!important;
+    
+    color: #ffffff!important;
+  }
