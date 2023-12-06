@@ -91,7 +91,7 @@
 
                 <ul class="listaNav">
                     <li>
-                        <a href="principal.php"> Inicio </a>
+                        <a href="index.php"> Inicio </a>
                     </li>                
                     <li>
                         <a href="catalogo.php"> Tienda </a>

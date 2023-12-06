@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             title: 'Éxito',
             text: 'Inicio de Sesión Exitoso'
         }).then(function() {
-            window.location.href='principal.php';
+            window.location.href='index.php';
         });
         </script>";        
 
