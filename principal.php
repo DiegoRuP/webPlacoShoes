@@ -25,7 +25,7 @@
         </div> 
         <h1>LOS MAS VENDIDOS</h1>
         <p> Te mostramos las mejores opciones que podrías encontrar a un excelente precio</p>
-
+ 
         <div class="cartaPrincipal">
             <ul>
                 <li>

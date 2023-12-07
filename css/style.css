@@ -855,3 +855,205 @@ figure img:hover {
     left: 30;
     font-size: 30px;
 }
+
+/* Responsive del navbar */
+
+@media (max-width: 991px) {
+    .contenedorNav {
+        margin-top: 20px !important; 
+        padding-bottom: 50px !important; 
+    }
+
+    .opcionesTopNav {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .opcionesTopNav .logoNav {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .opcionesTopNav .listaNav {
+        text-align: center;
+        width: 100%;
+    }
+
+    .opcionesTopNav .listaNav li {
+        display: block;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .iconoCarrito {
+        margin-left: 0; 
+    }
+
+    .micuentaNav {
+        margin-left: 0; 
+    }
+
+}
+
+/* Responsive design de la pagina de inicio */
+
+@media (max-width: 991px) {
+    .collage {
+        grid-template-areas:
+            "mujer"
+            "hombres"
+            "chavo";
+        grid-template-columns: 1fr;
+    }
+
+    .collage .mujer,
+    .collage .hombres,
+    .collage .chavo {
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .collage button {
+        font-size: 24px;
+        width: 300px;
+        height: 80px;
+    }
+
+    .cartaPrincipal li {
+        padding: 0 20px 50px 20px;
+    }
+
+    .shop-card {
+        width: 300px;
+    }
+
+    .shop-card .title {
+        font-size: 24px;
+    }
+
+    .shop-card .desc {
+        font-size: 14px;
+    }
+
+    .shop-card .cta {
+        padding: 15px 20px 5px;
+    }
+
+    .price {
+        font-size: 18px;
+    }
+
+    .btnCard {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+/* Responsive para pagina de Ayuda */
+
+@media (max-width: 991px) {
+    .divAyuda {
+        text-align: center;
+        margin: 0 auto;
+        width: 90%;
+        height: auto;
+        background-color: #1A2226;
+        border-radius: 15px;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    }
+
+    .divPreguntas {
+        padding: 20px;
+        text-align: left;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .question {
+        font-size: 16px;
+    }
+
+    .answer {
+        font-size: 14px;
+    }
+
+    .question img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+    /* Responsive para la pagina acerca de nosotros */
+
+    @media (max-width: 767px) {
+
+        .form {
+            width: 90%;
+            padding: 20px;
+        }
+    
+        .form input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+    
+        h2 {
+            font-size: 18px;
+        }
+    
+        label {
+            font-size: 14px;
+        }
+    
+        .btn {
+            font-size: 14px;
+            padding: 10px 15px;
+            margin-top: 10px;
+        }
+    
+        .checkbox-container {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+    
+        h5 {
+            font-size: 14px;
+        }
+            .contenedorMision {
+            width: 90%;
+        }
+    
+        .misionEtc {
+            width: 80%;
+            padding: 20px;
+        }
+    
+        .misionEtc h1,
+        .conocenos h1 {
+            font-size: 24px;
+        }
+    
+        .misionEtc h2 {
+            font-size: 18px;
+        }
+    
+        .misionEtc p {
+            font-size: 14px;
+        }  
+
+        .contenedorConocenos {
+            width: 90%;
+            padding: 20px;
+        }
+    
+        .conocenos {
+            width: 100%;
+            padding: 20px;
+        }
+    }
