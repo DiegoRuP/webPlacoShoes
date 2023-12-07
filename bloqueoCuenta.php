@@ -18,6 +18,7 @@ if (isset($_SESSION['userblock'])) {
     $user = $_SESSION['userblock'];
     $campo = "Online";
 
+    // hola
     // Usar UPDATE para actualizar el campo "Online" a 1
     $sql = "UPDATE usuarios SET $campo = 1 WHERE Cuenta = '$user'";
     $resultado = $conn->query($sql);
