@@ -1,8 +1,8 @@
 <?php include 'navbar.php';
 
 $servidor='localhost';
-$cuenta='admin';
-$password='9fd3dd83732033521aebb8cdb629ed5285c3a6515b7de477';
+$cuenta='root';
+$password='';
 $bd='bdplacoshoes';
 
 $conexion = new mysqli($servidor,$cuenta,$password,$bd);
