@@ -19,7 +19,7 @@
                     <a href=""> <i class="fa-brands fa-instagram"></i> </a>
                 </li>
                 <li>
-                    <a href=""> <i class="fa-brands fa-facebook"></i> </a>
+                    <a href="https://www.facebook.com/PlacoShoes"> <i class="fa-brands fa-facebook"></i> </a>
                 </li>
                 <li>
                     <a href=""> <i class="fa-brands fa-whatsapp"></i> </a>
