@@ -99,10 +99,14 @@ label.upload-btn {
     display: inline-block;
 }
 
-textarea{
+textarea {
     color: #fff;
     background-color: transparent;
     border-color: #0DB8DE;
+    width: 100%;
+    max-width: 100%; 
+    resize: none; 
+    box-sizing: border-box; 
 }
 
 .custom-select {
@@ -396,3 +400,11 @@ td{
     color: #ffffff!important;
   }
 
+
+  /* Diseño responsive del textarea */
+
+  @media (max-width: 991px) {
+    textarea {
+        max-height: 80px; 
+    }
+}

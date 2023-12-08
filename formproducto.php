@@ -37,7 +37,7 @@
 
             <div class="form-group">
               <label class="form-control-label">Descripcion</label>
-              <textarea name="descripcion" id="descripcion" cols="58 " rows="2"></textarea>
+              <textarea name="descripcion" id="descripcion" cols="36 " rows="10"></textarea>
             </div>
 
             <div class="form-group">

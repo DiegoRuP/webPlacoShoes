@@ -987,7 +987,7 @@ figure img:hover {
 
     /* Responsive para la pagina acerca de nosotros */
 
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
 
         .form {
             width: 90%;
