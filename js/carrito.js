@@ -21,40 +21,50 @@ document.addEventListener('DOMContentLoaded', () => {
         // Busca el icono del carrito directamente
         if (e.target.matches('.carritoCatalogo i')) {
             const product = e.target.parentElement.parentElement;
-
+    
             const infoProduct = {
-                quantity:1,
+                quantity: 1,
                 id: product.querySelector('#catalogoIDP').textContent,
-                stock: product.querySelector('#catalogoStockP').textContent,
+                stock: product.querySelector('#catalogoStockP').textContent.trim(), // Convierte el stock a un número
                 nombre: product.querySelector('#catalogoNombreP').textContent,
                 descripcion: product.querySelector('#catalogoDescripcionP').textContent,
                 categoria: product.querySelector('.desc').textContent,
                 precio: product.querySelector('#catalogoPrecioP').textContent,
             };
 
-            const exist = allProducts.some(product => product.nombre === infoProduct.nombre)
-
-            if(exist){
-                const products = allProducts.map(product => {
-                    if(product.nombre === infoProduct.nombre){
-                        product.quantity++;
-                        return product
-                    }else{
-                        return product
-                    }
-                })
-                allProducts = [...products]
-            }else{
-                allProducts = [...allProducts,infoProduct]
+            console.log(infoProduct.stock)
+    
+            // Verifica si hay suficiente stock
+            if (infoProduct.stock !== 'Stock: 0') {
+                const exist = allProducts.some(product => product.nombre === infoProduct.nombre);
+    
+                if (exist) {
+                    const products = allProducts.map(product => {
+                        if (product.nombre === infoProduct.nombre) {
+                            product.quantity++;
+                            return product;
+                        } else {
+                            return product;
+                        }
+                    });
+                    allProducts = [...products];
+                } else {
+                    allProducts = [...allProducts, infoProduct];
+                }
+    
+                showHTML();
+            } else {
+                // Muestra la alerta SweetAlert2
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Sin stock',
+                    text: 'No hay suficiente stock para este producto.',
+                });
             }
-
-           
-
-            showHTML();
-
         }
-
     });
+    
+    
 
 
     rowProduct.addEventListener('click', (e) => {
@@ -75,9 +85,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const showHTML = () => {
         
         if(!allProducts.length){
-            containerCartProducts.innerHTML=`
-                <p class ="cart-empty"> Carrito Vacio </p>
-            `
+            const emptyCartMessage = document.createElement('div');
+            emptyCartMessage.classList.add('itemCarrito', 'empty-cart');
+            emptyCartMessage.innerHTML = `
+                <div class="infoCarrito">
+                    <span class="cantItem"></span>
+                    <p class="tituloItem">Carrito Vacío</p>
+                    <p class="precioItem"></p>
+                </div>
+            `;
+            rowProduct.appendChild(emptyCartMessage);
         }
         
         //Limpiar HTML
