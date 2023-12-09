@@ -226,10 +226,10 @@
     color: #fff;
 }
 
-.desactivado{
+/* .desactivado{
     cursor: not-allowed;
     pointer-events: none;
-}
+} */
 
 .divAyuda{
     text-align: center;

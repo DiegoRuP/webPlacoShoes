@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="media/logo.ico">
     <script src="https://kit.fontawesome.com/f646e31ace.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
 </head>
 
 <body>
@@ -39,7 +41,7 @@
                     <!-- CARRITO SOLO CON INICIO DE SESIÓN -->
                     <li>
                         
-                    
+
                         <div class="iconoCarrito">
                             <a><i class="fa-solid fa-cart-shopping"></i> Carrito </a>
                         </div>
@@ -82,7 +84,7 @@
                     </li>                   
                     <li>
                         <!--Carrito desactivado si no tiene sesión-->
-                        <a class="desactivado"> <i class="fa-solid fa-cart-shopping"></i> Carrito </a>
+                        <a href=# onclick="validarCarrito()"> <i class="fa-solid fa-cart-shopping"></i> Carrito </a>
                         
                     </li>   ';
                 }
@@ -152,6 +154,7 @@
 </div>
 
 <script src="js/carrito.js"></script>
+<script src="js/validacion.js"></script>
 
 </body>
 
