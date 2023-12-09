@@ -85,7 +85,7 @@ $resultado = $conexion -> query($sql);
 
     <div class="col-md-3 col-sm-6 itemCatalogo">
         <a >
-            <img class="img-fluid" width="250" height="250" src="media/<?php echo $imagen ?>">
+            <img class="img-fluid" z-index="1"  width="250" height="250" src="media/<?php echo $imagen ?>">
         </a>
             <p id="catalogoIDP"><?php echo $id ?></p>
             <p id="catalogoStockP"> Stock: <?php echo $stock ?></p>

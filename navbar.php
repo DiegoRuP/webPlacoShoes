@@ -37,7 +37,7 @@
                     </li>    
                     
                     <!-- CARRITO SOLO CON INICIO DE SESIÓN -->
-                    <li>
+                    <li class="carrito-hover">
                         
                     
                         <div class="iconoCarrito">
@@ -45,6 +45,7 @@
                         </div>
 
                         <div class="contenedorCarrito">
+                            
                             <div class="contadorProductos">
                                 <span id="contador"> 0 </span>
                             </div>
@@ -54,17 +55,16 @@
                                 <div class="row-product">
                                     <div class="itemCarrito">   <!-- cart-product -->
                                         <div class="infoCarrito">  <!-- info-cart-product -->
-                                            <span class="cantItem">  1   </span>
-                                            <p class="tituloItem">Tenis Nike</p>
-                                            <p class="precioItem">$2220 </p>
-                                        </div>
-                                        <i class="fa-solid fa-xmark fa-lg" id="iconoCerrar"></i>                    
+                                            <span class="cantItem"></span>
+                                            <p class="tituloItem">Carrito Vacio</p>
+                                            <p class="precioItem"></p>
+                                        </div>                  
                                     </div>
                                 </div>    
 
                                 <div class="totalCarrito">
                                         <h3>Total:</h3>
-                                        <span class="totalPago">$2220</span>
+                                        <span class="totalPago">$0</span>
                                 </div>
                             </div>
                         </div>   
