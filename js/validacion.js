@@ -54,3 +54,19 @@ function validarIntentos() {
         }
 }
 
+//validacion de inicio de sesion para el carrito
+function validarCarrito(){
+    Swal.fire({
+        title: 'Inicio de sesión requerido',
+        text: 'Para acceder al carrito, se requiere que inice sesión',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Iniciar sesión o crear cuenta'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = 'login.php'; //si el usuario dio clic en aceptar, mandar al login
+        }
+    });
+}
