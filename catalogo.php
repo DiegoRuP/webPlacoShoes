@@ -18,7 +18,7 @@ $resultado = $conexion -> query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+
     <title>Catalogo - Placo Shoes</title>
 </head>
 <body>
@@ -58,7 +58,7 @@ $resultado = $conexion -> query($sql);
     </script>
         <div class="container"> 
         <br>
-            <div class="row">
+        <div class="row">
 
     <?php
         $numPro = 0;
@@ -84,7 +84,7 @@ $resultado = $conexion -> query($sql);
     </script>
 
     <div class="col-md-3 col-sm-6 itemCatalogo">
-        <a href="#">
+        <a >
             <img class="img-fluid" width="250" height="250" src="media/<?php echo $imagen ?>">
         </a>
             <p id="catalogoIDP"><?php echo $id ?></p>
@@ -117,7 +117,9 @@ $resultado = $conexion -> query($sql);
             ?>
         </div>
         <p id="catalogoPrecioP">$<?php echo $precio ?></p>
-        <a href="" class="carritoCatalogo" ><i class="fa-solid fa-cart-shopping"></i></a>
+        <a class="carritoCatalogo" >
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
     </div>
     <br>
 
@@ -142,7 +144,7 @@ $resultado = $conexion -> query($sql);
     </div>
 </div>
 <br>
-</body>
+</body
 
 
 </html>

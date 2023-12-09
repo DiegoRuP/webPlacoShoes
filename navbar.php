@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/f646e31ace.js" crossorigin="anonymous"></script>
 </head>
 
+<body>
 <div class="contenedorNav">
     
     <div class="opcionesTopNav">
@@ -37,30 +38,33 @@
                     
                     <!-- CARRITO SOLO CON INICIO DE SESIÓN -->
                     <li>
+                        
+                    
                         <div class="iconoCarrito">
                             <a><i class="fa-solid fa-cart-shopping"></i> Carrito </a>
                         </div>
+
                         <div class="contenedorCarrito">
                             <div class="contadorProductos">
                                 <span id="contador"> 0 </span>
                             </div>
+                            
                             <div class="productosCarrito ocultarCarrito">
-                                <div class="itemCarrito">
-                                    <div class="infoCarrito">
-                                        <span class="cantItem">
-                                            1
-                                        </span>
-                                        <p class="tituloItem">
-                                            Tenis Nike
-                                        </p>
-                                        <p class="precioItem">
-                                            $2220
-                                        </p>
+                                
+                                <div class="row-product">
+                                    <div class="itemCarrito">   <!-- cart-product -->
+                                        <div class="infoCarrito">  <!-- info-cart-product -->
+                                            <span class="cantItem">  1   </span>
+                                            <p class="tituloItem">Tenis Nike</p>
+                                            <p class="precioItem">$2220 </p>
+                                        </div>
+                                        <i class="fa-solid fa-xmark fa-lg" id="iconoCerrar"></i>                    
                                     </div>
-                                    <i class="fa-solid fa-xmark fa-lg" id="iconoCerrar"></i>                    </div>
+                                </div>    
+
                                 <div class="totalCarrito">
-                                    <h3>Total:</h3>
-                                    <span class="totalPago">$2220</span>
+                                        <h3>Total:</h3>
+                                        <span class="totalPago">$2220</span>
                                 </div>
                             </div>
                         </div>   
@@ -143,7 +147,13 @@
                 </ul>
     
     </header>
-    <script src="js/carrito.js"></script>
+    
 
 </div>
+
+<script src="js/carrito.js"></script>
+
+</body>
+
+
 
