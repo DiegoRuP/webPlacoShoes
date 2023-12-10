@@ -1077,3 +1077,45 @@ figure img:hover {
             padding: 20px;
         }
     }
+    
+    .imagen-contenedor {
+        cursor: pointer;
+        position: relative;
+        height: 20px;
+       
+    }
+    
+    .imagen-thumbnail {
+        position: absolute;
+        height: 20px;
+        top: 10;
+        left: 10;
+    }
+    
+    .modalImg {
+        z-index: 1;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal-contenido {
+        max-width: 70%;
+        max-height: 70%;
+    }
+    
+    .cerrar-modal {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+    }
+    

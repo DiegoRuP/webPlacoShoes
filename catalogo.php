@@ -25,6 +25,16 @@ $resultado = $conexion -> query($sql);
 <body>
     <br>
     <div class="contenedorCatalogo">
+
+        <div class="imagen-contenedor" onclick="abrirImagen(this)">
+            <img src="media/cuponTravis.png" alt="Imagen" class="imagen-thumbnail">
+        </div>
+
+        <div id="modalImg" class="modalImg" onclick="cerrarImagen(this)">
+            <span class="cerrar-modal">&times;</span>
+            <img class="modal-contenido" src="media/cuponTravis.png" alt="Imagen Ampliada">
+        </div>
+
     <br>
         <h2>Catalogo - Placo Shoes</h2>
         <br>
@@ -139,13 +149,27 @@ $resultado = $conexion -> query($sql);
         console.log(`Elegiste ${array[indice]}`);       
          
     }
+
+    //FUNCION PARA ABRIR CUPON TRAVIS
+
+    function abrirImagen(contenedor) {
+    var modal = document.getElementById('modalImg');
+    var modalContenido = document.querySelector('.modal-contenido');
+    modalContenido.src = contenedor.querySelector('img').src;
+    modal.style.display = 'flex';
+    }
+
+    function cerrarImagen(modal) {
+        modal.style.display = 'none';
+    }
     
 </script>
         </div>
     </div>
 </div>
 <br>
-</body
+
+</body>
 
 
 </html>
