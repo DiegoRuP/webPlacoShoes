@@ -56,10 +56,10 @@ $sql2 = "SELECT * FROM productos WHERE (Categoria = '$filtroGenero' OR '$filtroG
 
                 <!-- filtro de precio -->
                 <label for="precioMin">Precio mínimo: </label>
-                <input type="number" id="precioMin" name="precioMin">
+                <input type="number" id="precioMin" name="precioMin" min="0">
 
                 <label for="precioMax">Precio máximo: </label>
-                <input type="number" id="precioMax" name="precioMax">
+                <input type="number" id="precioMax" name="precioMax" min="0">
 
                 <button id="btnFiltro" onclick="filtrarPrecio()">Aplicar filtro de precio</button>
                 <a href="catalogo.php"><button>Borrar filtro</button></a>
@@ -136,7 +136,6 @@ $sql2 = "SELECT * FROM productos WHERE (Categoria = '$filtroGenero' OR '$filtroG
 
             }
 
-            
             ?>
             
         <p id="catalogoNombreP"><?php echo $producto ?></p>
@@ -146,6 +145,19 @@ $sql2 = "SELECT * FROM productos WHERE (Categoria = '$filtroGenero' OR '$filtroG
                 echo $categoria;
             ?>
         </div>
+        <?php
+
+            if($descuento > 0 && $stock > 0){
+                $descuentoProducto = $precio * $descuento / 100;
+
+                $precioAnterior = $precio;
+
+                $precio = $precioAnterior - $descuentoProducto;
+
+                echo '<del>$' . $precioAnterior . '</del>';
+            }
+
+            ?>
         <p id="catalogoPrecioP">$<?php echo $precio ?></p>
         <a class="carritoCatalogo" >
             <i class="fa-solid fa-cart-shopping"></i>
@@ -188,7 +200,9 @@ $sql2 = "SELECT * FROM productos WHERE (Categoria = '$filtroGenero' OR '$filtroG
 </div>
 <br>
 
+<script src="js/validacion.js"></script>
 </body>
+
 
 
 </html>
