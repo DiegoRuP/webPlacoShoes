@@ -10,6 +10,12 @@ $conexion = new mysqli($servidor,$cuenta,$password,$bd);
 $sql = 'select * from productos';
 $resultado = $conexion -> query($sql);
 
+// filtro de precio
+$minPrecio = isset($_GET['precioMin']) ? $_GET['precioMin'] : 0;
+$maxPrecio = isset($_GET['precioMax']) ? $_GET['precioMax'] : PHP_FLOAT_MAX;
+$filtroGenero = isset($_GET['filtroGenero']) ? $_GET['filtroGenero'] : 'todos';
+$sql2 = "SELECT * FROM productos WHERE (Categoria = '$filtroGenero' OR '$filtroGenero' = 'todos') AND Precio BETWEEN $minPrecio AND $maxPrecio";
+
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +26,10 @@ $resultado = $conexion -> query($sql);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
     <title>Catalogo - Placo Shoes</title>
 </head>
+
 <body>
     <br>
     <div class="contenedorCatalogo">
@@ -45,7 +53,18 @@ $resultado = $conexion -> query($sql);
                     <option value="hombres">Hombres</option>
                     <option value="mujer">Mujeres</option>
                 </select>
+
+                <!-- filtro de precio -->
+                <label for="precioMin">Precio mínimo: </label>
+                <input type="number" id="precioMin" name="precioMin">
+
+                <label for="precioMax">Precio máximo: </label>
+                <input type="number" id="precioMax" name="precioMax">
+
+                <button id="btnFiltro" onclick="filtrarPrecio()">Aplicar filtro de precio</button>
+                <a href="catalogo.php"><button>Borrar filtro</button></a>
         </div>
+
         <script>
         document.getElementById('filtroGenero').addEventListener('change', function() {
             

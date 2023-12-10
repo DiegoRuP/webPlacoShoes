@@ -70,3 +70,28 @@ function validarCarrito(){
         }
     });
 }
+
+
+//funcion de filtrar por precio
+function filtrarPrecio() {
+    var filtroGenero = document.getElementById('filtroGenero').value;
+    var precioMin = document.getElementById('precioMin').value;
+    var precioMax = document.getElementById('precioMax').value;
+
+    var cartas = document.querySelectorAll('.itemCatalogo');
+
+    //se añadio la parte del filtro de genero para que funcionara con ambos
+    cartas.forEach(function (carta) {
+        carta.style.paddingLeft = '15';
+        carta.style.display = 'block';
+        var generoCarta = carta.querySelector('.desc').innerText.toLowerCase();
+        var precioCarta = parseFloat(carta.querySelector('#catalogoPrecioP').innerText.replace('$', ''));
+
+        if ((filtroGenero === 'todos' || generoCarta === filtroGenero) && (precioCarta >= precioMin && precioCarta <= precioMax)) {
+            carta.style.paddingLeft = '15';
+            carta.style.display = 'block';
+        } else {
+            carta.style.display = 'none';
+        }
+    });
+}

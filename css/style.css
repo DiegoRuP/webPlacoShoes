@@ -810,6 +810,27 @@ figure img:hover {
     border-radius: 10px;
 }
 
+.filtro button{
+    width: 200px !important;
+    text-align: center;
+    background-color: #0DB8DE;
+    border-radius: 10px;
+}
+
+.filtro #precioMin{
+    width: 100px !important;
+    text-align: center;
+    background-color: #0DB8DE;
+    border-radius: 10px;
+}
+
+.filtro #precioMax{
+    width: 100px !important;
+    text-align: center;
+    background-color: #0DB8DE;
+    border-radius: 10px;
+}
+
 #catalogoIDP{
     font-size: 12px;
     position: absolute;
