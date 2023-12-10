@@ -177,8 +177,7 @@ input {
    
 .btn2 {
     
-    display: flex;
-    justify-content: center;
+    margin-left: 135px;
     padding: 10px 20px;
     color: #289bb8;
     background-color: #101416;
@@ -186,7 +185,8 @@ input {
     text-decoration: none;
     overflow: hidden;
     transition: .5s;
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     letter-spacing: 2px
   }
   

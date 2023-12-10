@@ -50,12 +50,9 @@
         </div>
         <div class="col-lg-12 login-form">
             <form method="post" action="procesar_pago.php">
-                
-
                 <br>
-
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="forma_pago" id="tarjeta_credito" value="tarjeta_credito" checked>
+                    <input class="form-check-input" type="radio" name="forma_pago" id="tarjeta_credito" value="tarjeta_credito" required>
                     <label class="form-check-label" for="tarjeta_credito">
                         Pago con Tarjeta de Crédito
                     </label>
@@ -64,9 +61,9 @@
                 <!-- Campos de tarjeta de crédito (inicialmente ocultos) -->
                 <div id="campos_tarjeta" style="display: none">
                     <div class="form-group">
-                        <input class="form-check-input" type="radio" name="banorte" id="tarjeta_banorte" value="tarjeta_banorte" checked>
+                        <input class="form-check-input" type="radio" name="banorte" id="tarjeta_banorte" value="tarjeta_banorte" required>
                         <img src="media/logobanorte.jpg" alt="" width="150px;">
-                        <input class="form-check-input" type="radio" name="banorte" id="tarjeta_bbva" value="tarjeta_bbva" checked>
+                        <input class="form-check-input" type="radio" name="banorte" id="tarjeta_bbva" value="tarjeta_bbva" required>
                         <img src="media/logobbva.png" alt="" width="150px; " style="margin-left: 50px;">
                     </div>
                     <div class="form-group">
@@ -92,7 +89,7 @@
 
                 <!-- Opción de pago en OXXO -->
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="forma_pago" id="pago_oxxo" value="pago_oxxo">
+                    <input class="form-check-input" type="radio" name="forma_pago" id="pago_oxxo" value="pago_oxxo" required>
                         <label class="form-check-label" for="pago_oxxo">
                             Pago en OXXO
                         </label>
@@ -120,7 +117,7 @@
 
                 <!-- País y impuestos -->
                 <label for="pais">Selecciona tu país:</label>
-                <select name="pais" id="pais" onchange="actualizarConfiguracion()">
+                <select name="pais" id="pais" onchange="actualizarConfiguracion()" required>
                     <option value="" disabled selected>Selecciona tu país</option>
                     <option value="mexico">México</option>
                     <option value="canada">Canada</option>
@@ -133,8 +130,10 @@
                 <br>
                 <div id="contenedorDesglosePago"></div>
                 <br>
-
-                <input class="btn2 btn2-outline-primary" type="submit" value="Pagar">
+                
+                <input type="hidden" name="cantidad" value="<?php echo $cantidad; ?>">
+                <input type="hidden" name="nombresArray" value="<?php echo htmlspecialchars(json_encode($nombresArray), ENT_QUOTES, 'UTF-8'); ?>">
+                <input class="btn2 btn2-outline-primary"  type="submit" value="Pagar">
             </form>
         </div>
     </div>
@@ -198,6 +197,7 @@ function actualizarConfiguracion() {
     console.log('Total a pagar: ' + totalPagar);
 }
 </script>
+
 
 </body>
 <?php include 'footer.php'?>
