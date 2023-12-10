@@ -1,23 +1,18 @@
 <?php include 'navbar.php'?>
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Recuperar los datos del formulario
+
         $cantidad = $_POST["quantity"];
         $total = $_POST["total"];
 
-        // Verificar si el nombre se envió y no es nulo
+
         $nombres = isset($_POST["nombre"]) ? $_POST["nombre"] : '';
 
-        // Decodificar la cadena JSON de nombres (si se envió como JSON)
+
         $nombresArray = json_decode($nombres);
-
-
-        echo "Cantidad: " . $cantidad . "<br>";
-        echo "Total: " . $total . "<br>";
         
-        // Imprimir los nombres solo si hay alguno
         if ($nombresArray !== null) {
-            echo "Nombres: " . implode(", ", $nombresArray);
+            //echo "Nombres: " . implode(", ", $nombresArray);
         } else {
             echo "No se proporcionaron nombres.";
         }
@@ -58,7 +53,7 @@
                     </label>
                 </div>
 
-                <!-- Campos de tarjeta de crédito (inicialmente ocultos) -->
+                
                 <div id="campos_tarjeta" style="display: none">
                     <div class="form-group">
                         <input class="form-check-input" type="radio" name="banorte" id="tarjeta_banorte" value="tarjeta_banorte" required>
@@ -68,12 +63,12 @@
                     </div>
                     <div class="form-group">
                         <label for="numero_tarjeta">Número de Tarjeta:</label>
-                        <input type="text" class="form-control" name="numero_tarjeta" id="numero_tarjeta" required>
+                        <input type="text" class="form-control" name="numero_tarjeta" id="numero_tarjeta" placeholder="XXXX-XXXX-XXXX-XXXX" required>
                     </div>
 
                     <div class="form-group">
                         <label for="nombre_titular">Nombre del Titular:</label>
-                        <input type="text" class="form-control" name="nombre_titular" id="nombre_titular" required>
+                        <input type="text" class="form-control" name="nombre_titular" id="nombre_titular" placeholder="Nombre de titular" required>
                     </div>
 
                     <div class="form-group">
@@ -83,7 +78,7 @@
 
                     <div class="form-group">
                         <label for="codigo_seguridad">Código de Seguridad:</label>
-                        <input type="text" class="form-control" name="codigo_seguridad" id="codigo_seguridad" required>
+                        <input type="number" class="form-control" name="codigo_seguridad" id="codigo_seguridad" placeholder="000" min="0" max="999" required>
                     </div>
                 </div>
 
@@ -146,20 +141,27 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script>
-    // Mostrar u ocultar campos de tarjeta de crédito según la opción seleccionada
+    
     $('input[name="forma_pago"]').change(function () {
+        var camposTarjeta = document.getElementById('campos_tarjeta');
+        var camposOXXO = document.getElementById('campos_oxxo');
         if ($('#tarjeta_credito').is(':checked')) {
-            $('#campos_tarjeta').show();
-            $('#campos_oxxo').hide();
-
+            
+            document.getElementById('campos_tarjeta').style.display = 'block';
+            document.getElementById('campos_oxxo').style.display = 'none';
+            camposTarjeta.querySelectorAll('[data-original-required]').forEach(function (element) {
+                element.setAttribute('required', 'required');
+            });
         } else {
-            $('#campos_tarjeta').hide();
-            $('#campos_oxxo').show();
+            
+            document.getElementById('campos_tarjeta').style.display = 'none';
+            document.getElementById('campos_oxxo').style.display = 'block';
+            camposTarjeta.querySelectorAll('[required]').forEach(function (element) {
+                element.removeAttribute('required');
+            });
         }
     });
-</script>
 
-<script>
 function actualizarConfiguracion() {
     var paisSeleccionado = document.getElementById('pais').value;
     var impuestos2 = 0;
@@ -196,8 +198,35 @@ function actualizarConfiguracion() {
     console.log('Impuestos: ' + impuestos2 + '%');
     console.log('Total a pagar: ' + totalPagar);
 }
-</script>
 
+document.getElementById('numero_tarjeta').addEventListener('input', function (e) {
+    // Obtener el valor actual del campo
+    let input = e.target;
+    let value = input.value;
+
+    // Eliminar caracteres no numéricos
+    let numericValue = value.replace(/\D/g, '');
+
+    // Aplicar el formato de tarjeta (XXXX-XXXX-XXXX-XXXX)
+    let formattedValue = numericValue.replace(/(\d{4})/g, '$1-');
+
+    // Eliminar el guión adicional al final (si lo hay)
+    formattedValue = formattedValue.replace(/-$/, '');
+
+    // Actualizar el valor del campo
+    input.value = formattedValue;
+});
+
+// Puedes agregar la validación adicional para aceptar solo números y verificar la longitud si es necesario
+document.getElementById('numero_tarjeta').addEventListener('keypress', function (e) {
+    // Solo permitir números (código ASCII)
+    if (e.which < 48 || e.which > 57) {
+        e.preventDefault();
+    }
+});
+
+
+</script>
 
 </body>
 <?php include 'footer.php'?>
