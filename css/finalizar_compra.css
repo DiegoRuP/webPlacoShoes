@@ -300,6 +300,21 @@ input {
 }
 
 
+#tarjeta_bbva{
+    margin-left: 25px;
+}
+
+#fotobarras{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+h3,h4,h5{
+    color: #289bb8;
+}
+
+
   /* Diseño responsive del textarea */
 
   @media (max-width: 991px) {

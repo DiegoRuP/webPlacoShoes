@@ -64,6 +64,12 @@
                 <!-- Campos de tarjeta de crédito (inicialmente ocultos) -->
                 <div id="campos_tarjeta" style="display: none">
                     <div class="form-group">
+                        <input class="form-check-input" type="radio" name="banorte" id="tarjeta_banorte" value="tarjeta_banorte" checked>
+                        <img src="media/logobanorte.jpg" alt="" width="150px;">
+                        <input class="form-check-input" type="radio" name="banorte" id="tarjeta_bbva" value="tarjeta_bbva" checked>
+                        <img src="media/logobbva.png" alt="" width="150px; " style="margin-left: 50px;">
+                    </div>
+                    <div class="form-group">
                         <label for="numero_tarjeta">Número de Tarjeta:</label>
                         <input type="text" class="form-control" name="numero_tarjeta" id="numero_tarjeta" required>
                     </div>
@@ -92,7 +98,14 @@
                         </label>
                     <div id="campos_oxxo" style="display: none;">
                         <br>
-                        <img src="media/logo_oxxo.png" alt="" width="150px;">
+                        <img src="media/logo_oxxo.png" alt="" width="200px;">
+                        <br>
+                        <br>
+                        <div id="fotobarras"><img src="media/codigobarras.png" alt="" width="150px;"></div>
+                        <h4>Instrucciones</h4>
+                        <h5>1. Acudir a tu Oxxo mas cercano.</h5>
+                        <h5>2. Indica en caja que quieres realizar un pago Oxxo</h5>
+                        <h5>3. Muestra al cajero el codigo de barras</h5>
                     </div>
                 </div>
 
@@ -107,18 +120,18 @@
 
                 <!-- País y impuestos -->
                 <label for="pais">Selecciona tu país:</label>
-                <select name="pais" id="pais">
+                <select name="pais" id="pais" onchange="actualizarConfiguracion()">
+                    <option value="" disabled selected>Selecciona tu país</option>
                     <option value="mexico">México</option>
-                    <option value="argentina">Argentina</option>
+                    <option value="canada">Canada</option>
                 </select>
-
                 <br>
-
-                <!-- Gastos de envío -->
-                <label for="envio">Gastos de Envío:</label>
-                <input type="radio" name="envio" value="gratuito" id="envio_gratuito"> <label for="envio_gratuito">Gratuito</label>
-                <input type="radio" name="envio" value="con_costo" id="envio_con_costo"> <label for="envio_con_costo">Con Costo</label>
-
+                <br>
+                <h3>Envios Nacionales Gratuitos!</h3>
+                <br>
+                <br>
+                <br>
+                <div id="contenedorDesglosePago"></div>
                 <br>
 
                 <input class="btn2 btn2-outline-primary" type="submit" value="Pagar">
@@ -145,6 +158,45 @@
             $('#campos_oxxo').show();
         }
     });
+</script>
+
+<script>
+function actualizarConfiguracion() {
+    var paisSeleccionado = document.getElementById('pais').value;
+    var impuestos2 = 0;
+    var totalPagar = 0;
+    var envio =0 ;
+
+    // Configuración para México
+    if (paisSeleccionado === 'mexico') {
+        var total = <?php echo $total;?>; 
+        impuestos2 = total * 0.16;
+        totalPagar = total * 1.16;
+
+    // Configuración para Canadá
+    } else if (paisSeleccionado === 'canada') {
+        var total = <?php echo $total;?>; 
+        envio = 500;
+        impuestos2 = total * 0.05;
+        totalPagar = total * 1.05;
+        totalPagar = totalPagar + envio;
+    }
+
+    // Actualizar visualización del desglose de pago
+    var containerProduct = document.getElementById('contenedorDesglosePago');
+    containerProduct.innerHTML = `
+        <div class="desglosepago"> 
+            <h3>Desglose del Pago</h3>
+            <h4>Valor en productos: $${total.toFixed(2)} MXN</h4>
+            <h4>Impuesto: $${impuestos2.toFixed(2)} MXN</h4>
+            <h4>Envio: $${envio.toFixed(2)} MXN</h4>
+            <h4>Total a pagar: $${totalPagar.toFixed(2)} MXN</h4>
+        </div>
+    `;
+
+    console.log('Impuestos: ' + impuestos2 + '%');
+    console.log('Total a pagar: ' + totalPagar);
+}
 </script>
 
 </body>
