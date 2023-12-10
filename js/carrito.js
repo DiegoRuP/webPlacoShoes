@@ -21,37 +21,39 @@ document.addEventListener('DOMContentLoaded', () => {
         // Busca el icono del carrito directamente
         if (e.target.matches('.carritoCatalogo i')) {
             const product = e.target.parentElement.parentElement;
-    
+
             const infoProduct = {
                 quantity: 1,
                 id: product.querySelector('#catalogoIDP').textContent,
-                stock: product.querySelector('#catalogoStockP').textContent.trim(), // Convierte el stock a un número
+                stock: parseInt(product.querySelector('#catalogoStockP').textContent.slice(7)), // Elimina 'Stock: ' y convierte a número
                 nombre: product.querySelector('#catalogoNombreP').textContent,
                 descripcion: product.querySelector('#catalogoDescripcionP').textContent,
                 categoria: product.querySelector('.desc').textContent,
                 precio: product.querySelector('#catalogoPrecioP').textContent,
             };
 
-            console.log(infoProduct.stock)
-    
+            console.log(infoProduct.stock);
+
             // Verifica si hay suficiente stock
-            if (infoProduct.stock !== 'Stock: 0') {
-                const exist = allProducts.some(product => product.nombre === infoProduct.nombre);
-    
-                if (exist) {
-                    const products = allProducts.map(product => {
-                        if (product.nombre === infoProduct.nombre) {
-                            product.quantity++;
-                            return product;
-                        } else {
-                            return product;
-                        }
-                    });
-                    allProducts = [...products];
+            if (infoProduct.stock > 0) {
+                const existingProduct = allProducts.find((product) => product.id === infoProduct.id);
+
+                if (existingProduct) {
+                    if (existingProduct.quantity < infoProduct.stock) {
+                        existingProduct.quantity++;
+                    } else {
+                        // Muestra la alerta SweetAlert2
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Sin stock',
+                            text: 'No hay suficiente stock para este producto.',
+                        });
+                        return; // No añadir al carrito si no hay suficiente stock
+                    }
                 } else {
-                    allProducts = [...allProducts, infoProduct];
+                    allProducts.push(infoProduct);
                 }
-    
+
                 showHTML();
             } else {
                 // Muestra la alerta SweetAlert2
