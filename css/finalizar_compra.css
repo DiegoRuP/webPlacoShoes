@@ -1,0 +1,376 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #071014;
+    background-image: -webkit-linear-gradient(160deg, #071014 0%, #0db8de 100%);
+    background-image: -moz-linear-gradient(160deg, #071014 0%, #0db8de 100%);
+    background-image: -o-linear-gradient(160deg, #071014 0%, #0db8de 100%);
+    background-image: linear-gradient(160deg, #071014 0%, #0db8de 100%);  
+    font-family: 'Arial', sans-serif;
+    height: 170vh;
+    background-size: cover;
+}
+  .caja-login {
+    margin-top: 15px;
+    background: #1A2226;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 15px;
+}
+
+  .caja-titulo {
+      text-align: center;
+      font-size: 30px;
+      letter-spacing: 2px;
+      margin-top: 35px;
+      font-weight: bold;
+      color: #0DB8DE;
+  }
+  .login-form {
+      margin-top: 25px;
+      text-align: left;
+  }
+  input[type=text] {
+      background-color: #1A2226;
+      border: none;
+      border-bottom: 2px solid #0DB8DE;
+      border-top: 0px;
+      border-radius: 0px;
+      outline: 0;
+      margin-bottom: 20px;
+      padding-left: 0px;
+      color: #ECF0F5;
+  }
+  .form-group {
+  margin: 30px;
+  }
+  .form-control:focus {
+      box-shadow: none;
+      background-color: #1A2226;
+      color: #ECF0F5;
+  }
+  .form-control-label {
+      font-size: 15px;
+      color: #6C6C6C;
+      letter-spacing: 1px;
+  }
+  
+  .login-button {
+      padding-right: 0px;
+      text-align: right;
+      margin-bottom: 25px;
+  }
+  .login-text {
+      padding-left: 0px;
+      color: #A2A4A4;
+  }
+
+  input[type="file"] {
+    display: none; /* Oculta el botón original */
+}
+
+label.upload-btn {
+    background-color: #101416;
+    color: #0DB8DE;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+textarea {
+    color: #fff;
+    background-color: transparent;
+    border-color: #0DB8DE;
+    width: 100%;
+    max-width: 100%; 
+    resize: none; 
+    box-sizing: border-box; 
+}
+
+.custom-select {
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #1A2226;
+    border-color: #0DB8DE;
+    color: #fff;
+}
+
+.custom-select option {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+input[type=number] {
+    background-color: #1A2226 !important;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #ffffff;
+}
+
+tr {
+    background-color: #f8f8f8;
+}
+
+td {
+    padding: 8px;
+    border: 3px solid rgb(8, 42, 51);;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.derecha {
+    margin-top: 20px;
+    padding: 20px;
+    height: 100%;
+}
+
+.estiloformulario {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+
+/* Boton de Logearse y Registrarse */
+   
+.btn2 {
+    
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    color: #289bb8;
+    background-color: #101416;
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 15px;
+    letter-spacing: 2px
+  }
+  
+  /* Efecto cuando tenemos el cursor en el boton */
+  .btn2:hover {
+    background: #289bb8;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #c1c6c8,
+                0 0 25px #e8eaeb,
+                0 0 50px #ebeded,
+                0 0 100px #e8eaea;
+  }
+
+  .btn2-outline-primary {
+    width: 200px;
+    height: 50px;
+    
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #0DB8DE !important;
+    border-color:#6ccde3!important;
+    color:#1A2226 !important;
+    margin-top: 30px;
+  }
+  .btn2-outline-primary:hover{
+    background-color: #374145!important;
+    background-image: -webkit-linear-gradient(160deg, #344750 0%, rgb(129, 205, 222) 100%)!important;
+    background-image: -moz-linear-gradient(160deg, #344750 0%, rgb(129, 205, 222) 100%)!important;
+    background-image: -o-linear-gradient(160deg, #344750 0%, rgb(129, 205, 222) 100%)!important;
+    background-image: linear-gradient(160deg, #344750 0%, rgb(129, 205, 222) 100%)!important;
+    
+    color: #ffffff!important;
+  }
+  .tab{
+    margin-top: 30px;
+    table-layout: fixed;
+    width: 90%;
+    text-align: left;
+    border-collapse: collapse;
+  }
+    .tab td {
+        overflow: hidden!important; /* Oculta el texto que exceda el tamaño del contenedor */
+        white-space: nowrap!important; /* Evita el salto de línea */
+        text-overflow: ellipsis!important; /* Muestra puntos suspensivos si el texto es demasiado largo */
+    }
+    .tab td {
+        max-height: 10px; /* Establece la altura máxima */
+        overflow: auto;
+    }
+
+.labcol{
+    color: white;
+    background-color: #1A2226;
+    grid-column: 1;
+    grid-row: 1;
+}
+.form-control {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+  #productImage{
+    width: 50%; 
+    height: auto;
+  }
+.contenedorAdmin{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 0 auto;
+    width: 98%;
+    background-color: #1A2226;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    padding: 50px;
+    overflow: auto;
+
+}
+.izqAlta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#imagenOculta{
+    display: none;
+}
+
+.calzadoSeleccionado{
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+    border-top: #0DB8DE solid 2px;
+    border-bottom: #0DB8DE solid 2px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.contenedor2{
+    margin: 0 auto;
+    width: 70%;
+    border-radius: 20px;
+    margin-right: 50px;
+}
+
+.izquierdaBaja{
+    border-top: #0DB8DE solid 2px;
+    border-bottom: #0DB8DE solid 2px;
+    border-radius: 20px;
+    padding: 20px 0px;
+}
+
+
+  /* Diseño responsive del textarea */
+
+  @media (max-width: 991px) {
+    textarea {
+        max-height: 80px; 
+    }
+}
+
+/* Diseño responsive del cambios.php */
+
+@media (max-width: 991px) {
+    .contenedorAdmin {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedor2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .izquierdaAlta,
+    .izquierdaBaja,
+    .derecha {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calzadoSeleccionado {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #productImage {
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .estiloformulario {
+        box-sizing: border-box;
+    }
+    
+    .izqAlta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .izqAlta select {
+        margin-bottom: 10px;
+    }
+
+    .izquierdaBaja {
+        overflow-x: auto;
+    }
+
+    .izquierdaBaja table {
+        width: 100%;
+    }
+
+    .estiloformulario button {
+        margin-top: 10px;
+    }
+}
