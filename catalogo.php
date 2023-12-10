@@ -52,6 +52,7 @@ $sql2 = "SELECT * FROM productos WHERE (Categoria = '$filtroGenero' OR '$filtroG
                 <input type="number" id="precioMax" name="precioMax">
 
                 <button id="btnFiltro" onclick="filtrarPrecio()">Aplicar filtro de precio</button>
+                <a href="catalogo.php"><button>Borrar filtro</button></a>
         </div>
 
         <script>
