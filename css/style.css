@@ -637,7 +637,7 @@ figure img:hover {
     }
   
     .price {
-      float: left;
+      float:none;
       color: #1A2226;
       font-size: 22px;
       font-weight: 900;
@@ -1147,3 +1147,43 @@ figure img:hover {
     del{
         color: red;
     }
+
+   /* Reset de estilos para campos de entrada */
+.formSub input {
+    box-sizing: border-box;
+    outline: none;
+}
+
+.formSub {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > input {
+        flex: 1 1 10ch;
+        margin: .5rem;
+        
+        &[type="email"] {
+            flex: 3 1 30ch;
+        }
+    }
+}
+
+.formSub input {
+    border: none;
+    background: hsl(0 0% 93%);
+    border-radius: .25rem;
+    padding: .75rem 1rem;
+}
+
+.formSub input[type="submit"] {
+    background: #0DB8DE;
+    color: white;
+    box-shadow: 0 .75rem .5rem -.5rem #071014;
+    transition: background 0.3s ease, color 0.3s ease; 
+}
+
+.formSub input[type="submit"]:hover {
+    background: #071014;
+    color: #0DB8DE;
+    cursor: pointer;
+}

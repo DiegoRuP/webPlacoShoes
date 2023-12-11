@@ -47,8 +47,16 @@
                 </li>
             </ul>
 
+            <form class="formSub" method="post" action="correoSub.php">
+                <input type="text" name="nombre" placeholder="Nombre">
+                <input type="email" name="email" placeholder="Correo electronico">
+                <input type="submit" value="Suscribirme">
+            </form>
+
             <p>
             Copyright&copy; 2023 - Página creada por PlacoInc. - Todos los derechos reservados
+            </p><p>
+            ESTA PAGINA ESTA CREADA CON FINES EDUCATIVOS, NO ES REAL
             </p>
         </footer>
 
