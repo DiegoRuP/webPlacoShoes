@@ -139,6 +139,9 @@
                                     echo "
                                     <li>
                                         <a href='formproducto.php'> Admin </a>
+                                    </li>
+                                    <li>
+                                        <a href='graficas.php'> Graficas </a>
                                     </li>";
                                 }
                             }
