@@ -8,62 +8,6 @@
         $nombres = isset($_POST["nombre"]) ? $_POST["nombre"] : '';
         $nombresArray = json_decode($nombres);
         
-        $servidor='localhost';
-        $cuenta='root';
-        $password='';
-        $bd='bdplacoshoes';
-    
-        $conexion = new mysqli($servidor, $cuenta, $password, $bd);
-    
-        // Verificar la conexión
-        if ($conexion->connect_error) {
-            die("Error de conexión: " . $conexion->connect_error);
-        }
-    
-        // $nombresArray es tu array con los nombres de los artículos
-        $nombresArray = json_decode($nombres, true);
-    
-        // Convierte los nombres a un formato seguro para usar en la consulta SQL
-        $nombresSeguros = array_map(function ($nombre) use ($conexion) {
-            return "'" . $conexion->real_escape_string($nombre) . "'";
-        }, $nombresArray);
-    
-        // Convierte el array en una cadena separada por comas para usar en la cláusula IN
-        $nombresProductos = implode(",", $nombresSeguros);
-    
-        // Realiza la consulta SQL para obtener los datos de los artículos
-        $sql = "SELECT * FROM productos WHERE Nombre IN ($nombresProductos)";
-        $resultado = $conexion->query($sql);
-    
-        // Verifica si la consulta fue exitosa
-        if ($resultado) {
-            // Procesa los resultados
-            while ($fila = $resultado->fetch_assoc()) {
-                // Accede a los datos de cada artículo
-                $id = $fila['ID'];
-                $nombre = $fila['Nombre'];
-                $descripcion = $fila['Descripcion'];
-                $stock = $fila['Stock'];
-                $precio = $fila['Precio'];
-                $descuento = $fila['Descuento'];
-                $imagen = $fila['Imagen'];
-                $categoria = $fila['Categoria'];
-    
-                // Realiza las operaciones necesarias con los datos
-                // Por ejemplo, imprime los datos o realiza alguna otra acción
-                echo "ID: $id, Nombre: $nombre, Descripción: $descripcion, Stock: $stock, Precio: $precio, Descuento: $descuento, Imagen: $imagen, Categoría: $categoria<br>";
-            }
-    
-            // Libera el resultado
-            $resultado->free();
-        } else {
-            // Maneja el caso de error en la consulta
-            echo "Error en la consulta: " . $conexion->error;
-        }
-    
-        // Cierra la conexión a la base de datos al finalizar
-        $conexion->close();
-    
         if ($nombresArray !== null) {
             //echo "Nombres: " . implode(", ", $nombresArray);
         } else {
@@ -97,7 +41,7 @@
           Detalles del pago
         </div>
         <div class="col-lg-12 login-form">
-            <form method="post" action="procesar_pago.php">
+            <form method="post" action="procesar_pago.php" target="_blank">
                 <br>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="forma_pago" id="tarjeta_credito" value="tarjeta_credito" required>
@@ -174,7 +118,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="direccion">Dirección:</label>
-                                <input type="text" class="form-control" id="direccion" placeholder="Tu dirección" required>
+                                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Tu dirección" required>
                             </div>
                         </div>
                         <div class="row">
@@ -227,6 +171,10 @@
                 <div id="contenedorDesglosePago"></div>
                 <br>
                 
+                <input type="hidden" id="subtotal" name="subtotal" value="">
+                <input type="hidden" id="cobroenvio" name="cobroenvio" value="">
+                <input type="hidden" id="impuesto" name="impuesto" value="">
+                <input type="hidden" id="total" name="totalpago" value="">
                 <input type="hidden" name="cantidad" value="<?php echo $cantidad; ?>">
                 <input type="hidden" name="nombresArray" value="<?php echo htmlspecialchars(json_encode($nombresArray), ENT_QUOTES, 'UTF-8'); ?>">
                 <input class="btn2 btn2-outline-primary"  type="submit" value="Pagar">
@@ -325,6 +273,10 @@
                 <h4>Total a pagar: $${totalPagar.toFixed(2)} MXN</h4>
             </div>
         `;
+        document.getElementById("subtotal").value = total;
+        document.getElementById("cobroenvio").value = envio;
+        document.getElementById("impuesto").value = impuestos2;
+        document.getElementById("total").value = totalPagar;
 
         console.log('Impuestos: ' + impuestos2 + '%');
         console.log('Total a pagar: ' + totalPagar);
