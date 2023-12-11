@@ -128,8 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
             nombres.push(product.nombre);
             cantidad.push(product.quantity);
 
-
+            
         });
+        
 
         valorTotal.innerText = `$${total}`;
         countProducts.innerText = totalOfProducts;
@@ -170,8 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const nombreInput = document.createElement('input');
             nombreInput.type = 'hidden';
             nombreInput.name = 'nombre';
-            nombreInput.value = nombresJSON;
-            
+            nombreInput.value = nombresJSON;            
         
             // Agregar los campos al formulario
             form.appendChild(quantityInput);

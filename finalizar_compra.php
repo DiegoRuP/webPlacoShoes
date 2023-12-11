@@ -5,12 +5,11 @@
         $cantidad = $_POST["quantity"];
         $total = $_POST["total"];
 
-
         $nombres = isset($_POST["nombre"]) ? $_POST["nombre"] : '';
-
-
         $nombresArray = json_decode($nombres);
         
+        
+
         if ($nombresArray !== null) {
             //echo "Nombres: " . implode(", ", $nombresArray);
         } else {
@@ -21,6 +20,7 @@
         echo "No se han enviado datos por POST.";
     }
 
+        
 ?>
 
 <head>
@@ -100,27 +100,75 @@
                         <h5>3. Muestra al cajero el codigo de barras</h5>
                     </div>
                 </div>
-
-                
                 <br>
+                <div id="datos_envio">
+                    <h4>Datos de envio</h4>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="nombres">Nombre (s):</label>
+                                <input type="text" class="form-control" id="nombres" placeholder="Nombre(s)" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="apellidos">Apellido (s):</label>
+                                <input type="text" class="form-control" id="apellidos" placeholder="Apellido(s)" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="telefono">Teléfono:</label>
+                                <input type="number" class="form-control" id="telefono" placeholder="449-534-4567" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="direccion">Dirección:</label>
+                                <input type="text" class="form-control" id="direccion" placeholder="Tu dirección" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="ext">No. Exterior:</label>
+                                <input type="number" class="form-control" id="ext" placeholder="000" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="int">No. Interior:</label>
+                                <input type="number" class="form-control" id="int" placeholder="000" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="co">Código Postal:</label>
+                                <input type="number" class="form-control" id="co" placeholder="12345" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ciudad">Ciudad:</label>
+                                <input type="text" class="form-control" id="ciudad" placeholder="Ciudad" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="estado">Estado:</label>
+                                <input type="text" class="form-control" id="estado" placeholder="Estado" required>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- País y impuestos -->
+                                <label for="pais">Selecciona tu país:</label>
+                                <select name="pais" id="pais" onchange="actualizarConfiguracion()" required>
+                                    <option value="" disabled selected>Selecciona tu país</option>
+                                    <option value="mexico">México</option>
+                                    <option value="canada">Canada</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Código de cupón -->
-                <label for="cupon">Código de Cupón:</label>
-                <input type="text" name="cupon" id="cupon">
-
-                <br>
-
-                <!-- País y impuestos -->
-                <label for="pais">Selecciona tu país:</label>
-                <select name="pais" id="pais" onchange="actualizarConfiguracion()" required>
-                    <option value="" disabled selected>Selecciona tu país</option>
-                    <option value="mexico">México</option>
-                    <option value="canada">Canada</option>
-                </select>
-                <br>
                 <br>
                 <h3>Envios Nacionales Gratuitos!</h3>
                 <br>
+                <div> 
+                    <input type="text" class="form-control" id="cupon" placeholder="Aplica tu cupon">
+                    <button class="btn2 btn2-outline-primary" type="button" >Aplicar</button>
+                </div>
                 <br>
                 <br>
                 <div id="contenedorDesglosePago"></div>
@@ -162,68 +210,98 @@
         }
     });
 
-function actualizarConfiguracion() {
-    var paisSeleccionado = document.getElementById('pais').value;
-    var impuestos2 = 0;
-    var totalPagar = 0;
-    var envio =0 ;
 
-    // Configuración para México
-    if (paisSeleccionado === 'mexico') {
-        var total = <?php echo $total;?>; 
-        impuestos2 = total * 0.16;
-        totalPagar = total * 1.16;
 
-    // Configuración para Canadá
-    } else if (paisSeleccionado === 'canada') {
-        var total = <?php echo $total;?>; 
-        envio = 500;
-        impuestos2 = total * 0.05;
-        totalPagar = total * 1.05;
-        totalPagar = totalPagar + envio;
+    function aplicarDescuento() {
+        var cupon = document.getElementById('cupon').value;
+        switch (cupon) {
+            case 'PLACOXTRAVIS':
+                aplicarDescuentoTravis();
+                break;
+            case 'SOYDBOLETIN':
+                aplicarDescuentoHombres();
+                break;
+            case 'NEWPSHOES':
+                aplicarDescuentoNuevo();
+                break;
+            default:
+                alert('Cupón no válido');
+                break;
+        }
+    }
+    function aplicarDescuentoTravis() {
+        // Verifica si el producto es Nike Air Jordan 1 HIGH x Travis Scott
+        if (nombresArray.includes('Nike Air Jordan 1 HIGH x Travis Scott')) {
+            // Aplica un descuento del 15%
+            aplicarDescuentoPorcentaje(15);
+        } else {
+            alert('El código de cupón no es aplicable a este producto');
+        }
     }
 
-    // Actualizar visualización del desglose de pago
-    var containerProduct = document.getElementById('contenedorDesglosePago');
-    containerProduct.innerHTML = `
-        <div class="desglosepago"> 
-            <h3>Desglose del Pago</h3>
-            <h4>Valor en productos: $${total.toFixed(2)} MXN</h4>
-            <h4>Impuesto: $${impuestos2.toFixed(2)} MXN</h4>
-            <h4>Envio: $${envio.toFixed(2)} MXN</h4>
-            <h4>Total a pagar: $${totalPagar.toFixed(2)} MXN</h4>
-        </div>
-    `;
+    
+    function actualizarConfiguracion() {
+        var paisSeleccionado = document.getElementById('pais').value;
+        var impuestos2 = 0;
+        var totalPagar = 0;
+        var envio =0 ;
 
-    console.log('Impuestos: ' + impuestos2 + '%');
-    console.log('Total a pagar: ' + totalPagar);
-}
+        // Configuración para México
+        if (paisSeleccionado === 'mexico') {
+            var total = <?php echo $total;?>; 
+            impuestos2 = total * 0.16;
+            totalPagar = total * 1.16;
 
-document.getElementById('numero_tarjeta').addEventListener('input', function (e) {
-    // Obtener el valor actual del campo
-    let input = e.target;
-    let value = input.value;
+        // Configuración para Canadá
+        } else if (paisSeleccionado === 'canada') {
+            var total = <?php echo $total;?>; 
+            envio = 500;
+            impuestos2 = total * 0.05;
+            totalPagar = total * 1.05;
+            totalPagar = totalPagar + envio;
+        }
 
-    // Eliminar caracteres no numéricos
-    let numericValue = value.replace(/\D/g, '');
+        // Actualizar visualización del desglose de pago
+        var containerProduct = document.getElementById('contenedorDesglosePago');
+        containerProduct.innerHTML = `
+            <div class="desglosepago"> 
+                <h3>Desglose del Pago</h3>
+                <h4>Valor en productos: $${total.toFixed(2)} MXN</h4>
+                <h4>Impuesto: $${impuestos2.toFixed(2)} MXN</h4>
+                <h4>Envio: $${envio.toFixed(2)} MXN</h4>
+                <h4>Total a pagar: $${totalPagar.toFixed(2)} MXN</h4>
+            </div>
+        `;
 
-    // Aplicar el formato de tarjeta (XXXX-XXXX-XXXX-XXXX)
-    let formattedValue = numericValue.replace(/(\d{4})/g, '$1-');
-
-    // Eliminar el guión adicional al final (si lo hay)
-    formattedValue = formattedValue.replace(/-$/, '');
-
-    // Actualizar el valor del campo
-    input.value = formattedValue;
-});
-
-// Puedes agregar la validación adicional para aceptar solo números y verificar la longitud si es necesario
-document.getElementById('numero_tarjeta').addEventListener('keypress', function (e) {
-    // Solo permitir números (código ASCII)
-    if (e.which < 48 || e.which > 57) {
-        e.preventDefault();
+        console.log('Impuestos: ' + impuestos2 + '%');
+        console.log('Total a pagar: ' + totalPagar);
     }
-});
+
+    document.getElementById('numero_tarjeta').addEventListener('input', function (e) {
+        // Obtener el valor actual del campo
+        let input = e.target;
+        let value = input.value;
+
+        // Eliminar caracteres no numéricos
+        let numericValue = value.replace(/\D/g, '');
+
+        // Aplicar el formato de tarjeta (XXXX-XXXX-XXXX-XXXX)
+        let formattedValue = numericValue.replace(/(\d{4})/g, '$1-');
+
+        // Eliminar el guión adicional al final (si lo hay)
+        formattedValue = formattedValue.replace(/-$/, '');
+
+        // Actualizar el valor del campo
+        input.value = formattedValue;
+    });
+
+    // Puedes agregar la validación adicional para aceptar solo números y verificar la longitud si es necesario
+    document.getElementById('numero_tarjeta').addEventListener('keypress', function (e) {
+        // Solo permitir números (código ASCII)
+        if (e.which < 48 || e.which > 57) {
+            e.preventDefault();
+        }
+    });
 
 
 </script>
