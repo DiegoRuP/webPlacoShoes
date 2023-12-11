@@ -4,19 +4,72 @@
 
         $cantidad = $_POST["quantity"];
         $total = $_POST["total"];
-
+    
         $nombres = isset($_POST["nombre"]) ? $_POST["nombre"] : '';
         $nombresArray = json_decode($nombres);
         
-        
-
+        $servidor='localhost';
+        $cuenta='root';
+        $password='';
+        $bd='bdplacoshoes';
+    
+        $conexion = new mysqli($servidor, $cuenta, $password, $bd);
+    
+        // Verificar la conexión
+        if ($conexion->connect_error) {
+            die("Error de conexión: " . $conexion->connect_error);
+        }
+    
+        // $nombresArray es tu array con los nombres de los artículos
+        $nombresArray = json_decode($nombres, true);
+    
+        // Convierte los nombres a un formato seguro para usar en la consulta SQL
+        $nombresSeguros = array_map(function ($nombre) use ($conexion) {
+            return "'" . $conexion->real_escape_string($nombre) . "'";
+        }, $nombresArray);
+    
+        // Convierte el array en una cadena separada por comas para usar en la cláusula IN
+        $nombresProductos = implode(",", $nombresSeguros);
+    
+        // Realiza la consulta SQL para obtener los datos de los artículos
+        $sql = "SELECT * FROM productos WHERE Nombre IN ($nombresProductos)";
+        $resultado = $conexion->query($sql);
+    
+        // Verifica si la consulta fue exitosa
+        if ($resultado) {
+            // Procesa los resultados
+            while ($fila = $resultado->fetch_assoc()) {
+                // Accede a los datos de cada artículo
+                $id = $fila['ID'];
+                $nombre = $fila['Nombre'];
+                $descripcion = $fila['Descripcion'];
+                $stock = $fila['Stock'];
+                $precio = $fila['Precio'];
+                $descuento = $fila['Descuento'];
+                $imagen = $fila['Imagen'];
+                $categoria = $fila['Categoria'];
+    
+                // Realiza las operaciones necesarias con los datos
+                // Por ejemplo, imprime los datos o realiza alguna otra acción
+                echo "ID: $id, Nombre: $nombre, Descripción: $descripcion, Stock: $stock, Precio: $precio, Descuento: $descuento, Imagen: $imagen, Categoría: $categoria<br>";
+            }
+    
+            // Libera el resultado
+            $resultado->free();
+        } else {
+            // Maneja el caso de error en la consulta
+            echo "Error en la consulta: " . $conexion->error;
+        }
+    
+        // Cierra la conexión a la base de datos al finalizar
+        $conexion->close();
+    
         if ($nombresArray !== null) {
             //echo "Nombres: " . implode(", ", $nombresArray);
         } else {
             echo "No se proporcionaron nombres.";
         }
     } else {
-        
         echo "No se han enviado datos por POST.";
     }
 
