@@ -54,7 +54,7 @@ $mail->Body = '
         <style>
             body {
                 font-family: Arial, sans-serif;
-                background-color: #0DB8DE;
+                
                 color: #0DB8DE;
             }
             .container {

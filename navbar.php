@@ -16,7 +16,7 @@
     <div class="opcionesTopNav">
 
         <div class="logoNav"> 
-            <a href=""><img src="media/logoAzul.png" alt="PlacoLogo"></a>
+            <a href="principal.php"><img src="media/logoAzul.png" alt="PlacoLogo"></a>
         </div>
 
         <ul class="listaNav">            

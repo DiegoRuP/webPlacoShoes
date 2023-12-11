@@ -1,14 +1,16 @@
 <?php
+session_start();
     $servidor='localhost';
     $cuenta='root';
     $password='';
     $bd='bdplacoshoes';
 
-    $conexion = new mysqli($servidor,$cuenta,$password,$bd);
+    $conn = new mysqli($servidor,$cuenta,$password,$bd);
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $cantidad = $_POST["cantidad"];
         $cantidadArray = explode(",", $cantidad);
+        $_SESSION['cantidad'] = $_POST['cantidad'];
 
         
         $nombres = isset($_POST["nombresArray"]) ? $_POST["nombresArray"] : '';
@@ -20,6 +22,14 @@
         $totalPago = $_POST['totalpago'];
         $fpago = $_POST['forma_pago'];
         $address = $_POST['direccion'];
+
+        $_SESSION['subtotal']=$subtotal;
+        $_SESSION['cobroenvio']=$cobroenvio;
+        $_SESSION['impuesto']=$impuesto;
+        $_SESSION['totalpago']=$totalPago;
+        $_SESSION['forma_pago']=$fpago;
+        $_SESSION['direccion']=$address;
+        $_SESSION['arrayNombres']=$nombresArray;
 
         require('fpdf/fpdf.php');
 
@@ -62,11 +72,12 @@
         
         // Productos
         $pdf->SetFont('Arial', '', 12);
-        $i = 1;
+        $i = 0;
         $pdf->Cell(0, 8, 'Productos:', 0, 1, 'C', true);
         foreach ($nombresArray as $nombre) {
             $sql = "SELECT Precio, Descuento FROM productos WHERE Nombre='$nombre'";
-            $resultado = $conexion->query($sql);
+            $resultado = $conn->query($sql);
+            
 
             if ($resultado && $row = $resultado->fetch_assoc()) {
                 $precio = $row['Precio'];
@@ -74,12 +85,13 @@
                 if ($descuento > 0) {
                     // SI hay, se aplica descuento
                     $precioConDescuento = $precio - ($precio * ($descuento / 100));
-                    $pdf->Cell(0, 8, '$' . number_format($precioConDescuento, 2) . ' - ' . $nombre, 0, 1, 'C');
+                    $pdf->Cell(0, 8,$cantidadArray[$i]. ' - $' . number_format($precioConDescuento, 2) . ' - ' . $nombre, 0, 1, 'C');
                 } else {
                     // Si no, solo se pone el original
-                    $pdf->Cell(0, 8, '$' . number_format($precio, 2) . ' - ' . $nombre, 0, 1, 'C');
+                    $pdf->Cell(0, 8,$cantidadArray[$i]. ' - $' . number_format($precio, 2) . ' - ' . $nombre, 0, 1, 'C');
                 }
             }
+            $i++;
         }
         $pdf->SetY($coordenadaY+10);
         $pdf->Cell(0, 8, 'Subtotal: $' . number_format($subtotal, 2), 0, 1, 'C');
@@ -98,8 +110,16 @@
         $contentHeight = $pdf->GetY();
         $remainingSpace = ($pageHeight - $contentHeight) / 2;
         $pdf->SetY($remainingSpace);
+        
+        $rutapdf = 'pdf/ticketcompra.pdf';
+        $_SESSION['ruta_pdf'] = $rutapdf;
 
-        $pdf->Output();
+        ob_start(); // Inicia el almacenamiento en buffer de salida
+    
+        // Genera el PDF, pero no lo envíes directamente al navegador
+        $pdf->Output('F', $rutapdf);
+
+        ob_end_clean(); // Limpia (borra) el buffer de salida sin enviarlo al navegador
         
         if ($nombresArray !== null) {
             //echo "Nombres: " . implode(", ", $nombresArray);
@@ -125,19 +145,5 @@
         }
     }
     $conn->close();
+    header("Location: nota_compra_correo.php?");
     ?>
-<!-- no funciona la alerta por culpa del pdf, no supe como solucionarlo :( -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
-        swal({
-            title: "Compra realizada!",
-            text: "Tus productos se enviarán en unos momentos!",
-            icon: "success"
-            }).then(function () {
-                window.location.href = 'principal.php';
-        });
-    </script>
-    <?php
-?>
-
-<?php include 'footer.php'?>

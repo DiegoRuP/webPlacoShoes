@@ -41,7 +41,7 @@
           Detalles del pago
         </div>
         <div class="col-lg-12 login-form">
-            <form method="post" action="procesar_pago.php" target="_blank">
+            <form method="post" action="procesar_pago.php" target="_blank" onsubmit="redireccionar()">
                 <br>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="forma_pago" id="tarjeta_credito" value="tarjeta_credito" required>
@@ -188,6 +188,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="js/redireccionarPrincipal.js"></script>
 
 <script>
     
