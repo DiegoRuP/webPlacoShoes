@@ -84,7 +84,6 @@
 
         // Verificar si el archivo ya existe
         if (file_exists($target_file)) {
-            
             $nombreimag= htmlspecialchars(basename($_FILES["imagen2"]["name"]));
             $siete= $nombreimag;
             $uploadOk = 0;
@@ -109,24 +108,27 @@
         } else {
             // Si todo está bien, intentar subir el archivo
             if (move_uploaded_file($_FILES["imagen2"]["tmp_name"], $target_file)) {
-                //echo "El archivo " . htmlspecialchars(basename($_FILES["imagen2"]["name"])) . " ha sido subido.";
                 $nombreimag= htmlspecialchars(basename($_FILES["imagen2"]["name"]));
                 $siete= $nombreimag;
             } else {
                 echo "Lo siento, hubo un error al subir tu archivo.";
             }
         }
-    
+
         $uno=$_POST['id2'];
         $dos=$_POST['nom2'];
         $tres=$_POST['desc2'];
         $cuatro=$_POST['stock2'];
         $cinco=$_POST['precio2'];
         $seis=$_POST['descuen2'];
-        //$siete=$_POST['imagen2'];
         $ocho=$_POST['categ2'];
         $modificar1=$_SESSION['modificar2'];
-        $ne="UPDATE productos SET ID='$uno', Nombre='$dos', Descripcion='$tres', Stock='$cuatro', Precio='$cinco', Descuento='$seis', Imagen='$siete', Categoria='$ocho' WHERE id='$modificar1'";
+
+        // Solo actualizar la imagen si se ha cargado una nueva
+        $ne = "UPDATE productos SET ID='$uno', Nombre='$dos', Descripcion='$tres', Stock='$cuatro', Precio='$cinco', Descuento='$seis', Categoria='$ocho' WHERE id='$modificar1'";
+        if (!empty($nombreimag)) {
+            $ne = "UPDATE productos SET ID='$uno', Nombre='$dos', Descripcion='$tres', Stock='$cuatro', Precio='$cinco', Descuento='$seis', Imagen='$siete', Categoria='$ocho' WHERE id='$modificar1'";
+        }
         $fin=$conexion->query($ne);
     }
 ?>

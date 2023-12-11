@@ -67,7 +67,7 @@ $mail->Body = '
             }
         </style>
     </head>
-    <body>
+    <body style="background-color: #0DB8DE; ">
         <div class="container">
             <img src="cid:logoPlaco" alt="logoPlacoShoes" width="200px" height="200px" style="margin-left: 32%;">
             <h2>¡Hola ' . $nombre . '!</h2>
@@ -91,6 +91,7 @@ $mail->Body = '
                     title: "¡Bienvenido a Placo-Shoes!",
                     text: "Revisa tu correo para obtener tu cupón.",
                     confirmButtonText: "Aceptar"
+                    
                 }).then(function() {
                     window.location = "principal.php";
                 });

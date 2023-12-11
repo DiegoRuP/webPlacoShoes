@@ -27,45 +27,45 @@
           <form action="alta.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">       
               <label class="form-control-label">ID del producto</label>
-              <input type="text" class="form-control" name="idProducto" id="idProducto">
+              <input type="text" class="form-control" name="idProducto" id="idProducto" required>
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Nombre del producto</label>
-              <input type="text" class="form-control" name="nombreProducto" id="nombreProducto">
+              <input type="text" class="form-control" name="nombreProducto" id="nombreProducto" required>
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Descripcion</label>
-              <textarea name="descripcion" id="descripcion" cols="36 " rows="10"></textarea>
+              <textarea name="descripcion" id="descripcion" cols="36 " rows="10" required></textarea>
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Categoria</label>
-              <input type="text" class="form-control" name="categoriaProducto" id="categoriaProducto">
+              <input type="text" class="form-control" name="categoriaProducto" id="categoriaProducto" required>
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Stock</label>
-              <input type="text" class="form-control" name="stock" id="disponibleProducto" >
+              <input type="text" class="form-control" name="stock" id="disponibleProducto" required>
 
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Precio</label>
-              <input type="text" class="form-control" id="precioProducto" name="precioProducto">
+              <input type="text" class="form-control" id="precioProducto" name="precioProducto" required>
             </div>
             <div class="form-group">
             <label class="form-control-label">Foto del producto</label>
               <label for="imagen" class="upload-btn">
                 <span id="label-imagen">Selecciona una imagen</span>
               </label>
-              <input type="file" id="imagen" name="imagen" style="display: none;" onchange="mostrarNombreArchivo()">
+              <input type="file" id="imagen" name="imagen" style="display: none;" onchange="mostrarNombreArchivo()" required>
             </div>
 
             <div class="form-group">
               <label class="form-control-label">Descuento</label>
-              <input type="text" class="form-control" name="descuentoProducto" id="descuentoProducto" >
+              <input type="text" class="form-control" name="descuentoProducto" id="descuentoProducto" required>
             </div>
 
             <div class="col-12 login-btm login-button justify-content-center d-flex">
