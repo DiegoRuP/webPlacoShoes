@@ -10,10 +10,10 @@
 <body>
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "bdplacoshoes";
+    $servername='localhost';
+    $username='placoTest';
+    $password='testPlacoPass';
+    $database='bdplacoshoes';
 
 $intentos = isset($_SESSION['intentos']) ? $_SESSION['intentos'] : 0;
 $inres = isset($_SESSION['inres']) ? $_SESSION['inres'] : 3;

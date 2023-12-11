@@ -13,7 +13,7 @@
 
         function drawChart1() {
             <?php
-            $conexion = mysqli_connect("localhost", "root", "", "bdplacoshoes");
+            $conexion = mysqli_connect("localhost", 'placoTest', 'testPlacoPass', "bdplacoshoes");
             if (mysqli_connect_errno()) {
                 die("Conexión fallida: " . mysqli_connect_error());
             }
@@ -52,7 +52,8 @@
 
         function drawChart2() {
             <?php
-            $conexion = new mysqli("localhost", "root", "", "bdplacoshoes");
+
+            $conexion = new mysqli("localhost", 'placoTest', 'testPlacoPass', "bdplacoshoes");
             if ($conexion->connect_error) {
                 die("Conexión fallida: " . $conexion->connect_error);
             }

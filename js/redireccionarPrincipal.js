@@ -1,6 +1,6 @@
 function redireccionar() {
-    // Redirecciona a principal.php después de 1 segundo (1000 milisegundos)
+    // Redirecciona a index.php después de 1 segundo (1000 milisegundos)
     setTimeout(function(){
-        window.location.href = 'principal.php';
+        window.location.href = 'index.php';
     }, 1000);
 }

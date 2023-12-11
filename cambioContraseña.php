@@ -1,9 +1,9 @@
 <?php include 'navbar.php';
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "bdplacoshoes";
+    $servername='localhost';
+    $username='placoTest';
+    $password='testPlacoPass';
+    $database='bdplacoshoes';
 
 $conn = new mysqli($servername, $username, $password, $database);
 

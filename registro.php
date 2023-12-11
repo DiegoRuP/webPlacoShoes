@@ -7,9 +7,10 @@
 
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = 'placoTest';
+$password = 'testPlacoPass';
 $database = "bdplacoshoes";
+
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $database);
@@ -40,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contra_encriptada = encrypt($contraseña);
 
     // Insertar datos en la base de datos
-    $sql = "INSERT INTO usuarios (nombre, cuenta, correo, animal, contraseña) VALUES ('$nombre', '$cuenta', '$correo', '$animal', '$contra_encriptada')";
+    $sql = "INSERT INTO usuarios (nombre, cuenta, correo, animal, contraseña, online, admin) VALUES ('$nombre', '$cuenta', '$correo', '$animal', '$contra_encriptada', 0, 0)";
 
     if ($conn->query($sql) === TRUE) {
         echo "<script>

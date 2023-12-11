@@ -93,7 +93,7 @@ $mail->Body = '
                     confirmButtonText: "Aceptar"
                     
                 }).then(function() {
-                    window.location = "principal.php";
+                    window.location = "index.php";
                 });
               </script>';
         exit();
@@ -106,7 +106,7 @@ $mail->Body = '
                     text: "Hubo un problema al enviar el correo. No has agregado direccion valida.",
                     confirmButtonText: "Aceptar"
                 }).then(function() {
-                    window.location = "principal.php";
+                    window.location = "index.php";
                 });
               </script>';
     }

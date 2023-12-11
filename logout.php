@@ -6,6 +6,6 @@ $_SESSION['usuario']="";
 session_destroy();
 
 # Finalmente lo redireccionamos al formulario
-header("Location: principal.php");
+header("Location: index.php");
 exit;
 ?>

@@ -23,8 +23,8 @@
     $cantidadArray = explode(",", $cantidad);
 
     $servidor='localhost';
-    $cuenta='root';
-    $password='';
+    $cuenta='placoTest';
+    $password='testPlacoPass';
     $bd='bdplacoshoes';
 
     $conexion = new mysqli($servidor,$cuenta,$password,$bd);
@@ -157,7 +157,7 @@
                             text: "Hubo un problema al enviar el correo. No se ha encontrado la direccion de correo para el envio.",
                             confirmButtonText: "Aceptar"
                         }).then(function() {
-                            window.location = "principal.php";
+                            window.location = "index.php";
                         });
                     </script>';
             }

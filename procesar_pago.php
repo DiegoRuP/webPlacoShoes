@@ -1,8 +1,9 @@
 <?php
 session_start();
+
     $servidor='localhost';
-    $cuenta='root';
-    $password='';
+    $cuenta='placoTest';
+    $password='testPlacoPass';
     $bd='bdplacoshoes';
 
     $conn = new mysqli($servidor,$cuenta,$password,$bd);

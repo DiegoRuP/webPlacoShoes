@@ -16,7 +16,7 @@
     <div class="opcionesTopNav">
 
         <div class="logoNav"> 
-            <a href="principal.php"><img src="media/logoAzul.png" alt="PlacoLogo"></a>
+            <a href="index.php"><img src="media/logoAzul.png" alt="PlacoLogo"></a>
         </div>
 
         <ul class="listaNav">            
@@ -97,7 +97,7 @@
 
                 <ul class="listaNav">
                     <li>
-                        <a href="principal.php"> Inicio </a>
+                        <a href="index.php"> Inicio </a>
                     </li>                
                     <li>
                         <a href="catalogo.php"> Tienda </a>

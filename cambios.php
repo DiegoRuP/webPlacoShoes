@@ -4,8 +4,8 @@
 <?php 
     include 'navbar.php';
     $servidor='localhost';
-    $cuenta='root';
-    $password='';
+    $cuenta='placoTest';
+    $password='testPlacoPass';
     $bd='bdplacoshoes';
      
     $_SESSION['id'] = '';

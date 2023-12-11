@@ -7,9 +7,10 @@
 <body>
 
 <?php
+
     $servidor='localhost';
-    $cuenta='root';
-    $password='';
+    $cuenta='placoTest';
+    $password='testPlacoPass';
     $bd='bdplacoshoes';
     
     // Creamos la conexión

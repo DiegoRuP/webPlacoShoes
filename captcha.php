@@ -23,6 +23,7 @@
     }
     //se iguala una variable con el texto aleatorio
     $captcha_texto = randomText(6);
+    $font = realpath("/var/www/html/ARIAL.TTF");
     //se guarda el valor del captcha en la variable de session global
     $_SESSION['captcha_texto']=$captcha_texto;
     //aqui se da valores aleatorios a el angulo, tamano de fuente, de uno en uno de los 6 caracteres.
@@ -30,8 +31,9 @@
         $fuente = rand(3, 5);
         $caracter = substr($captcha_texto, $i, 1);
         $angulo = rand(-30, 30);
+
         //se van agregando cada uno de los caracteres que conforman el captcha a la imagen creada
-        imagettftext($imagen, 20, $angulo, 20 + ($i * 20), 35, $negro, 'ARIAL.TTF', $caracter);
+        imagettftext($imagen, 20, $angulo, 20 + ($i * 20), 35, $negro, $font, $caracter);
     }
     //se agrega un filtro a la imagen
     imagefilter($imagen, IMG_FILTER_SMOOTH, 10);
@@ -95,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             title: 'Éxito',
             text: 'Inicio de Sesión Exitoso'
         }).then(function() {
-            window.location.href='principal.php';
+            window.location.href='index.php';
         });
         </script>";        
 
